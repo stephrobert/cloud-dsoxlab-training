@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
+id: challenge-budget-contraint
+title: "Challenge 1: an architecture on a tight budget"
+description: >-
+  An environment is already deployed on the feint emulator, drawn at random.
+  Read it with the official scw CLI, cost it on the dated price grid provided,
+  say whether it fits the budget and name what is billed for nothing. No
+  procedure: graded on the estimate, recomputed from the real state.
+level: a
+difficulty: intermediate
+lab_type: challenge
+estimated_time: 45m
+skills:
+  - scw
+  - cost-estimation
+  - inventory
+  - cloud.cost.estimate
+distros:
+  - debian13
+doc_url: https://blog.stephane-robert.info/docs/cloud/outils/feint/limites/
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - grille-tarifaire.yaml
+    - estimation.yaml
+    - feint-scaleway.env
+  services:
+    - name: feint
+      image: ghcr.io/stephrobert/feint:v0.13.0@sha256:d46639ac7c7a0fa2b6b69d0c5d74bdca0757e3124675563209e8ada58e6a6040
+      ports:
+        - 127.0.0.1:4599:4599
+      ready_exec:
+        - /feint
+        - wait
+        - --addr
+        - 127.0.0.1:4599
+        - --timeout
+        - 2s
+      ready_timeout: 60
+validation:
+  functional: true
+  security: false
+  persistence_after_reboot: false

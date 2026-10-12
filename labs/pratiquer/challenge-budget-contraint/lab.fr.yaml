@@ -1,0 +1,7 @@
+id: challenge-budget-contraint
+title: "Challenge 1 : architecture à budget contraint"
+description: >-
+  Un environnement est déjà déployé sur l'émulateur feint, tiré au hasard. Le
+  lire avec le CLI officiel scw, le chiffrer sur la grille tarifaire datée
+  fournie, dire s'il tient dans le budget et nommer ce qui est facturé pour
+  rien. Sans procédure : noté sur l'estimation, recalculée depuis l'état réel.

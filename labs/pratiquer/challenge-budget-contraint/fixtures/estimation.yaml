@@ -1,0 +1,23 @@
+# Estimation mensuelle de l'environnement fourni, sur grille-tarifaire.yaml.
+# Monthly estimate of the provided environment, on grille-tarifaire.yaml.
+
+# Nombre d'instances par type commercial, par exemple DEV1-S: 1
+instances: {}
+
+# Total des volumes bloc, en Go (1 Go = 10^9 octets)
+volumes_go: 0
+
+# IP flexibles d'instance
+ips_flexibles: 0
+
+# Public Gateways
+passerelles: 0
+
+# Coût mensuel total, en euros HT
+cout_mensuel_eur: 0.0
+
+# L'environnement tient-il dans le budget de la mission ? true ou false
+dans_le_budget: null
+
+# Ressources facturées rattachées à rien : nom des volumes, adresse des IP
+non_rattaches: []

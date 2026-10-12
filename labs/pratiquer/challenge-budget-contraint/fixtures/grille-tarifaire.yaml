@@ -1,0 +1,27 @@
+# Grille tarifaire d'EXERCICE, datée du 2026-10-12.
+#
+# Ses montants sont FIXÉS POUR CE CHALLENGE : ils ne sont pas les prix d'un
+# fournisseur, qui changent et se relèvent sur sa page de tarifs, à la date du
+# relevé. Ce que le challenge note, c'est la méthode : inventorier ce qui est
+# déployé, appliquer une grille datée, et la lire jusqu'à ses règles.
+#
+# Exercise price grid, dated 2026-10-12. Its amounts are SET FOR THIS
+# CHALLENGE and are not a provider's prices.
+date: "2026-10-12"
+devise: EUR HT
+heures_par_mois: 730
+
+instances_eur_par_heure:
+  DEV1-S: 0.01
+  DEV1-M: 0.02
+  GP1-XS: 0.08
+
+volume_bloc_eur_par_go_et_par_mois: 0.08
+ip_flexible_eur_par_mois: 3.00
+passerelle_vpc_gw_s_eur_par_mois: 15.00
+
+regles:
+  - "Une instance est facturée à l'heure, 730 heures par mois."
+  - "Tout volume bloc est facturé, volume racine d'une instance compris, qu'il soit attaché ou non. 1 Go = 10^9 octets."
+  - "Une IP flexible d'instance est facturée, qu'elle soit attachée ou non."
+  - "L'IP d'une Public Gateway est comprise dans le prix de la passerelle : elle ne compte pas comme IP flexible."

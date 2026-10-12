@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-10-12 08:06:27",
+  "genere_le": "2026-10-12 08:11:42",
   "dsoxlab": "dsoxlab 0.3.1",
   "feint": "ghcr.io/stephrobert/feint:v0.13.0@sha256:d46639ac7c7a0fa2b6b69d0c5d74bdca0757e3124675563209e8ada58e6a6040",
   "scw": "2.62.0",
@@ -7,6 +7,17 @@
   "incus": "7.2",
   "docker": "29.1.3",
   "labs": {
+    "challenge-budget-contraint": {
+      "id": "challenge-budget-contraint",
+      "chemin": "pratiquer/challenge-budget-contraint",
+      "verdict": "VALIDE",
+      "score_avant": 0,
+      "score_apres": 100,
+      "tests": "5/5",
+      "duree_s": 10.4,
+      "traces": [],
+      "pourquoi": ""
+    },
     "premiere-vm-propre": {
       "id": "premiere-vm-propre",
       "chemin": "amorcer/premiere-vm-propre",
