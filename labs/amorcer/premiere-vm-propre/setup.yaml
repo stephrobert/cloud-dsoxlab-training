@@ -1,0 +1,50 @@
+---
+# Terrain du lab « Première VM propre », joué par `dsoxlab run` sur le poste.
+#
+# Il ne crée PAS la machine : c'est le geste de l'apprenant. Il pose seulement
+# ce que le lab suppose acquis :
+#   - Incus répond sans sudo (prérequis du lab, vérifié plutôt que supposé) ;
+#   - aucune instance `boutique-vm1` d'un essai précédent ne traîne ;
+#   - un réseau privé dédié, `lab-amorcer`, en NAT sortant et sans IPv6 :
+#     la machine y reçoit une adresse privée et aucune adresse publique ;
+#   - une paire de clés SSH propre au lab, dans le répertoire de travail.
+- name: Préparer le terrain du lab premiere-vm-propre
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    instance: boutique-vm1
+    reseau: lab-amorcer
+    # 10.10.70.0/24 est réservé au réseau du catalogue (meta.yml) ; ce lab
+    # prend la plage suivante, pour ne jamais le croiser.
+    passerelle: 10.10.71.1/24
+  tasks:
+    - name: Incus répond pour l'utilisateur courant
+      ansible.builtin.command: incus info
+      changed_when: false
+
+    - name: Retirer l'instance d'un essai précédent
+      ansible.builtin.command: incus delete --force {{ instance }}
+      register: suppression
+      failed_when: false
+      changed_when: suppression.rc == 0
+
+    - name: Lire le réseau privé du lab
+      ansible.builtin.command: incus network show {{ reseau }}
+      register: reseau_existant
+      failed_when: false
+      changed_when: false
+
+    - name: Créer le réseau privé du lab, NAT sortant, sans IPv6
+      ansible.builtin.command: >-
+        incus network create {{ reseau }}
+        ipv4.address={{ passerelle }} ipv4.nat=true ipv6.address=none
+      when: reseau_existant.rc != 0
+      changed_when: true
+
+    - name: Générer la paire de clés SSH du lab
+      ansible.builtin.command: >-
+        ssh-keygen -q -t ed25519 -N "" -C boutique-lab
+        -f {{ lab_workdir }}/cle_lab
+      args:
+        creates: "{{ lab_workdir }}/cle_lab"

@@ -1,0 +1,71 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/meta.schema.json
+#
+# Catalogue cloud-dsoxlab-training, décrit par le contrat v1 de dsoxlab.
+#
+# Les labs de la formation Cloud du blog, joués SANS COMPTE CLOUD NI CARTE
+# BANCAIRE. Deux dispositifs locaux portent toute la pratique de niveau A :
+#
+#   - feint, émulateur local des API Scaleway, Outscale et Exoscale, lancé par
+#     dsoxlab comme SERVICE conteneur (runtime.services de chaque lab). Il
+#     prouve l'existence des ressources et de leurs liens, jamais le trafic.
+#   - Incus, sur le poste de l'apprenant, pour les machines qui doivent
+#     réellement démarrer (cloud-init, paquets, réseau privé).
+#
+# L'ordre ci-dessous est celui du parcours du blog. Chaque entrée
+# `sections[].labs[]` est un chemin relatif depuis `labs/` : un lab existe si et
+# seulement si `labs/<chemin>/lab.yaml` existe, ce fichier ne fait que
+# l'ORDONNER et NOMMER son bloc.
+schema_version: 1
+
+repo:
+  id: cloud-dsoxlab-training
+  category: cloud
+  title: "Cloud Training: practise without an account"
+  blog_url: "https://blog.stephane-robert.info/docs/cloud/"
+  issues_url: "https://github.com/stephrobert/cloud-dsoxlab-training/issues"
+  description: |
+    Teaching labs for the blog's Cloud course, played without a cloud account
+    or a credit card. The official CLIs (scw, octl) drive feint, a local API
+    emulator started by dsoxlab; Incus boots the machines that must really
+    start. Every lab is graded on the state it leaves, read from the emulator
+    or from the machine, never on the commands typed.
+
+# Pas de lab `runtime: vm` dans la vague 1 : tous les labs sont `shell`, et le
+# lab qui démarre une machine la lance lui-même par Incus, depuis le poste.
+#
+# Le bloc est déclaré quand même pour RÉSERVER le réseau et la plage de ce
+# catalogue avant la vague 2 (labs 6, 7, 8, 10 et 13 du contrat, sur KVM ou
+# Incus). Plages déjà prises par les catalogues voisins :
+#   10.10.20 Ansible, 10.10.30 Linux, 10.10.40 validation des guides,
+#   10.10.50 Kubernetes, 10.10.60 DevSecOps.
+#
+# Le nom du réseau est COURT à dessein : le provider kvm en dérive un pont
+# `virbr-<nom sans lab->`, et le noyau refuse un nom d'interface de plus de
+# 15 caractères. `cloud` laisse la marge (9 caractères au plus après `lab-`).
+#
+# L'IP et la MAC d'un hôte dérivent de sa POSITION dans `hosts` : tout hôte
+# s'ajoutera EN FIN DE LISTE.
+infra:
+  provider:
+    - kvm
+    - incus
+  network: lab-cloud
+  cidr: 10.10.70.0/24
+  hosts: []
+
+sections:
+  - id: pratiquer
+    title: "Practise without an account"
+    description: "Module 2b: the official CLIs plugged into feint, and challenge 1, an estimate read from a provided environment."
+    labs:
+      - pratiquer/challenge-budget-contraint
+  - id: amorcer
+    title: "Boot a machine"
+    description: "Module 2c: a first virtual machine booted by cloud-init, with no public address, then destroyed."
+    labs:
+      - amorcer/premiere-vm-propre
+  - id: reseau
+    title: "Cloud networking"
+    description: "Module 3: a regional private network attached in two zones, an egress gateway and its default route, declared on feint."
+    labs:
+      - reseau/reseau-prive-scaleway

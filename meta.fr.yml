@@ -1,0 +1,25 @@
+# Traduction française du meta.yml voisin.
+#
+# dsoxlab n'y lit que repo.title, repo.description, sections[].title et
+# sections[].description. Les sections sont appariées par `id`, jamais par
+# position : réordonner meta.yml ne casse donc pas la traduction.
+
+repo:
+  title: "Formation Cloud : pratiquer sans compte"
+  description: |
+    Labs de la formation Cloud du blog, joués sans compte cloud ni carte
+    bancaire. Les CLI officielles (scw, octl) pilotent feint, un émulateur
+    local d'API lancé par dsoxlab ; Incus démarre les machines qui doivent
+    réellement démarrer. Chaque lab est noté sur l'état qu'il laisse, lu dans
+    l'émulateur ou sur la machine, jamais sur les commandes tapées.
+
+sections:
+  - id: pratiquer
+    title: "Pratiquer sans compte"
+    description: "Module 2b : les CLI officielles branchées sur feint, et le challenge 1, une estimation lue dans un environnement fourni."
+  - id: amorcer
+    title: "Amorcer une machine"
+    description: "Module 2c : une première machine virtuelle amorcée par cloud-init, sans adresse publique, puis détruite."
+  - id: reseau
+    title: "Réseau cloud"
+    description: "Module 3 : un réseau privé régional attaché dans deux zones, une passerelle de sortie et sa route par défaut, déclarés sur feint."

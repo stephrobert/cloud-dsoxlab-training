@@ -1,0 +1,14 @@
+#cloud-config
+# The first line above must stay exactly `#cloud-config`.
+# La première ligne doit rester exactement `#cloud-config`.
+#
+# Replace every ??? / Remplacez chaque ???
+users:
+  - name: ???
+    shell: ???
+    lock_passwd: ???
+    ssh_authorized_keys:
+      - ???
+package_update: true
+packages: ???
+write_files: ???

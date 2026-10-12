@@ -1,0 +1,7 @@
+id: premiere-vm-propre
+title: "Première VM propre : amorcée par cloud-init, sans adresse publique"
+description: >-
+  Écrire le user-data d'une première machine, démarrer avec lui une machine
+  virtuelle Incus sur un réseau privé, et prouver depuis la machine elle-même
+  que l'utilisateur, les paquets et le fichier viennent de cloud-init seul.
+  Puis la détruire.

@@ -1,0 +1,23 @@
+---
+# Nettoyage du lab « Première VM propre », joué par `dsoxlab clean` avant
+# l'effacement du répertoire de travail. Une machine oubliée est exactement ce
+# que ce lab apprend à ne pas laisser : on la détruit, puis son réseau.
+- name: Nettoyer le lab premiere-vm-propre
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    instance: boutique-vm1
+    reseau: lab-amorcer
+  tasks:
+    - name: Détruire la machine du lab
+      ansible.builtin.command: incus delete --force {{ instance }}
+      register: suppression
+      failed_when: false
+      changed_when: suppression.rc == 0
+
+    - name: Supprimer le réseau privé du lab
+      ansible.builtin.command: incus network delete {{ reseau }}
+      register: reseau_supprime
+      failed_when: false
+      changed_when: reseau_supprime.rc == 0

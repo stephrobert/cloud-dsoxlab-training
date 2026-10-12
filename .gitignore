@@ -1,0 +1,42 @@
+# --- Secrets et état local : jamais versionnés ---------------------------------
+
+# Le mot de passe qui chiffre solution/ par ansible-vault. Il se transmet de la
+# main à la main ; le committer rendrait le chiffrement vain.
+.vault-pass
+.vault-pass.txt
+
+# Progression et contexte de dsoxlab : propres à chaque machine.
+.dsoxlab.db
+.dsoxlab-context.json
+
+# Clés posées par `dsoxlab instructor bootstrap` : chaque poste génère sa paire.
+ssh/id_ed25519
+ssh/id_ed25519.pub
+ssh/id_rsa
+ssh/*_key
+
+# --- Ce que les labs produisent ------------------------------------------------
+
+# Les répertoires de travail des labs `shell` : ce que l'apprenant y écrit lui
+# appartient (user-data, estimation, clé SSH du lab), et `dsoxlab run` les
+# recrée.
+labs/**/challenge/work/
+
+# Généré à chaque rejeu des solutions : un artefact, pas une source.
+solution/verified-with.json
+
+# Solutions de référence EN CLAIR, en attente de chiffrement : elles ne partent
+# jamais dans git. `scripts/chiffrer-solutions.py` les chiffre dans solution/
+# par ansible-vault, une fois `.vault-pass` posé.
+solution-en-clair/
+
+# --- Python ---------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+
+# LES FIXTURES NE S'IGNORENT JAMAIS, QUELLE QUE SOIT LEUR EXTENSION : une
+# fixture déclarée et non versionnée casse le lab pour quiconque clone le dépôt.
+!labs/**/fixtures/**

@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
+id: premiere-vm-propre
+title: "A first clean VM: booted by cloud-init, with no public address"
+description: >-
+  Write the user-data of a first machine, boot an Incus virtual machine with it
+  on a private network, and prove from the machine itself that the user, the
+  packages and the file came from cloud-init alone. Then destroy it.
+level: a
+difficulty: beginner
+lab_type: lab
+estimated_time: 30m
+skills:
+  - cloud-init
+  - user-data
+  - incus
+  - private-network
+  - cloud.environment.rebuild
+distros:
+  - ubuntu24
+doc_url: https://blog.stephane-robert.info/docs/cloud/cloud-init/
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - user-data.yaml
+validation:
+  functional: true
+  security: false
+  persistence_after_reboot: false
