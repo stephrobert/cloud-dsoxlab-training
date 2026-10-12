@@ -9,7 +9,7 @@ This repository is a **content catalog**, not a library. A version is published
 by a tag, which produces a signed archive (see [RELEASING.md](./RELEASING.md));
 the unit that matters remains the lab.
 
-## [Unreleased]
+## [0.1.0] - 2026-10-12
 
 ### Added
 

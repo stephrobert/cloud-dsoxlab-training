@@ -9,7 +9,7 @@ Ce dépôt est un **catalogue de contenu**, pas une bibliothèque. Une version s
 publie par un tag, qui produit une archive signée (voir
 [RELEASING.fr.md](./RELEASING.fr.md)) ; l'unité qui compte reste le lab.
 
-## [Non publié]
+## [0.1.0] - 2026-10-12
 
 ### Ajouté
 
