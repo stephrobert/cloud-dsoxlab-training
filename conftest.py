@@ -40,7 +40,7 @@ FEINT_URL = os.environ.get("FEINT_URL", "http://127.0.0.1:4599").rstrip("/")
 
 # feint ne vérifie aucune signature : un jeton bien formé suffit, comme celui
 # que produit `feint env scaleway`.
-_SCW_TOKEN = "11111111-1111-1111-1111-111111111111"
+_SCW_TOKEN = "11111111-1111-1111-1111-111111111111"  # noqa: S105 (jeton FICTIF de feint)
 
 
 # ── Répertoire de travail ────────────────────────────────────────────────────
@@ -80,7 +80,7 @@ def etat_lab() -> Path | None:
 
 def _requete(methode: str, url: str, corps: dict | None, entetes: dict) -> Any:
     donnees = json.dumps(corps).encode() if corps is not None else None
-    requete = urllib.request.Request(url, data=donnees, method=methode)
+    requete = urllib.request.Request(url, data=donnees, method=methode)  # noqa: S310 (URL de feint, http local)
     for cle, valeur in entetes.items():
         requete.add_header(cle, valeur)
     try:

@@ -8,7 +8,7 @@
 #   - un réseau privé dédié, `lab-amorcer`, en NAT sortant et sans IPv6 :
 #     la machine y reçoit une adresse privée et aucune adresse publique ;
 #   - une paire de clés SSH propre au lab, dans le répertoire de travail.
-- name: Préparer le terrain du lab premiere-vm-propre
+- name: Préparer le terrain du lab amorcer-premiere-vm-propre
   hosts: localhost
   connection: local
   gather_facts: false

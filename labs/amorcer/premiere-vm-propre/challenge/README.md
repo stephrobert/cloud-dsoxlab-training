@@ -34,8 +34,8 @@ Shell `/bin/bash`, password locked, not in the `sudo` group, and the key
 ## Check, then destroy
 
 ```bash
-dsoxlab check premiere-vm-propre
-dsoxlab clean premiere-vm-propre
+dsoxlab check amorcer-premiere-vm-propre
+dsoxlab clean amorcer-premiere-vm-propre
 ```
 
 Hints are available through `dsoxlab hint`, each deducted from the score: 10,

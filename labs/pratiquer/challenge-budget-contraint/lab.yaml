@@ -1,5 +1,5 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
-id: challenge-budget-contraint
+id: pratiquer-challenge-budget-contraint
 title: "Challenge 1: an architecture on a tight budget"
 description: >-
   An environment is already deployed on the feint emulator, drawn at random.

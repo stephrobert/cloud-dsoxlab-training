@@ -26,7 +26,7 @@ Lesson of the site that carries this lab (in French):
 - **dsoxlab installed** and a working **Docker**: feint runs in a container,
   started by `dsoxlab run`.
 - **`scw` installed** (2.62.0 at the time of writing): lesson
-  <https://blog.stephane-robert.info/docs/cloud/outils/feint/clients/>.
+  <https://blog.stephane-robert.info/en/docs/cloud/outils/feint/clients/>.
 - **Port 4599 free** on your host: stop any feint you started yourself
   (`feint stop`, or `docker stop` its container).
 - The notions of module 3: private network, NAT gateway, default route.
@@ -48,7 +48,7 @@ section "Practise on a European cloud" of the lesson.
 
 ```bash
 dsoxlab run reseau-prive-scaleway
-cd labs/reseau/reseau-prive-scaleway/challenge/work
+cd labs/reseau/prive-scaleway/challenge/work
 source feint-scaleway.env      # or: eval "$(feint env scaleway)"
 cat PLAN.md
 ```

@@ -3,7 +3,7 @@
 # ensuite le service feint ; vider l'émulateur avant reste utile quand un autre
 # lab du catalogue le réutilise encore. Un feint déjà arrêté n'est pas une
 # erreur.
-- name: Nettoyer le lab challenge-budget-contraint
+- name: Nettoyer le lab pratiquer-challenge-budget-contraint
   hosts: localhost
   connection: local
   gather_facts: false

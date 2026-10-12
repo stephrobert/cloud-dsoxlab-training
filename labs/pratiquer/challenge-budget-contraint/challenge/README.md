@@ -33,8 +33,8 @@ created or deleted voids the answer.
 resource attached to nothing, by its name (volume) or its address (IP).
 
 ```bash
-dsoxlab check challenge-budget-contraint
-dsoxlab clean challenge-budget-contraint
+dsoxlab check pratiquer-challenge-budget-contraint
+dsoxlab clean pratiquer-challenge-budget-contraint
 ```
 
 Hints through `dsoxlab hint`, deducted from the score: 10, 15 then 20 points.

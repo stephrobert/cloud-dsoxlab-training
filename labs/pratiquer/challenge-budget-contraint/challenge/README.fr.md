@@ -33,8 +33,8 @@ ressource créée ou supprimée invalide la copie.
 facturée rattachée à rien, par son nom (volume) ou son adresse (IP).
 
 ```bash
-dsoxlab check challenge-budget-contraint
-dsoxlab clean challenge-budget-contraint
+dsoxlab check pratiquer-challenge-budget-contraint
+dsoxlab clean pratiquer-challenge-budget-contraint
 ```
 
 Indices par `dsoxlab hint`, déduits du score : 10, 15 puis 20 points.

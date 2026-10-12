@@ -68,5 +68,5 @@ sections:
     title: "Cloud networking"
     description: "Module 3: a regional private network attached in two zones, an egress gateway and its default route, declared on feint."
     labs:
-      - reseau/reseau-prive-scaleway
-      - reseau/reseau-prive-outscale
+      - reseau/prive-scaleway
+      - reseau/prive-outscale

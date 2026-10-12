@@ -1,5 +1,7 @@
 # Scenario: the shop's first machine
 
+**Skill targeted: `cloud.environment.rebuild`.**
+
 The course's common-thread shop has a costed architecture. It now needs its
 first machine, the one that will carry the API. The team set itself three rules
 before creating a single one:

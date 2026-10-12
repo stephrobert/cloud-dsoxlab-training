@@ -1,5 +1,7 @@
 # Scenario: the shop's private network
 
+**Skill targeted: `cloud.network.design`.**
+
 The shop has its first machine booted locally. Before declaring a single
 instance at a provider, the team sets a rule: **nothing exposed before the
 private network**. The API and its front end will run in two zones of the

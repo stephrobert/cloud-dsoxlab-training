@@ -27,7 +27,7 @@ import pytest
 from conftest import exiger_workdir, hote_incus, incus_instance, workdir_lab
 
 WORKDIR = workdir_lab(__file__)
-LAB_ID = "premiere-vm-propre"
+LAB_ID = "amorcer-premiere-vm-propre"
 
 INSTANCE = "boutique-vm1"
 RESEAU = "lab-amorcer"

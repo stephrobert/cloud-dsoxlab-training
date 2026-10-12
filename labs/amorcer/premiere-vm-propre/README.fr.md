@@ -45,7 +45,7 @@ l'image en cache.
 - un gabarit `challenge/work/user-data.yaml`, troué de `???`.
 
 ```bash
-dsoxlab run premiere-vm-propre
+dsoxlab run amorcer-premiere-vm-propre
 cd labs/amorcer/premiere-vm-propre/challenge/work
 ```
 
@@ -110,7 +110,7 @@ exactement comme une instance sans IP publique sort par la passerelle NAT de
 son réseau cloud.
 
 ```bash
-dsoxlab check premiere-vm-propre
+dsoxlab check amorcer-premiere-vm-propre
 ```
 
 ## Étape 4 : détruire
@@ -119,7 +119,7 @@ Une machine oubliée continue de coûter chez un fournisseur. Ici, la règle est
 la même :
 
 ```bash
-dsoxlab clean premiere-vm-propre
+dsoxlab clean amorcer-premiere-vm-propre
 incus list boutique-vm1        # la liste doit être vide
 ```
 

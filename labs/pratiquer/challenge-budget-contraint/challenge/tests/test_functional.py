@@ -32,7 +32,7 @@ import yaml
 from conftest import etat_lab, exiger_workdir, scw_get, workdir_lab
 
 WORKDIR = workdir_lab(__file__)
-LAB_ID = "challenge-budget-contraint"
+LAB_ID = "pratiquer-challenge-budget-contraint"
 
 ZONES = ("fr-par-1", "fr-par-2", "fr-par-3")
 BUDGET_EUR = 160.00
@@ -63,7 +63,7 @@ def reel(grille: dict) -> dict:
         assert presents == attendus, (
             "L'environnement fourni a été modifié depuis `dsoxlab run` (ressource "
             "créée ou supprimée). Ce challenge se joue en LECTURE seule : relancez "
-            "`dsoxlab run challenge-budget-contraint`, qui tire un nouvel environnement."
+            "`dsoxlab run pratiquer-challenge-budget-contraint`, qui tire un nouvel environnement."
         )
 
     serveurs = _par_zone("/instance/v1/zones/{zone}/servers", "servers")

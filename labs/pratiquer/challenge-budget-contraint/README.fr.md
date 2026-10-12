@@ -41,6 +41,6 @@ aux tarifs relevés chez le fournisseur, à leur date, et à la facture mensuell
 qui seule fait foi.
 
 ```bash
-dsoxlab run challenge-budget-contraint
-dsoxlab challenge challenge-budget-contraint
+dsoxlab run pratiquer-challenge-budget-contraint
+dsoxlab challenge pratiquer-challenge-budget-contraint
 ```

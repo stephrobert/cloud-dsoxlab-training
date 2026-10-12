@@ -1,5 +1,7 @@
 # Scenario: the same network, at another provider
 
+**Skill targeted: `cloud.network.design`.**
+
 The shop wants to keep an exit door: its private network must be declarable at
 Outscale as well as at Scaleway. The need does not change: two zones, no public
 address on the machines, a single controlled way out to the Internet. The model

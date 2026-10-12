@@ -1,5 +1,7 @@
 # Scénario : la facture avant la carte bancaire
 
+**Compétence visée : `cloud.cost.estimate`.**
+
 L'équipe de la boutique a hérité d'un environnement déjà déployé : un
 frontal, des instances d'API, une base et son volume, une passerelle, et
 quelques restes d'essais dont personne ne se souvient. La direction a fixé un

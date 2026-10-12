@@ -57,4 +57,5 @@ package = false
 dev = [
     "pyyaml>=6",
     "pytest>=8",
+    "jsonschema>=4",
 ]

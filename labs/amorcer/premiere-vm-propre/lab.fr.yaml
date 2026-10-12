@@ -1,4 +1,4 @@
-id: premiere-vm-propre
+id: amorcer-premiere-vm-propre
 title: "Première VM propre : amorcée par cloud-init, sans adresse publique"
 description: >-
   Écrire le user-data d'une première machine, démarrer avec lui une machine

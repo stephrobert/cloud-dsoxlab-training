@@ -25,7 +25,7 @@ Lesson of the site that carries this lab (in French):
 
 - **dsoxlab installed** and a working **Docker**: feint runs in a container.
 - **`octl` installed** (v0.0.32 at the time of writing): lesson
-  <https://blog.stephane-robert.info/docs/cloud/outils/feint/clients/>.
+  <https://blog.stephane-robert.info/en/docs/cloud/outils/feint/clients/>.
 - **Port 4599 free**: stop any feint you started yourself.
 - The notions of module 3: subnet, route table, NAT.
 
@@ -43,7 +43,7 @@ seen on a real account.
 
 ```bash
 dsoxlab run reseau-prive-outscale
-cd labs/reseau/reseau-prive-outscale/challenge/work
+cd labs/reseau/prive-outscale/challenge/work
 source feint-outscale.env      # or: eval "$(feint env outscale)"
 cat PLAN.md
 o() { octl iaas api "$@" --output json --no-upgrade; }

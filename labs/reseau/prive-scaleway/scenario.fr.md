@@ -1,5 +1,7 @@
 # Scénario : le réseau privé de la boutique
 
+**Compétence visée : `cloud.network.design`.**
+
 La boutique a sa première machine amorcée en local. Avant de déclarer la
 moindre instance chez un fournisseur, l'équipe pose une règle : **rien
 d'exposé avant le réseau privé**. L'API et son frontal tourneront dans deux

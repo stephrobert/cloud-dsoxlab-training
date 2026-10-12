@@ -9,7 +9,7 @@
 # Les identifiants créés vont dans le répertoire d'état du lab, hors du
 # répertoire de travail : les tests s'en servent pour refuser un environnement
 # modifié (supprimer une instance ferait baisser la facture sans rien estimer).
-- name: Préparer l'environnement du challenge-budget-contraint
+- name: Préparer l'environnement du pratiquer-challenge-budget-contraint
   hosts: localhost
   connection: local
   gather_facts: false

@@ -1,5 +1,7 @@
 # Scenario: the bill before the credit card
 
+**Skill targeted: `cloud.cost.estimate`.**
+
 The shop's team inherited an environment already deployed: a front end, API
 instances, a database and its volume, a gateway, and a few leftovers of trials
 nobody remembers. Management set a ceiling: **160 euros excluding VAT per

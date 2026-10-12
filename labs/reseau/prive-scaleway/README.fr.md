@@ -47,7 +47,7 @@ section facultative « Pratiquer sur un cloud européen » de la leçon.
 
 ```bash
 dsoxlab run reseau-prive-scaleway
-cd labs/reseau/reseau-prive-scaleway/challenge/work
+cd labs/reseau/prive-scaleway/challenge/work
 source feint-scaleway.env      # ou : eval "$(feint env scaleway)"
 cat PLAN.md
 ```

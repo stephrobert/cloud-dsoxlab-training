@@ -2,7 +2,7 @@
 # Nettoyage du lab « Première VM propre », joué par `dsoxlab clean` avant
 # l'effacement du répertoire de travail. Une machine oubliée est exactement ce
 # que ce lab apprend à ne pas laisser : on la détruit, puis son réseau.
-- name: Nettoyer le lab premiere-vm-propre
+- name: Nettoyer le lab amorcer-premiere-vm-propre
   hosts: localhost
   connection: local
   gather_facts: false

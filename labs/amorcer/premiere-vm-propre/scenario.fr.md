@@ -1,5 +1,7 @@
 # Scénario : la première machine de la boutique
 
+**Compétence visée : `cloud.environment.rebuild`.**
+
 La boutique fil rouge de la formation a son architecture chiffrée. Il lui faut
 maintenant sa première machine, celle qui portera l'API. L'équipe s'est fixé
 trois règles avant d'en créer une seule :

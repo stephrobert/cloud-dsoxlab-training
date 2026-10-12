@@ -43,7 +43,7 @@ se constate que sur un vrai compte.
 
 ```bash
 dsoxlab run reseau-prive-outscale
-cd labs/reseau/reseau-prive-outscale/challenge/work
+cd labs/reseau/prive-outscale/challenge/work
 source feint-outscale.env      # ou : eval "$(feint env outscale)"
 cat PLAN.md
 o() { octl iaas api "$@" --output json --no-upgrade; }

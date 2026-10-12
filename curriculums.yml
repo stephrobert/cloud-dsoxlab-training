@@ -1,0 +1,84 @@
+# La grille d'objectifs du catalogue : les compétences `cloud.*` de la
+# formation Cloud du blog.
+#
+# POURQUOI CE FICHIER EXISTE
+#
+# Chaque lab éprouve une compétence du référentiel du site, et son scénario le
+# dit en clair : « Compétence visée : `cloud.network.design` (concevoir le
+# réseau privé d'un environnement cloud) ». Un identifiant de compétence se
+# trompe aussi facilement qu'un code d'examen : `cloud.cost.estimate` et
+# `cloud.finops.optimize` parlent tous deux de coût, et un identifiant faux
+# reste un identifiant valide.
+#
+# Les intitulés vivent donc ici une seule fois, avec leur source et la date de
+# la dernière confrontation. `tests/test_curriculums.py` refuse un identifiant
+# absent de la grille, un lab qui n'en cite aucun, et un `lab.yaml` dont les
+# `skills` ne portent pas la compétence que son scénario annonce.
+#
+# LA SOURCE, ET SON STATUT
+#
+# Le contrat pédagogique de la formation Cloud (§3.2, « Les 18 candidates »),
+# arrêté le 2026-10-12. Ce sont des compétences CANDIDATES : elles entrent au
+# référentiel publié du site avec la formation. Un identifiant qui changerait
+# là-bas se corrige ici, et le test le fera voir dans chaque lab qui le cite.
+
+curriculums:
+  cloud:
+    nom: "Compétences de la formation Cloud (candidates du contrat, §3.2)"
+    source: "https://blog.stephane-robert.info/docs/cloud/"
+    derniere_verification: 2026-10-12
+    competences:
+      cloud.model.choose:
+        fr: "Choisir le modèle de service et de déploiement d'un workload et répartir les responsabilités"
+        en: "Choose a workload's service and deployment model and split responsibilities"
+      cloud.cost.estimate:
+        fr: "Estimer le coût mensuel d'une architecture cloud à partir de grilles tarifaires datées"
+        en: "Estimate a cloud architecture's monthly cost from dated price lists"
+      cloud.network.design:
+        fr: "Concevoir le réseau privé d'un environnement cloud : adressage, réseau régional attaché dans plusieurs zones, routage et filtrage par défaut"
+        en: "Design a cloud environment's private network: addressing, a regional network attached in several zones, routing and default-deny filtering"
+      cloud.compute.choose:
+        fr: "Choisir le modèle de calcul d'un workload et le dimensionner à partir de mesures"
+        en: "Choose a workload's compute model and size it from measurements"
+      cloud.storage.choose:
+        fr: "Choisir la famille et la classe de stockage d'un workload selon accès, performance mesurée, durabilité et coût"
+        en: "Choose a workload's storage family and class from access, measured performance, durability and cost"
+      cloud.data.choose:
+        fr: "Choisir un service de données, managé ou auto-géré, et le raccorder en privé, réplication et bascule comprises"
+        en: "Choose a data service, managed or self-managed, and connect it privately, replication and failover included"
+      cloud.iam.design:
+        fr: "Donner à une identité humaine des droits cloud minimaux, temporaires et audités"
+        en: "Grant a human identity minimal, temporary and audited cloud permissions"
+      cloud.workload.identity:
+        fr: "Faire accéder un workload à un service cloud sans identifiant de longue durée sur disque"
+        en: "Let a workload reach a cloud service with no long-lived credential on disk"
+      cloud.exposure.design:
+        fr: "Exposer une application privée par répartiteur, sonde de santé, DNS, TLS et bordure"
+        en: "Expose a private application through load balancer, health check, DNS, TLS and edge"
+      cloud.resilience.design:
+        fr: "Placer un workload en zones et régions pour tenir une cible de disponibilité, de RTO et de RPO, et le prouver"
+        en: "Place a workload across zones and regions to meet availability, RTO and RPO targets, and prove it"
+      cloud.elasticity.design:
+        fr: "Rendre un workload élastique : sans état local, extensible par ajout d'instances, tolérant la perte de l'une d'elles"
+        en: "Make a workload elastic: no local state, scalable by adding instances, tolerant to losing one"
+      cloud.environment.rebuild:
+        fr: "Reconstruire un environnement cloud depuis le code, instances amorcées sans intervention, puis le détruire sans reste"
+        en: "Rebuild a cloud environment from code, instances bootstrapped unattended, then destroy it with nothing left"
+      cloud.operations.run:
+        fr: "Exploiter un environnement cloud : télémétrie, alertes, quotas, événements imposés et incident"
+        en: "Run a cloud environment: telemetry, alerts, quotas, imposed events and incidents"
+      cloud.governance.apply:
+        fr: "Organiser un environnement cloud multi-équipes : comptes séparés, garde-fous en code, étiquetage et budget"
+        en: "Organize a multi-team cloud environment: separate accounts, guardrails as code, tagging and budget"
+      cloud.finops.optimize:
+        fr: "Réduire la facture d'une architecture cloud sans dégrader la résilience demandée"
+        en: "Cut a cloud architecture's bill without degrading the required resilience"
+      cloud.migration.plan:
+        fr: "Classer un parc applicatif selon les 7R et ordonner sa migration"
+        en: "Classify an application estate with the 7Rs and sequence its migration"
+      cloud.sovereignty.assess:
+        fr: "Évaluer un fournisseur cloud sur juridiction, dépendances, détention des clés et réversibilité, et chiffrer sa sortie"
+        en: "Assess a cloud provider on jurisdiction, dependencies, key custody and reversibility, and cost its exit"
+      cloud.architecture.review:
+        fr: "Défendre une architecture cloud en revue, décisions écrites et mesures à l'appui"
+        en: "Defend a cloud architecture in review, with written decisions and measurements"

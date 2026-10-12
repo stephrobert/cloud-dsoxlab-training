@@ -34,8 +34,8 @@ Shell `/bin/bash`, mot de passe verrouillé, absent du groupe `sudo`, et la clé
 ## Valider, puis détruire
 
 ```bash
-dsoxlab check premiere-vm-propre
-dsoxlab clean premiere-vm-propre
+dsoxlab check amorcer-premiere-vm-propre
+dsoxlab clean amorcer-premiere-vm-propre
 ```
 
 Indices disponibles par `dsoxlab hint`, chacun déduit du score : 10, 15 puis

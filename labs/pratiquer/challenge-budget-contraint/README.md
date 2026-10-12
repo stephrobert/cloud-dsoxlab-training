@@ -6,8 +6,8 @@ build: you have to **read** it, through the official CLI plugged into the
 **feint** emulator, then **cost** it on a dated price grid. It is a challenge,
 not a guided lab: no command is given.
 
-Lesson of the site that carries this challenge (in French):
-<https://blog.stephane-robert.info/docs/cloud/outils/feint/limites/>.
+Lesson of the site that carries this challenge:
+<https://blog.stephane-robert.info/en/docs/cloud/outils/feint/limites/>.
 
 ## What is tested
 
@@ -19,7 +19,7 @@ Lesson of the site that carries this challenge (in French):
 
 - Module 2 of the course (reading a bill, dated grids) and the lessons of
   module 2b: feint installed, and **`scw` plugged into feint**:
-  <https://blog.stephane-robert.info/docs/cloud/outils/feint/clients/>.
+  <https://blog.stephane-robert.info/en/docs/cloud/outils/feint/clients/>.
 - **dsoxlab** and **Docker**: feint runs in a container, started by
   `dsoxlab run`. Port **4599** must be free.
 
@@ -40,6 +40,6 @@ at the provider, at their date, and against the monthly invoice, which alone is
 binding.
 
 ```bash
-dsoxlab run challenge-budget-contraint
-dsoxlab challenge challenge-budget-contraint
+dsoxlab run pratiquer-challenge-budget-contraint
+dsoxlab challenge pratiquer-challenge-budget-contraint
 ```

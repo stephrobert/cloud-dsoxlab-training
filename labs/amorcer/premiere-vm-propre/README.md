@@ -24,11 +24,11 @@ Lesson of the site that carries this lab (in French):
 
 - **Incus installed and usable without sudo** (your account in the
   `incus-admin` group):
-  <https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/incus/installation/>.
+  <https://blog.stephane-robert.info/en/docs/incus/installation/>.
   The host must be able to virtualise (KVM): `incus info | grep -i virtual`
   must name `qemu`.
 - **dsoxlab installed**:
-  <https://blog.stephane-robert.info/docs/dsoxlab/installation/>.
+  <https://blog.stephane-robert.info/en/docs/dsoxlab/installation/>.
 - Outbound Internet access: the image (about 300 MB on first pull) and the
   packages are downloaded.
 
@@ -45,7 +45,7 @@ cached.
 - a template `challenge/work/user-data.yaml`, with `???` holes.
 
 ```bash
-dsoxlab run premiere-vm-propre
+dsoxlab run amorcer-premiere-vm-propre
 cd labs/amorcer/premiere-vm-propre/challenge/work
 ```
 
@@ -110,7 +110,7 @@ The machine still goes out to install its packages, through the network's
 gateway of its cloud network.
 
 ```bash
-dsoxlab check premiere-vm-propre
+dsoxlab check amorcer-premiere-vm-propre
 ```
 
 ## Step 4: destroy
@@ -118,7 +118,7 @@ dsoxlab check premiere-vm-propre
 A forgotten machine keeps costing at a provider. Here the rule is the same:
 
 ```bash
-dsoxlab clean premiere-vm-propre
+dsoxlab clean amorcer-premiere-vm-propre
 incus list boutique-vm1        # the list must be empty
 ```
 

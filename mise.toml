@@ -1,0 +1,22 @@
+# Les outils du catalogue, épinglés. `mise install` les pose à la version
+# mesurée ici, sans curl d'archive ni gestionnaire de paquets système.
+#
+# Versions rejouées le 2026-10-12, celles de validation-labs.json :
+#
+#   feint   l'émulateur ; les labs le lancent eux-mêmes en conteneur (image
+#           épinglée par digest dans chaque lab.yaml). Le binaire sert à
+#           `feint env scaleway` et `feint env outscale`, et le backend
+#           `github:` vérifie ses attestations de provenance à l'installation.
+#   scw     le CLI officiel Scaleway, que les labs pointent sur feint.
+#   octl    le CLI officiel Outscale, même usage.
+#   uv et python font tourner les tests du catalogue.
+#
+# Hors de mise, par nature : Docker (le service feint), Incus (la machine du
+# lab « Première VM propre ») et dsoxlab (`uv tool install dsoxlab`).
+
+[tools]
+uv = "0.12.21"
+python = "3.14.8"
+"github:stephrobert/feint" = "0.13.0"
+"github:scaleway/scaleway-cli" = "2.62.0"
+"github:outscale/octl" = "0.0.32"
