@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-10-12 08:11:42",
+  "genere_le": "2026-10-12 08:14:46",
   "dsoxlab": "dsoxlab 0.3.1",
   "feint": "ghcr.io/stephrobert/feint:v0.13.0@sha256:d46639ac7c7a0fa2b6b69d0c5d74bdca0757e3124675563209e8ada58e6a6040",
   "scw": "2.62.0",
@@ -26,6 +26,17 @@
       "score_apres": 100,
       "tests": "5/5",
       "duree_s": 35.2,
+      "traces": [],
+      "pourquoi": ""
+    },
+    "reseau-prive-outscale": {
+      "id": "reseau-prive-outscale",
+      "chemin": "reseau/reseau-prive-outscale",
+      "verdict": "VALIDE",
+      "score_avant": 0,
+      "score_apres": 100,
+      "tests": "5/5",
+      "duree_s": 7.8,
       "traces": [],
       "pourquoi": ""
     },

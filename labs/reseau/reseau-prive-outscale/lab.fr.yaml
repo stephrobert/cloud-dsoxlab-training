@@ -1,0 +1,7 @@
+id: reseau-prive-outscale
+title: "Réseau privé, et premières instances sans adresse publique : octl sur feint"
+description: >-
+  Avec le CLI officiel octl branché sur l'émulateur feint, construire un Net
+  régional avec un sous-réseau par sous-région, deux VM sans IP publique dans
+  deux sous-régions, un Internet Service, un NAT Service et les deux tables de
+  routage qui font sortir le trafic privé par le NAT. Noté sur l'état de feint.

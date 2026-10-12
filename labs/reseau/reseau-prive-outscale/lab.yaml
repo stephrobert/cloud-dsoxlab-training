@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
+id: reseau-prive-outscale
+title: "Private network, and first instances with no public address: octl on feint"
+description: >-
+  With the official octl CLI plugged into the feint emulator, build a regional
+  Net with one subnet per Subregion, two VMs with no public IP in two
+  Subregions, an Internet Service, a NAT Service and the two route tables that
+  send private traffic out through the NAT. Graded on the state feint holds.
+level: a
+difficulty: intermediate
+lab_type: lab
+estimated_time: 45m
+skills:
+  - octl
+  - net
+  - subnet
+  - nat-service
+  - route-table
+  - cloud.network.design
+distros:
+  - debian13
+doc_url: https://blog.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - PLAN.md
+    - feint-outscale.env
+  services:
+    - name: feint
+      image: ghcr.io/stephrobert/feint:v0.13.0@sha256:d46639ac7c7a0fa2b6b69d0c5d74bdca0757e3124675563209e8ada58e6a6040
+      ports:
+        - 127.0.0.1:4599:4599
+      ready_exec:
+        - /feint
+        - wait
+        - --addr
+        - 127.0.0.1:4599
+        - --timeout
+        - 2s
+      ready_timeout: 60
+validation:
+  functional: true
+  security: false
+  persistence_after_reboot: false

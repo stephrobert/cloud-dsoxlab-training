@@ -1,0 +1,21 @@
+---
+# Nettoyage du lab « Réseau privé », joué par `dsoxlab clean`. dsoxlab arrête
+# ensuite le service feint ; vider l'émulateur avant reste utile quand un autre
+# lab du catalogue le réutilise encore. Un feint déjà arrêté n'est pas une
+# erreur.
+- name: Nettoyer le lab reseau-prive-outscale
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Vider feint s'il tourne encore
+      ansible.builtin.uri:
+        url: http://127.0.0.1:4599/_feint/state
+        method: PUT
+        body_format: json
+        body:
+          format: feint-snapshot
+          version: 1
+          resources: []
+        status_code: 200
+      failed_when: false

@@ -4,7 +4,7 @@ Pourquoi ce module existe
 -------------------------
 Les vérificateurs de catalogue tournent **en CI, sur le contenu d'une pull
 request**. Le `lab.yaml` qu'ils lisent est donc écrit par quelqu'un d'autre, et
-il peut être malformé — ce n'est pas une hypothèse : un simple guillemet non
+il peut être malformé, et ce n'est pas une hypothèse : un simple guillemet non
 fermé faisait remonter une `yaml.scanner.ScannerError` jusqu'au terminal.
 
 Mesuré le 2026-09-15 sur un lab témoin :

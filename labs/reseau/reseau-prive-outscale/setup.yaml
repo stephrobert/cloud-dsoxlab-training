@@ -1,0 +1,34 @@
+---
+# Terrain du lab « Réseau privé » sur feint, joué par `dsoxlab run` APRÈS le
+# démarrage du service feint (runtime.services).
+#
+# Le conteneur feint est partagé par les labs de ce catalogue qui le déclarent
+# à l'identique, et dsoxlab le réutilise tant qu'il tourne : sans remise à
+# zéro, ce lab hériterait des ressources du lab précédent. Charger un état
+# vide (PUT /_feint/state, ce que fait `feint snapshot load`) part d'un
+# émulateur neuf. Ce n'est fait qu'ici, jamais à `check` : ce serait effacer
+# le travail de l'apprenant.
+- name: Préparer le terrain du lab reseau-prive-outscale
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    feint_url: http://127.0.0.1:4599
+  tasks:
+    - name: Remettre feint à zéro
+      ansible.builtin.uri:
+        url: "{{ feint_url }}/_feint/state"
+        method: PUT
+        body_format: json
+        body:
+          format: feint-snapshot
+          version: 1
+          resources: []
+        status_code: 200
+
+    - name: Vérifier que l'émulateur est vide
+      ansible.builtin.uri:
+        url: "{{ feint_url }}/_feint/health"
+        return_content: true
+      register: sante
+      failed_when: sante.json.resources != 0
