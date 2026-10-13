@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
 id: reseau-prive-outscale
-title: "Private network, and first instances with no public address: octl on feint"
+title: "Private network, and first instances with no public address: octl on Feint"
 description: >-
   With the official octl CLI plugged into the feint emulator, build a regional
   Net with one subnet per Subregion, two VMs with no public IP in two

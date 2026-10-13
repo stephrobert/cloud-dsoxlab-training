@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
 id: reseau-prive-scaleway
-title: "Private network, and first instances with no public address: scw on feint"
+title: "Private network, and first instances with no public address: scw on Feint"
 description: >-
   With the official scw CLI plugged into the feint emulator, build a regional
   VPC and Private Network, two instances with no public IP in two zones, one
