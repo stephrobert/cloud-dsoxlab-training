@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-10-12 09:33:48",
+  "genere_le": "2026-10-13 12:10:39",
   "dsoxlab": "dsoxlab 0.3.5",
   "feint": "ghcr.io/stephrobert/feint:v0.13.0@sha256:d46639ac7c7a0fa2b6b69d0c5d74bdca0757e3124675563209e8ada58e6a6040",
   "scw": "2.62.0",
@@ -36,7 +36,7 @@
       "score_avant": 0,
       "score_apres": 100,
       "tests": "5/5",
-      "duree_s": 8.2,
+      "duree_s": 8.1,
       "traces": [],
       "pourquoi": ""
     },
@@ -47,7 +47,7 @@
       "score_avant": 0,
       "score_apres": 100,
       "tests": "5/5",
-      "duree_s": 6.9,
+      "duree_s": 6.7,
       "traces": [],
       "pourquoi": ""
     }

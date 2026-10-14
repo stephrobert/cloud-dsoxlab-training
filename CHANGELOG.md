@@ -9,6 +9,18 @@ This repository is a **content catalog**, not a library. A version is published
 by a tag, which produces a signed archive (see [RELEASING.md](./RELEASING.md));
 the unit that matters remains the lab.
 
+## [0.1.1] - 2026-10-14
+
+### Fixed
+
+- "Feint" is capitalised in the private-network lab titles, in both
+  languages.
+- Two labs re-attested with dsoxlab 0.3.5.
+
+### Changed
+
+- The release procedure re-attests labs modified since their verdict.
+
 ## [0.1.0] - 2026-10-12
 
 ### Added
@@ -43,3 +55,4 @@ the unit that matters remains the lab.
   lab; a private table not linked in `eu-west-2b` only fails task 5 of the
   Outscale lab; an inventory limited to the default zone scores 40/100 in the
   challenge; a deleted resource scores 0/100.
+[0.1.1]: https://github.com/stephrobert/cloud-dsoxlab-training/releases/tag/v0.1.1

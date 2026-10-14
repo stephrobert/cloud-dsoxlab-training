@@ -166,8 +166,8 @@ anglais vers la traduction quand elle existe.
 
 | Lab (id) | Titre | Niveau | Runtime | Guide compagnon |
 |---|---|---|---|---|
-| `reseau-prive-scaleway` | Réseau privé, et premières instances sans adresse publique : scw sur feint | a | shell | [guide](https://blog.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
-| `reseau-prive-outscale` | Réseau privé, et premières instances sans adresse publique : octl sur feint | a | shell | [guide](https://blog.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+| `reseau-prive-scaleway` | Réseau privé, et premières instances sans adresse publique : scw sur Feint | a | shell | [guide](https://blog.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+| `reseau-prive-outscale` | Réseau privé, et premières instances sans adresse publique : octl sur Feint | a | shell | [guide](https://blog.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
 
 _4 labs, table générée par `scripts/gen_catalog.py`._
 <!-- LABS:END -->

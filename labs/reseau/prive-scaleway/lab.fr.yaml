@@ -1,5 +1,5 @@
 id: reseau-prive-scaleway
-title: "Réseau privé, et premières instances sans adresse publique : scw sur feint"
+title: "Réseau privé, et premières instances sans adresse publique : scw sur Feint"
 description: >-
   Avec le CLI officiel scw branché sur l'émulateur feint, construire un VPC et
   un Private Network régionaux, deux instances sans IP publique dans deux
