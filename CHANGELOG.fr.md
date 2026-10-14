@@ -9,6 +9,18 @@ Ce dépôt est un **catalogue de contenu**, pas une bibliothèque. Une version s
 publie par un tag, qui produit une archive signée (voir
 [RELEASING.fr.md](./RELEASING.fr.md)) ; l'unité qui compte reste le lab.
 
+## [0.1.1] - 2026-10-14
+
+### Corrigé
+
+- « Feint » prend une majuscule dans les titres des labs de réseau privé,
+  dans les deux langues.
+- Deux labs réattestés avec la dsoxlab 0.3.5.
+
+### Modifié
+
+- La procédure de release réatteste les labs modifiés depuis leur verdict.
+
 ## [0.1.0] - 2026-10-12
 
 ### Ajouté
@@ -43,3 +55,4 @@ publie par un tag, qui produit une archive signée (voir
   tâche 2 du lab Scaleway ; une table privée non liée en `eu-west-2b` ne fait
   tomber que la tâche 5 du lab Outscale ; un inventaire limité à la zone par
   défaut rend 40/100 au challenge ; une ressource supprimée le rend 0/100.
+[0.1.1]: https://github.com/stephrobert/cloud-dsoxlab-training/releases/tag/v0.1.1
