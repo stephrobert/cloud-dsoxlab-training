@@ -24,7 +24,7 @@ Leçon du site qui porte ce lab :
 
 - **Incus installé et utilisable sans sudo** (votre compte dans le groupe
   `incus-admin`) :
-  <https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/incus/installation/>.
+  <https://blog.stephane-robert.info/docs/virtualiser/type1/incus/installation/>.
   Le poste doit savoir virtualiser (KVM) : `incus info | grep -i virtual`
   doit citer `qemu`.
 - **dsoxlab installé** :
