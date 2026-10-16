@@ -29,7 +29,7 @@ import ipaddress
 
 import pytest
 
-from conftest import exiger_workdir, scw_get, workdir_lab
+from conftest import exiger_workdir, message, scw_get, workdir_lab
 
 WORKDIR = workdir_lab(__file__)
 LAB_ID = "reseau-prive-scaleway"
@@ -50,10 +50,15 @@ def _lab_joue() -> None:
 
 def _un_seul(objets: list[dict], nom: str, genre: str) -> dict:
     trouves = [o for o in objets if o.get("name") == nom]
-    assert trouves, f"Aucun {genre} nommé {nom} dans feint."
-    assert len(trouves) == 1, (
-        f"{len(trouves)} {genre}s nommés {nom} : un seul est attendu. Supprimez "
-        "les doublons d'un essai précédent."
+    assert trouves, message(
+        en=f"No {genre} named {nom} in feint.",
+        fr=f"Aucun {genre} nommé {nom} dans feint.",
+    )
+    assert len(trouves) == 1, message(
+        en=f"{len(trouves)} {genre}s named {nom}: a single one is expected. Delete "
+        "the duplicates from an earlier attempt.",
+        fr=f"{len(trouves)} {genre}s nommés {nom} : un seul est attendu. Supprimez "
+        "les doublons d'un essai précédent.",
     )
     return trouves[0]
 
@@ -84,30 +89,39 @@ def test_vpc_et_reseau_prive_regionaux() -> None:
     """Un VPC, un Private Network régional dans ce VPC, sur le plan d'adressage."""
     vpc = _vpc()
     reseau = _reseau()
-    assert reseau.get("vpc_id") == vpc["id"], (
-        f"{RESEAU} n'appartient pas à {VPC} : créez-le avec vpc-id=<id de {VPC}>."
+    assert reseau.get("vpc_id") == vpc["id"], message(
+        en=f"{RESEAU} does not belong to {VPC}: create it with vpc-id=<id of {VPC}>.",
+        fr=f"{RESEAU} n'appartient pas à {VPC} : créez-le avec vpc-id=<id de {VPC}>.",
     )
-    assert reseau.get("region") == REGION, f"{RESEAU} est en {reseau.get('region')}."
+    assert reseau.get("region") == REGION, message(
+        en=f"{RESEAU} is in {reseau.get('region')}.",
+        fr=f"{RESEAU} est en {reseau.get('region')}.",
+    )
     ipv4 = [
         ipaddress.ip_network(s["subnet"])
         for s in reseau.get("subnets") or []
         if ipaddress.ip_network(s["subnet"]).version == 4
     ]
-    assert ipv4 == [SOUS_RESEAU], (
-        f"Sous-réseaux IPv4 de {RESEAU} : {[str(s) for s in ipv4]}. Le plan "
-        f"demande {SOUS_RESEAU} et lui seul."
+    assert ipv4 == [SOUS_RESEAU], message(
+        en=f"IPv4 subnets of {RESEAU}: {[str(s) for s in ipv4]}. The plan "
+        f"asks for {SOUS_RESEAU} and it alone.",
+        fr=f"Sous-réseaux IPv4 de {RESEAU} : {[str(s) for s in ipv4]}. Le plan "
+        f"demande {SOUS_RESEAU} et lui seul.",
     )
 
 
 def test_deux_instances_dans_deux_zones_sans_ip_publique() -> None:
     """Une instance par zone, aucune adresse publique."""
     for nom, serveur in _serveurs().items():
-        assert serveur.get("zone") == INSTANCES[nom], (
-            f"{nom} est en {serveur.get('zone')}, {INSTANCES[nom]} attendu."
+        assert serveur.get("zone") == INSTANCES[nom], message(
+            en=f"{nom} is in {serveur.get('zone')}, {INSTANCES[nom]} expected.",
+            fr=f"{nom} est en {serveur.get('zone')}, {INSTANCES[nom]} attendu.",
         )
-        assert serveur.get("public_ip") is None and not serveur.get("public_ips"), (
-            f"{nom} porte une adresse publique ({serveur.get('public_ip') or serveur.get('public_ips')}). "
-            "Créez l'instance avec ip=none : rien d'exposé avant le réseau privé."
+        assert serveur.get("public_ip") is None and not serveur.get("public_ips"), message(
+            en=f"{nom} carries a public address ({serveur.get('public_ip') or serveur.get('public_ips')}). "
+            "Create the instance with ip=none: nothing exposed before the private network.",
+            fr=f"{nom} porte une adresse publique ({serveur.get('public_ip') or serveur.get('public_ips')}). "
+            "Créez l'instance avec ip=none : rien d'exposé avant le réseau privé.",
         )
 
 
@@ -120,21 +134,30 @@ def test_le_meme_reseau_prive_attache_dans_chaque_zone() -> None:
             "private_nics"
         ]
         sur_le_reseau = [n for n in nics if n.get("private_network_id") == reseau["id"]]
-        assert sur_le_reseau, (
-            f"{nom} n'a aucune NIC privée sur {RESEAU}. Une NIC se crée par zone : "
-            f"scw instance private-nic create ... zone={zone}."
+        assert sur_le_reseau, message(
+            en=f"{nom} has no private NIC on {RESEAU}. A NIC is created per zone: "
+            f"scw instance private-nic create … zone={zone}.",
+            fr=f"{nom} n'a aucune NIC privée sur {RESEAU}. Une NIC se crée par zone : "
+            f"scw instance private-nic create ... zone={zone}.",
         )
-        assert sur_le_reseau[0].get("zone") == zone
+        assert sur_le_reseau[0].get("zone") == zone, message(
+        en=f"The private NIC of {nom} is in {sur_le_reseau[0].get('zone')}, "
+        f"{zone} expected: a NIC is created in the instance's own zone.",
+        fr=f"La NIC privée de {nom} est en {sur_le_reseau[0].get('zone')}, "
+        f"{zone} attendu : une NIC se crée dans la zone de son instance.",
+    )
 
 
 def test_passerelle_publique_avec_son_ip() -> None:
     """La Public Gateway existe, dans sa zone, avec son IP."""
     passerelle = _passerelle()
-    assert passerelle.get("type") == "VPC-GW-S", (
-        f"{PASSERELLE} est de type {passerelle.get('type')}, VPC-GW-S attendu."
+    assert passerelle.get("type") == "VPC-GW-S", message(
+        en=f"{PASSERELLE} is of type {passerelle.get('type')}, VPC-GW-S expected.",
+        fr=f"{PASSERELLE} est de type {passerelle.get('type')}, VPC-GW-S attendu.",
     )
-    assert (passerelle.get("ipv4") or {}).get("address"), (
-        f"{PASSERELLE} n'a pas d'IP : une Public Gateway en exige une."
+    assert (passerelle.get("ipv4") or {}).get("address"), message(
+        en=f"{PASSERELLE} has no IP: a Public Gateway requires one.",
+        fr=f"{PASSERELLE} n'a pas d'IP : une Public Gateway en exige une.",
     )
 
 
@@ -151,11 +174,17 @@ def test_passerelle_reliee_avec_route_par_defaut_et_nat() -> None:
         if g.get("gateway_id") == passerelle["id"]
         and g.get("private_network_id") == reseau["id"]
     ]
-    assert liaison, f"Aucun gateway-network ne relie {PASSERELLE} à {RESEAU}."
-    assert liaison[0].get("push_default_route") is True, (
-        "La liaison ne pousse pas la route par défaut : sans elle, les instances "
-        "sans IP publique n'ont aucun chemin vers l'extérieur."
+    assert liaison, message(
+        en=f"No gateway-network links {PASSERELLE} to {RESEAU}.",
+        fr=f"Aucun gateway-network ne relie {PASSERELLE} à {RESEAU}.",
     )
-    assert liaison[0].get("masquerade_enabled") is True, (
-        "Le NAT (masquerade) n'est pas activé sur la liaison."
+    assert liaison[0].get("push_default_route") is True, message(
+        en="The link does not push the default route: without it, the instances "
+        "with no public IP have no path to the outside.",
+        fr="La liaison ne pousse pas la route par défaut : sans elle, les instances "
+        "sans IP publique n'ont aucun chemin vers l'extérieur.",
+    )
+    assert liaison[0].get("masquerade_enabled") is True, message(
+        en="NAT (masquerade) is not enabled on the link.",
+        fr="Le NAT (masquerade) n'est pas activé sur la liaison.",
     )
