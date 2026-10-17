@@ -208,9 +208,13 @@ repos:
       # Le contrat du catalogue, au push : `validate-structure` lit meta.yml,
       # chaque lab.yaml, chaque fixture déclarée et chaque lien relatif des
       # README. Il attrape ce qu'aucun test local ne voit.
+      #
+      # La borne de version est déclarée ici aussi, et pour la même raison
+      # qu'en CI : sans elle, un poste resté en 0.4.0 verrait le validateur
+      # accuser le catalogue plutôt que l'outil.
       - id: contrat-du-catalogue
         name: dsoxlab validate-structure
-        entry: uvx dsoxlab validate-structure
+        entry: uvx dsoxlab>=0.4.1 validate-structure
         language: system
         pass_filenames: false
         always_run: true

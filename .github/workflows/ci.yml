@@ -230,8 +230,18 @@ jobs:
       - name: Installer uv
         uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
 
+      # La borne de version est DÉCLARÉE, et non supposée. `uvx dsoxlab`
+      # installait « ce que PyPI publie aujourd'hui » : le jour où le contrat
+      # gagne un champ, le message accuse le catalogue (« n'est pas dans le
+      # contrat ») au lieu de dire que le moteur est trop ancien. Avec la
+      # borne, uv répond « aucune version ne satisfait la contrainte », ce qui
+      # nomme le bon coupable.
+      #
+      # 0.4.1 et pas plus haut : c'est la version qui a introduit le champ
+      # `status` de `check --json`, sans lequel `scripts/verdict_check.py`
+      # refuse de conclure. Ce catalogue n'exige rien de plus récent.
       - name: Vérifier la structure et les leçons jumelées
-        run: uvx dsoxlab validate-structure --check-urls
+        run: uvx 'dsoxlab>=0.4.1' validate-structure --check-urls
 
       # Un verrou qui dérive de son pyproject ne verrouille plus rien : les
       # scanners de vulnérabilités continuent de lire uv.lock, qui ne décrit
