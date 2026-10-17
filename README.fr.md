@@ -51,7 +51,7 @@ le détaille, et chaque lab concerné le rappelle dans son énoncé.
   versions de `mise.toml` (`mise install`).
 - Pour le lab « Première VM propre » seulement : **Incus** utilisable sans sudo,
   sur un poste capable de virtualiser
-  ([installer Incus](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/incus/installation/)).
+  ([installer Incus](https://blog.stephane-robert.info/docs/virtualiser/type1/incus/installation/)).
 
 ## Installation
 
@@ -108,6 +108,19 @@ par `dsoxlab support --issue`.
   (type, fixtures, **services**), son `doc_url` et un bloc `validation`. Un
   `lab.fr.yaml` surcharge le `title` et la `description` en français.
 
+### Le cycle de vie d'un lab
+
+```bash
+dsoxlab list-labs              # parcourir le catalogue
+dsoxlab show      <id>         # métadonnées et état d'un lab
+dsoxlab run       <id>         # poser l'état de départ
+dsoxlab challenge <id>         # lire la mission, sans pas-à-pas
+dsoxlab hint      <id>         # révéler un indice (déduit du score)
+dsoxlab check     <id>         # lancer les tests, calculer et enregistrer le score
+dsoxlab clean     <id>         # retirer le répertoire de travail et arrêter les services
+dsoxlab progress               # avancement par section, score moyen
+```
+
 ### Les runtimes
 
 | Runtime | Ce que le lab demande |
@@ -132,6 +145,19 @@ jouant `setup.yaml` : retirer l'outil doit laisser les labs jouables.
 Les solutions de référence vivent sous `solution/`, **chiffrées par
 ansible-vault** : une solution livrée en clair gâche le lab, et git la garde
 pour toujours.
+
+### Score, indices, avancement
+
+`check` enregistre un score (tests réussis sur total, moins le coût des indices
+révélés). Les indices sont **en base64** dans `challenge/hints.yaml`, pour qu'on
+n'y accède pas en ouvrant le fichier, et leur coût croît avec leur précision.
+L'historique vit dans une base SQLite **locale à ce dépôt**.
+
+Une exécution qui n'a rien mesuré n'est ni une réussite ni un échec : si tous
+les tests collectés skippent, `check` n'enregistre aucune note et dit pourquoi.
+C'est dans ce catalogue que le défaut a été trouvé : un challenge dont le
+service feint ne tournait pas annonçait cinq tests skippés comme une réussite,
+et inscrivait un 0 pour un lab que personne n'avait joué.
 
 ### La grille d'objectifs : les compétences de la formation
 
@@ -172,7 +198,7 @@ anglais vers la traduction quand elle existe.
 _4 labs, table générée par `scripts/gen_catalog.py`._
 <!-- LABS:END -->
 
-## Contribuer et licence
+## Contribuer
 
 Les contributions sont bienvenues : lisez
 [CONTRIBUTING.fr.md](./CONTRIBUTING.fr.md), qui décrit l'anatomie d'un lab de ce
@@ -180,7 +206,7 @@ dépôt et la règle d'or, un lab s'éprouve dans les deux sens. Le
 [code de conduite](./CODE_OF_CONDUCT.fr.md) s'applique à tous les échanges, et
 les vulnérabilités se signalent en privé : [SECURITY.fr.md](./SECURITY.fr.md).
 
-### Licence
+## Licence
 
 Ce contenu est publié sous [Creative Commons Attribution 4.0
 International](./LICENSE) (CC BY 4.0). Vous pouvez le partager et l'adapter, y
