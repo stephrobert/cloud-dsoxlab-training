@@ -51,7 +51,7 @@ le détaille, et chaque lab concerné le rappelle dans son énoncé.
   versions de `mise.toml` (`mise install`).
 - Pour le lab « Première VM propre » seulement : **Incus** utilisable sans sudo,
   sur un poste capable de virtualiser
-  ([installer Incus](https://blog.stephane-robert.info/docs/conteneurs/moteurs-conteneurs/incus/installation/)).
+  ([installer Incus](https://blog.stephane-robert.info/docs/virtualiser/type1/incus/installation/)).
 
 ## Installation
 

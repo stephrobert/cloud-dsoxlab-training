@@ -29,7 +29,7 @@ from collections import Counter
 import pytest
 import yaml
 
-from conftest import etat_lab, exiger_workdir, scw_get, workdir_lab
+from conftest import etat_lab, exiger_workdir, message, scw_get, workdir_lab
 
 WORKDIR = workdir_lab(__file__)
 LAB_ID = "pratiquer-challenge-budget-contraint"
@@ -60,10 +60,13 @@ def reel(grille: dict) -> dict:
         attendus = json.loads((reference / "environnement.json").read_text(encoding="utf-8"))
         etat = scw_get("/_feint/state")
         presents = sorted(r["ID"] for r in etat.get("resources") or [])
-        assert presents == attendus, (
-            "L'environnement fourni a été modifié depuis `dsoxlab run` (ressource "
+        assert presents == attendus, message(
+            en="The environment provided was modified since `dsoxlab run` (a resource "
+            "created or deleted). This challenge is played READ-only: run "
+            "`dsoxlab run pratiquer-challenge-budget-contraint` again, which draws a new environment.",
+            fr="L'environnement fourni a été modifié depuis `dsoxlab run` (ressource "
             "créée ou supprimée). Ce challenge se joue en LECTURE seule : relancez "
-            "`dsoxlab run pratiquer-challenge-budget-contraint`, qui tire un nouvel environnement."
+            "`dsoxlab run pratiquer-challenge-budget-contraint`, qui tire un nouvel environnement.",
         )
 
     serveurs = _par_zone("/instance/v1/zones/{zone}/servers", "servers")
@@ -101,63 +104,85 @@ def reel(grille: dict) -> dict:
 def estimation() -> dict:
     exiger_workdir(WORKDIR, LAB_ID)
     fichier = WORKDIR / "estimation.yaml"
-    assert fichier.is_file(), "challenge/work/estimation.yaml a disparu."
+    assert fichier.is_file(), message(
+        en="challenge/work/estimation.yaml has disappeared.",
+        fr="challenge/work/estimation.yaml a disparu.",
+    )
     try:
         contenu = yaml.safe_load(fichier.read_text(encoding="utf-8")) or {}
     except yaml.YAMLError as erreur:
-        pytest.fail(f"estimation.yaml n'est pas un YAML lisible : {erreur}")
-    assert isinstance(contenu, dict), "estimation.yaml doit être un dictionnaire YAML."
+        pytest.fail(message(
+            en=f"estimation.yaml is not readable YAML: {erreur}",
+            fr=f"estimation.yaml n'est pas un YAML lisible : {erreur}",
+        ))
+    assert isinstance(contenu, dict), message(
+        en="estimation.yaml must be a YAML dictionary.",
+        fr="estimation.yaml doit être un dictionnaire YAML.",
+    )
     return contenu
 
 
 def test_instances_par_type(estimation: dict, reel: dict) -> None:
     """Le nombre d'instances de chaque type, toutes zones confondues."""
     donne = {str(k): v for k, v in (estimation.get("instances") or {}).items()}
-    assert donne == reel["instances"], (
-        f"instances : {donne}. Le compte ne correspond pas à l'environnement. "
-        "Avez-vous regardé toutes les zones ?"
+    assert donne == reel["instances"], message(
+        en=f"instances: {donne}. The count does not match the environment. "
+        "Did you look at every zone?",
+        fr=f"instances : {donne}. Le compte ne correspond pas à l'environnement. "
+        "Avez-vous regardé toutes les zones ?",
     )
 
 
 def test_volumes_en_go(estimation: dict, reel: dict) -> None:
     """Le total des volumes bloc facturés, en Go."""
-    assert estimation.get("volumes_go") == reel["volumes_go"], (
-        f"volumes_go : {estimation.get('volumes_go')}. Le total ne correspond pas. "
-        "Relisez les règles de la grille sur ce qui est facturé."
+    assert estimation.get("volumes_go") == reel["volumes_go"], message(
+        en=f"volumes_go: {estimation.get('volumes_go')}. The total does not match. "
+        "Read the grid's rules again on what is billed.",
+        fr=f"volumes_go : {estimation.get('volumes_go')}. Le total ne correspond pas. "
+        "Relisez les règles de la grille sur ce qui est facturé.",
     )
 
 
 def test_ips_et_passerelles(estimation: dict, reel: dict) -> None:
     """Les IP flexibles d'instance et les passerelles, comptées à part."""
-    assert estimation.get("ips_flexibles") == reel["ips_flexibles"], (
-        f"ips_flexibles : {estimation.get('ips_flexibles')}, ne correspond pas."
+    assert estimation.get("ips_flexibles") == reel["ips_flexibles"], message(
+        en=f"ips_flexibles: {estimation.get('ips_flexibles')}, does not match.",
+        fr=f"ips_flexibles : {estimation.get('ips_flexibles')}, ne correspond pas.",
     )
-    assert estimation.get("passerelles") == reel["passerelles"], (
-        f"passerelles : {estimation.get('passerelles')}, ne correspond pas."
+    assert estimation.get("passerelles") == reel["passerelles"], message(
+        en=f"passerelles: {estimation.get('passerelles')}, does not match.",
+        fr=f"passerelles : {estimation.get('passerelles')}, ne correspond pas.",
     )
 
 
 def test_cout_mensuel(estimation: dict, reel: dict) -> None:
     """Le coût mensuel, à 50 centimes près."""
     donne = estimation.get("cout_mensuel_eur")
-    assert isinstance(donne, int | float) and not isinstance(donne, bool), (
-        "cout_mensuel_eur doit être un nombre, en euros."
+    assert isinstance(donne, int | float) and not isinstance(donne, bool), message(
+        en="cout_mensuel_eur must be a number, in euros.",
+        fr="cout_mensuel_eur doit être un nombre, en euros.",
     )
-    assert abs(donne - reel["cout"]) <= TOLERANCE_EUR, (
-        f"cout_mensuel_eur : {donne}. L'écart au coût recalculé sur la grille "
-        f"dépasse {TOLERANCE_EUR} euro."
+    assert abs(donne - reel["cout"]) <= TOLERANCE_EUR, message(
+        en=f"cout_mensuel_eur: {donne}. The gap with the cost recomputed on the grid "
+        f"exceeds {TOLERANCE_EUR} euro.",
+        fr=f"cout_mensuel_eur : {donne}. L'écart au coût recalculé sur la grille "
+        f"dépasse {TOLERANCE_EUR} euro.",
     )
 
 
 def test_budget_et_ressources_non_rattachees(estimation: dict, reel: dict) -> None:
     """Le verdict sur le budget, et ce qui coûte sans servir."""
     attendu = reel["cout"] <= BUDGET_EUR
-    assert estimation.get("dans_le_budget") is attendu, (
-        f"dans_le_budget : {estimation.get('dans_le_budget')}, ne correspond pas "
-        "au coût de l'environnement comparé au budget de la mission."
+    assert estimation.get("dans_le_budget") is attendu, message(
+        en=f"dans_le_budget: {estimation.get('dans_le_budget')}, does not match "
+        "the environment's cost compared with the mission's budget.",
+        fr=f"dans_le_budget : {estimation.get('dans_le_budget')}, ne correspond pas "
+        "au coût de l'environnement comparé au budget de la mission.",
     )
     donne = {str(x) for x in (estimation.get("non_rattaches") or [])}
-    assert donne == reel["orphelins"], (
-        f"non_rattaches : {sorted(donne)}. La liste des ressources facturées "
-        "rattachées à rien ne correspond pas."
+    assert donne == reel["orphelins"], message(
+        en=f"non_rattaches: {sorted(donne)}. The list of billed resources "
+        "attached to nothing does not match.",
+        fr=f"non_rattaches : {sorted(donne)}. La liste des ressources facturées "
+        "rattachées à rien ne correspond pas.",
     )

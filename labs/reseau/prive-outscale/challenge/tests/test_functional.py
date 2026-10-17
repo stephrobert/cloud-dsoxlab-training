@@ -25,7 +25,7 @@ from __future__ import annotations
 
 import pytest
 
-from conftest import exiger_workdir, osc_call, workdir_lab
+from conftest import exiger_workdir, message, osc_call, workdir_lab
 
 WORKDIR = workdir_lab(__file__)
 LAB_ID = "reseau-prive-outscale"
@@ -55,8 +55,9 @@ def _nom(objet: dict) -> str | None:
 @pytest.fixture(scope="module")
 def net() -> dict:
     nets = [n for n in osc_call("ReadNets").get("Nets") or [] if _nom(n) == NOM_NET]
-    assert len(nets) == 1, (
-        f"{len(nets)} Net portant le tag Name={NOM_NET} : un seul est attendu."
+    assert len(nets) == 1, message(
+        en=f"{len(nets)} Net carrying the tag Name={NOM_NET}: a single one is expected.",
+        fr=f"{len(nets)} Net portant le tag Name={NOM_NET} : un seul est attendu.",
     )
     return nets[0]
 
@@ -67,10 +68,15 @@ def sous_reseaux(net: dict) -> dict[str, dict]:
     trouves: dict[str, dict] = {}
     for role, (plage, sous_region) in SOUS_RESEAUX.items():
         candidats = [s for s in tous if s.get("IpRange") == plage]
-        assert candidats, f"Aucun sous-réseau {plage} dans {NOM_NET}."
-        assert candidats[0].get("SubregionName") == sous_region, (
-            f"Le sous-réseau {plage} est en {candidats[0].get('SubregionName')}, "
-            f"{sous_region} attendu."
+        assert candidats, message(
+            en=f"No subnet {plage} in {NOM_NET}.",
+            fr=f"Aucun sous-réseau {plage} dans {NOM_NET}.",
+        )
+        assert candidats[0].get("SubregionName") == sous_region, message(
+            en=f"The subnet {plage} is in {candidats[0].get('SubregionName')}, "
+            f"{sous_region} expected.",
+            fr=f"Le sous-réseau {plage} est en {candidats[0].get('SubregionName')}, "
+            f"{sous_region} attendu.",
         )
         trouves[role] = candidats[0]
     return trouves
@@ -101,10 +107,16 @@ def _route_par_defaut(table: dict | None) -> dict | None:
 
 def test_net_regional_et_un_sous_reseau_par_sous_region(net: dict, sous_reseaux: dict) -> None:
     """Le Net sur son plan, et ses trois sous-réseaux dans leurs sous-régions."""
-    assert net.get("IpRange") == PLAGE_NET, (
-        f"{NOM_NET} couvre {net.get('IpRange')}, {PLAGE_NET} attendu."
+    assert net.get("IpRange") == PLAGE_NET, message(
+        en=f"{NOM_NET} covers {net.get('IpRange')}, {PLAGE_NET} expected.",
+        fr=f"{NOM_NET} couvre {net.get('IpRange')}, {PLAGE_NET} attendu.",
     )
-    assert len(sous_reseaux) == len(SOUS_RESEAUX)
+    assert len(sous_reseaux) == len(SOUS_RESEAUX), message(
+        en=f"{len(sous_reseaux)} subnet(s) found, {len(SOUS_RESEAUX)} expected: "
+        "one per role, each in its own subregion.",
+        fr=f"{len(sous_reseaux)} sous-réseau(x) trouvé(s), {len(SOUS_RESEAUX)} "
+        "attendu(s) : un par rôle, chacun dans sa sous-région.",
+    )
 
 
 def test_deux_vms_dans_deux_sous_regions_sans_ip_publique(sous_reseaux: dict) -> None:
@@ -112,17 +124,21 @@ def test_deux_vms_dans_deux_sous_regions_sans_ip_publique(sous_reseaux: dict) ->
     vms = osc_call("ReadVms").get("Vms") or []
     for nom, role in VMS.items():
         trouvees = [v for v in vms if _nom(v) == nom and v.get("State") != "terminated"]
-        assert len(trouvees) == 1, (
-            f"{len(trouvees)} VM portant le tag Name={nom} : une seule est attendue."
+        assert len(trouvees) == 1, message(
+            en=f"{len(trouvees)} VMs carrying the tag Name={nom}: a single one is expected.",
+            fr=f"{len(trouvees)} VM portant le tag Name={nom} : une seule est attendue.",
         )
         vm = trouvees[0]
         attendu = sous_reseaux[role]
-        assert vm.get("SubnetId") == attendu["SubnetId"], (
-            f"{nom} n'est pas dans le sous-réseau {attendu['IpRange']}."
+        assert vm.get("SubnetId") == attendu["SubnetId"], message(
+            en=f"{nom} is not in the subnet {attendu['IpRange']}.",
+            fr=f"{nom} n'est pas dans le sous-réseau {attendu['IpRange']}.",
         )
-        assert not vm.get("PublicIp"), (
-            f"{nom} porte l'IP publique {vm.get('PublicIp')} : rien d'exposé avant "
-            "le réseau privé."
+        assert not vm.get("PublicIp"), message(
+            en=f"{nom} carries the public IP {vm.get('PublicIp')}: nothing exposed before "
+            "the private network.",
+            fr=f"{nom} porte l'IP publique {vm.get('PublicIp')} : rien d'exposé avant "
+            "le réseau privé.",
         )
 
 
@@ -132,11 +148,16 @@ def test_internet_service_lie_et_route_publique(net: dict, sous_reseaux: dict) -
         s for s in osc_call("ReadInternetServices").get("InternetServices") or []
         if s.get("NetId") == net["NetId"]
     ]
-    assert services, f"Aucun Internet Service lié à {NOM_NET} (LinkInternetService)."
+    assert services, message(
+        en=f"No Internet Service linked to {NOM_NET} (LinkInternetService).",
+        fr=f"Aucun Internet Service lié à {NOM_NET} (LinkInternetService).",
+    )
     route = _route_par_defaut(_table_du_sous_reseau(net, sous_reseaux["public"]["SubnetId"]))
-    assert route and route.get("GatewayId") == services[0]["InternetServiceId"], (
-        "Le sous-réseau public n'a pas de route 0.0.0.0/0 vers l'Internet Service : "
-        "une table de routage liée à ce sous-réseau doit la porter."
+    assert route and route.get("GatewayId") == services[0]["InternetServiceId"], message(
+        en="The public subnet has no 0.0.0.0/0 route to the Internet Service: "
+        "a route table linked to that subnet must carry it.",
+        fr="Le sous-réseau public n'a pas de route 0.0.0.0/0 vers l'Internet Service : "
+        "une table de routage liée à ce sous-réseau doit la porter.",
     )
 
 
@@ -146,9 +167,21 @@ def test_nat_service_dans_le_sous_reseau_public(sous_reseaux: dict) -> None:
         n for n in osc_call("ReadNatServices").get("NatServices") or []
         if n.get("SubnetId") == sous_reseaux["public"]["SubnetId"]
     ]
-    assert nats, "Aucun NAT Service dans le sous-réseau public 10.20.0.0/24."
-    assert nats[0].get("State") == "available"
-    assert nats[0].get("PublicIps"), "Le NAT Service n'a pas d'IP publique."
+    assert nats, message(
+        en="No NAT Service in the public subnet 10.20.0.0/24.",
+        fr="Aucun NAT Service dans le sous-réseau public 10.20.0.0/24.",
+    )
+    assert nats[0].get("State") == "available", message(
+        en=f"The NAT Service is {nats[0].get('State')!r}, `available` expected: "
+        "as long as it is not, the private subnets have no path out.",
+        fr=f"Le NAT Service est en {nats[0].get('State')!r}, `available` attendu : "
+        "tant qu'il ne l'est pas, les sous-réseaux privés n'ont aucun chemin vers "
+        "l'extérieur.",
+    )
+    assert nats[0].get("PublicIps"), message(
+        en="The NAT Service has no public IP.",
+        fr="Le NAT Service n'a pas d'IP publique.",
+    )
 
 
 def test_sous_reseaux_prives_sortent_par_le_nat(net: dict, sous_reseaux: dict) -> None:
@@ -160,7 +193,9 @@ def test_sous_reseaux_prives_sortent_par_le_nat(net: dict, sous_reseaux: dict) -
     }
     for role in ("prive-a", "prive-b"):
         route = _route_par_defaut(_table_du_sous_reseau(net, sous_reseaux[role]["SubnetId"]))
-        assert route and route.get("NatServiceId") in nats, (
-            f"Le sous-réseau {sous_reseaux[role]['IpRange']} n'a pas de route "
-            "0.0.0.0/0 vers le NAT Service du sous-réseau public."
+        assert route and route.get("NatServiceId") in nats, message(
+            en=f"The subnet {sous_reseaux[role]['IpRange']} has no "
+            "0.0.0.0/0 route to the NAT Service of the public subnet.",
+            fr=f"Le sous-réseau {sous_reseaux[role]['IpRange']} n'a pas de route "
+            "0.0.0.0/0 vers le NAT Service du sous-réseau public.",
         )
