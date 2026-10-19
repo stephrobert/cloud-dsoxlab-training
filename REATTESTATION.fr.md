@@ -24,6 +24,25 @@ qui n'en a pas.
 - **`.vault-pass` à la racine** : 4 fichier(s) de solution de ce catalogue sont chiffrés par ansible-vault, et le cycle les pose déchiffrés. Le secret n'est jamais commité. Ici : présent.
 - **Docker joignable** : 3 lab(s) déclarent `runtime.services`. Un service injoignable fait échouer `run` et `check`, qui ne notent pas un 0 silencieux.
 
+### Attention : trois de ces quatre labs visent un fournisseur cloud
+
+`challenge-budget-contraint`, `prive-outscale` et `prive-scaleway` appellent
+les CLI de fournisseurs cloud. Dans un bac à sable qui n'accorde le réseau
+qu'à la commande de premier niveau, **ces appels n'échouent pas : ils
+attendent**. Mesuré le 2026-10-19, un `octl --version` lancé par le validateur
+est resté bloqué vingt-trois minutes sans un message, et la campagne entière
+n'avançait plus.
+
+Avant de lancer une campagne ici, éprouver l'accès sortant :
+
+```bash
+octl --version    # doit répondre en moins d'une seconde
+```
+
+S'il n'y a pas de réponse immédiate, la campagne ne mesurera pas les labs,
+elle mesurera l'absence de réseau. Et comme le validateur borne ses étapes à
+900 secondes, elle mettra des heures à le dire.
+
 ## La commande
 
 ```bash

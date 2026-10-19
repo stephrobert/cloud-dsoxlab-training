@@ -23,6 +23,24 @@ that has none.
 - **`.vault-pass` at the root**: 4 solution file(s) in this catalogue are ansible-vault encrypted, and the cycle lays them decrypted. The secret is never committed. Here: present.
 - **Docker reachable**: 3 lab(s) declare `runtime.services`. An unreachable service fails `run` and `check`, which do not silently record a 0.
 
+### Careful: three of these four labs target a cloud provider
+
+`challenge-budget-contraint`, `prive-outscale` and `prive-scaleway` call cloud
+provider CLIs. In a sandbox that grants network access only to the top-level
+command, **those calls do not fail: they hang**. Measured on 2026-10-19, an
+`octl --version` launched by the validator hung for twenty-three minutes
+without a single message, and the whole campaign stopped progressing.
+
+Before starting a campaign here, test outbound access:
+
+```bash
+octl --version    # must answer in under a second
+```
+
+If there is no immediate answer, the campaign will not measure the labs, it
+will measure the absence of network. And since the validator caps its steps at
+900 seconds, it will take hours to say so.
+
 ## The command
 
 ```bash
