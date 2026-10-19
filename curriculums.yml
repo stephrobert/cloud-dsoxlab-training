@@ -25,7 +25,7 @@
 curriculums:
   cloud:
     nom: "Compétences de la formation Cloud (candidates du contrat, §3.2)"
-    source: "https://blog.stephane-robert.info/docs/cloud/"
+    source: "https://www.stephane-robert.info/docs/cloud/"
     derniere_verification: 2026-10-12
     competences:
       cloud.model.choose:

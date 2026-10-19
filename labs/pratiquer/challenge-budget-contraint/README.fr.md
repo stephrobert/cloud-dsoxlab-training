@@ -7,7 +7,7 @@ l'émulateur **feint**, puis le **chiffrer** sur une grille tarifaire datée.
 C'est un challenge, pas un lab guidé : aucune commande n'est donnée.
 
 Leçon du site qui porte ce challenge :
-<https://blog.stephane-robert.info/docs/cloud/outils/feint/limites/>.
+<https://www.stephane-robert.info/docs/cloud/outils/feint/limites/>.
 
 ## Ce qui est éprouvé
 
@@ -20,7 +20,7 @@ Leçon du site qui porte ce challenge :
 
 - Le module 2 de la formation (lire une facture, grilles datées) et les leçons
   du module 2b : feint installé, et **`scw` branché sur feint** :
-  <https://blog.stephane-robert.info/docs/cloud/outils/feint/clients/>.
+  <https://www.stephane-robert.info/docs/cloud/outils/feint/clients/>.
 - **dsoxlab** et **Docker** : feint tourne en conteneur, démarré par
   `dsoxlab run`. Le port **4599** doit être libre.
 

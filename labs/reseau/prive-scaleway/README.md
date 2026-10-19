@@ -9,7 +9,7 @@ zonal as well, linked to the network by a **gateway-network** that pushes the
 the official `scw` CLI, without an account, against the **feint** emulator.
 
 Lesson of the site that carries this lab (in French):
-<https://blog.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
+<https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
 
 ## What you will be able to do
 
@@ -26,7 +26,7 @@ Lesson of the site that carries this lab (in French):
 - **dsoxlab installed** and a working **Docker**: feint runs in a container,
   started by `dsoxlab run`.
 - **`scw` installed** (2.62.0 at the time of writing): lesson
-  <https://blog.stephane-robert.info/en/docs/cloud/outils/feint/clients/>.
+  <https://www.stephane-robert.info/en/docs/cloud/outils/feint/clients/>.
 - **Port 4599 free** on your host: stop any feint you started yourself
   (`feint stop`, or `docker stop` its container).
 - The notions of module 3: private network, NAT gateway, default route.

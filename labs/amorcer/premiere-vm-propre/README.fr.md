@@ -8,7 +8,7 @@ machine virtuelle **Incus** joue le rôle de l'instance, un réseau Incus privé
 celui du réseau du fournisseur.
 
 Leçon du site qui porte ce lab :
-<https://blog.stephane-robert.info/docs/cloud/cloud-init/>.
+<https://www.stephane-robert.info/docs/cloud/cloud-init/>.
 
 ## Ce que vous saurez faire
 
@@ -24,11 +24,11 @@ Leçon du site qui porte ce lab :
 
 - **Incus installé et utilisable sans sudo** (votre compte dans le groupe
   `incus-admin`) :
-  <https://blog.stephane-robert.info/docs/virtualiser/type1/incus/installation/>.
+  <https://www.stephane-robert.info/docs/virtualiser/type1/incus/installation/>.
   Le poste doit savoir virtualiser (KVM) : `incus info | grep -i virtual`
   doit citer `qemu`.
 - **dsoxlab installé** :
-  <https://blog.stephane-robert.info/docs/dsoxlab/installation/>.
+  <https://www.stephane-robert.info/docs/dsoxlab/installation/>.
 - Un accès Internet sortant : l'image (300 Mo environ au premier tirage) et
   les paquets se téléchargent.
 

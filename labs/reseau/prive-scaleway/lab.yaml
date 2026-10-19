@@ -18,7 +18,7 @@ skills:
   - cloud.network.design
 distros:
   - debian13
-doc_url: https://blog.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/
+doc_url: https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/
 runtime:
   type: shell
   workdir: challenge/work
