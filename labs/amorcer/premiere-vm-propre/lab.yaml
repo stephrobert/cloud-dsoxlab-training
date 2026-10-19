@@ -17,7 +17,7 @@ skills:
   - cloud.environment.rebuild
 distros:
   - ubuntu24
-doc_url: https://blog.stephane-robert.info/docs/cloud/cloud-init/
+doc_url: https://www.stephane-robert.info/docs/cloud/cloud-init/
 runtime:
   type: shell
   workdir: challenge/work

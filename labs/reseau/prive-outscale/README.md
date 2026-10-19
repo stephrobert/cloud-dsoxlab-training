@@ -10,7 +10,7 @@ variant of the `reseau-prive-scaleway` lab: the same need, another provider
 model.
 
 Lesson of the site that carries this lab (in French):
-<https://blog.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
+<https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
 
 ## What you will be able to do
 
@@ -25,7 +25,7 @@ Lesson of the site that carries this lab (in French):
 
 - **dsoxlab installed** and a working **Docker**: feint runs in a container.
 - **`octl` installed** (v0.0.32 at the time of writing): lesson
-  <https://blog.stephane-robert.info/en/docs/cloud/outils/feint/clients/>.
+  <https://www.stephane-robert.info/en/docs/cloud/outils/feint/clients/>.
 - **Port 4599 free**: stop any feint you started yourself.
 - The notions of module 3: subnet, route table, NAT.
 

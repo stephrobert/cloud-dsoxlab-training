@@ -8,7 +8,7 @@ machine plays the instance, a private Incus network plays the provider's
 network.
 
 Lesson of the site that carries this lab (in French):
-<https://blog.stephane-robert.info/docs/cloud/cloud-init/>.
+<https://www.stephane-robert.info/docs/cloud/cloud-init/>.
 
 ## What you will be able to do
 
@@ -24,11 +24,11 @@ Lesson of the site that carries this lab (in French):
 
 - **Incus installed and usable without sudo** (your account in the
   `incus-admin` group):
-  <https://blog.stephane-robert.info/en/docs/incus/installation/>.
+  <https://www.stephane-robert.info/en/docs/incus/installation/>.
   The host must be able to virtualise (KVM): `incus info | grep -i virtual`
   must name `qemu`.
 - **dsoxlab installed**:
-  <https://blog.stephane-robert.info/en/docs/dsoxlab/installation/>.
+  <https://www.stephane-robert.info/en/docs/dsoxlab/installation/>.
 - Outbound Internet access: the image (about 300 MB on first pull) and the
   packages are downloaded.
 

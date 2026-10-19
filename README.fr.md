@@ -8,8 +8,8 @@
 [![SLSA 3](https://slsa.dev/images/gh-badge-level3.svg)](https://slsa.dev)
 [![Licence : CC BY 4.0](https://img.shields.io/badge/Licence-CC%20BY%204.0-lightgrey.svg)](./LICENSE)
 
-Labs de la [formation Cloud](https://blog.stephane-robert.info/docs/cloud/) de
-blog.stephane-robert.info, pilotés par la CLI
+Labs de la [formation Cloud](https://www.stephane-robert.info/docs/cloud/) de
+www.stephane-robert.info, pilotés par la CLI
 [`dsoxlab`](https://github.com/stephrobert/dsoxlab) et joués **sans compte
 cloud ni carte bancaire**. Les CLI officielles des fournisseurs, `scw` pour
 Scaleway et `octl` pour Outscale, y pilotent **feint**, un émulateur local de
@@ -38,7 +38,7 @@ existent, avec leurs liens, et se lisent comme chez le fournisseur. Il
 n'achemine **aucun paquet**, n'applique ni routage ni NAT, n'émule ni prix, ni
 quotas, ni IAM. Un lab réseau sur feint prouve donc qu'une architecture est
 **déclarée** correctement, pas que le trafic sort. La leçon
-[Ce que feint prouve](https://blog.stephane-robert.info/docs/cloud/outils/feint/limites/)
+[Ce que feint prouve](https://www.stephane-robert.info/docs/cloud/outils/feint/limites/)
 le détaille, et chaque lab concerné le rappelle dans son énoncé.
 
 ## Prérequis
@@ -51,7 +51,7 @@ le détaille, et chaque lab concerné le rappelle dans son énoncé.
   versions de `mise.toml` (`mise install`).
 - Pour le lab « Première VM propre » seulement : **Incus** utilisable sans sudo,
   sur un poste capable de virtualiser
-  ([installer Incus](https://blog.stephane-robert.info/docs/virtualiser/type1/incus/installation/)).
+  ([installer Incus](https://www.stephane-robert.info/docs/virtualiser/type1/incus/installation/)).
 
 ## Installation
 
@@ -180,20 +180,20 @@ anglais vers la traduction quand elle existe.
 
 | Lab (id) | Titre | Niveau | Runtime | Guide compagnon |
 |---|---|---|---|---|
-| `pratiquer-challenge-budget-contraint` | Challenge 1 : architecture à budget contraint | a | shell | [guide](https://blog.stephane-robert.info/docs/cloud/outils/feint/limites/) |
+| `pratiquer-challenge-budget-contraint` | Challenge 1 : architecture à budget contraint | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/outils/feint/limites/) |
 
 ### Amorcer une machine
 
 | Lab (id) | Titre | Niveau | Runtime | Guide compagnon |
 |---|---|---|---|---|
-| `amorcer-premiere-vm-propre` | Première VM propre : amorcée par cloud-init, sans adresse publique | a | shell | [guide](https://blog.stephane-robert.info/docs/cloud/cloud-init/) |
+| `amorcer-premiere-vm-propre` | Première VM propre : amorcée par cloud-init, sans adresse publique | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/cloud-init/) |
 
 ### Réseau cloud
 
 | Lab (id) | Titre | Niveau | Runtime | Guide compagnon |
 |---|---|---|---|---|
-| `reseau-prive-scaleway` | Réseau privé, et premières instances sans adresse publique : scw sur Feint | a | shell | [guide](https://blog.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
-| `reseau-prive-outscale` | Réseau privé, et premières instances sans adresse publique : octl sur Feint | a | shell | [guide](https://blog.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+| `reseau-prive-scaleway` | Réseau privé, et premières instances sans adresse publique : scw sur Feint | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+| `reseau-prive-outscale` | Réseau privé, et premières instances sans adresse publique : octl sur Feint | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
 
 _4 labs, table générée par `scripts/gen_catalog.py`._
 <!-- LABS:END -->

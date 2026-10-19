@@ -7,7 +7,7 @@ build: you have to **read** it, through the official CLI plugged into the
 not a guided lab: no command is given.
 
 Lesson of the site that carries this challenge:
-<https://blog.stephane-robert.info/en/docs/cloud/outils/feint/limites/>.
+<https://www.stephane-robert.info/en/docs/cloud/outils/feint/limites/>.
 
 ## What is tested
 
@@ -19,7 +19,7 @@ Lesson of the site that carries this challenge:
 
 - Module 2 of the course (reading a bill, dated grids) and the lessons of
   module 2b: feint installed, and **`scw` plugged into feint**:
-  <https://blog.stephane-robert.info/en/docs/cloud/outils/feint/clients/>.
+  <https://www.stephane-robert.info/en/docs/cloud/outils/feint/clients/>.
 - **dsoxlab** and **Docker**: feint runs in a container, started by
   `dsoxlab run`. Port **4599** must be free.
 

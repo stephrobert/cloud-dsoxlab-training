@@ -21,7 +21,7 @@ repo:
   id: cloud-dsoxlab-training
   category: cloud
   title: "Cloud Training: practise without an account"
-  blog_url: "https://blog.stephane-robert.info/docs/cloud/"
+  blog_url: "https://www.stephane-robert.info/docs/cloud/"
   issues_url: "https://github.com/stephrobert/cloud-dsoxlab-training/issues"
   description: |
     Teaching labs for the blog's Cloud course, played without a cloud account

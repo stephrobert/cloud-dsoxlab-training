@@ -17,7 +17,7 @@ skills:
   - cloud.cost.estimate
 distros:
   - debian13
-doc_url: https://blog.stephane-robert.info/docs/cloud/outils/feint/limites/
+doc_url: https://www.stephane-robert.info/docs/cloud/outils/feint/limites/
 runtime:
   type: shell
   workdir: challenge/work

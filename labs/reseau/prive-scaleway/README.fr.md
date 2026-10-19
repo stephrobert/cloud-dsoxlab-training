@@ -9,7 +9,7 @@ par défaut** et fait du NAT. Ce lab vous fait construire cette architecture
 avec le CLI officiel `scw`, sans compte, contre l'émulateur **feint**.
 
 Leçon du site qui porte ce lab :
-<https://blog.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
+<https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
 
 ## Ce que vous saurez faire
 
@@ -25,7 +25,7 @@ Leçon du site qui porte ce lab :
 - **dsoxlab installé** et **Docker** qui répond : feint tourne en conteneur,
   démarré par `dsoxlab run`.
 - **`scw` installé** (2.62.0 au moment de l'écriture) : leçon
-  <https://blog.stephane-robert.info/docs/cloud/outils/feint/clients/>.
+  <https://www.stephane-robert.info/docs/cloud/outils/feint/clients/>.
 - **Le port 4599 libre** sur votre poste : arrêtez tout feint que vous auriez
   lancé vous-même (`feint stop`, ou `docker stop` de son conteneur).
 - Les notions du module 3 : réseau privé, passerelle NAT, route par défaut.

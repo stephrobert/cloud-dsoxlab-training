@@ -10,7 +10,7 @@ architecture avec le CLI officiel `octl`, sans compte, contre l'émulateur
 besoin, un autre modèle de fournisseur.
 
 Leçon du site qui porte ce lab :
-<https://blog.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
+<https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
 
 ## Ce que vous saurez faire
 
@@ -25,7 +25,7 @@ Leçon du site qui porte ce lab :
 
 - **dsoxlab installé** et **Docker** qui répond : feint tourne en conteneur.
 - **`octl` installé** (v0.0.32 au moment de l'écriture) : leçon
-  <https://blog.stephane-robert.info/docs/cloud/outils/feint/clients/>.
+  <https://www.stephane-robert.info/docs/cloud/outils/feint/clients/>.
 - **Le port 4599 libre** : arrêtez tout feint lancé par vous-même.
 - Les notions du module 3 : sous-réseau, table de routage, NAT.
 
