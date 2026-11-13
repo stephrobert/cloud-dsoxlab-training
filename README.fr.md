@@ -181,6 +181,9 @@ anglais vers la traduction quand elle existe.
 | Lab (id) | Titre | Niveau | Runtime | Guide compagnon |
 |---|---|---|---|---|
 | `pratiquer-challenge-budget-contraint` | Challenge 1 : architecture à budget contraint | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/outils/feint/limites/) |
+| `estimer-cout-mensuel` | Estimer le coût mensuel d'une architecture cloud | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/) |
+| `choisir-service-donnees` | Choisir un service de données managé | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/donnees/) |
+| `concevoir-elasticite` | Concevoir un workload élastique | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/) |
 | `pratiquer-choisir-modele-cloud` | Choisir un modèle de service et de déploiement cloud | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/) |
 
 ### Amorcer une machine
@@ -204,8 +207,9 @@ anglais vers la traduction quand elle existe.
 | `concevoir-modele-acces` | Concevoir un modèle d'identité et d'accès cloud | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/securite/iam/) |
 | `concevoir-recommander-evolutions-architecture` | Prioriser les évolutions d'une architecture cloud | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/) |
 | `defendre-revue-architecture` | Défendre une revue d'architecture cloud avec des preuves | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/) |
+| `choisir-modele-calcul` | Choisir un modèle de calcul et le dimensionner sur des mesures | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/) |
 
-_9 labs, table générée par `scripts/gen_catalog.py`._
+_13 labs, table générée par `scripts/gen_catalog.py`._
 <!-- LABS:END -->
 
 ## Contribuer
