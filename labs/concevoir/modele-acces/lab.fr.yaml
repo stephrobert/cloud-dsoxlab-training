@@ -3,3 +3,14 @@ description: >-
   Concevoir un modèle indépendant du fournisseur pour les identités humaines,
   le cycle de vie des accès, la séparation des responsabilités, les accès de
   secours et les exigences de journalisation.
+criteria:
+  - id: identite-federee
+    label: "Les identités humaines sont fédérées depuis l'annuaire, avec une session bornée"
+  - id: comptes-urgence
+    label: "Les comptes d'urgence sont nominatifs, sous MFA, hors usage courant et alertent"
+  - id: separation
+    label: "Les rôles portent leurs tâches et séparent approbation et déploiement"
+  - id: cycle-de-vie
+    label: "Chaque événement du cycle de vie a un responsable et un délai dans les exigences"
+  - id: audit
+    label: "L'audit tient les exigences de conservation, d'immuabilité et d'alerte"

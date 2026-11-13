@@ -7,7 +7,7 @@ description: >-
 skills:
   - cloud.model.choose
 distros:
-  - any
+  - debian13
 doc_url: https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/
 lab_type: lab
 estimated_time: 30m
@@ -18,3 +18,22 @@ runtime:
     - brief.json
 validation:
   functional: true
+criteria:
+  - id: modele-de-service
+    label: "The service model follows the brief"
+    tests:
+      - test_le_modele_de_service_suit_le_brief
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/
+  - id: modele-de-deploiement
+    label: "The deployment model follows the brief"
+    tests:
+      - test_le_modele_de_deploiement_suit_le_brief
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/
+  - id: responsabilites
+    label: "Responsibilities are shared as the model implies, with a rationale"
+    tests:
+      - test_les_responsabilites_sont_partagees_selon_le_modele
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/

@@ -8,7 +8,7 @@ description: >-
 skills:
   - cloud.architecture.decide
 distros:
-  - any
+  - debian13
 doc_url: https://www.stephane-robert.info/docs/cloud/capstone/decider-une-architecture-cible/
 lab_type: lab
 estimated_time: 40m
@@ -19,3 +19,22 @@ runtime:
     - brief.json
 validation:
   functional: true
+criteria:
+  - id: comparaison
+    label: "The comparison covers both options with the measured facts"
+    tests:
+      - test_la_comparaison_reprend_les_faits_du_brief
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/capstone/decider-une-architecture-cible/
+  - id: adr-complet
+    label: "The ADR states options, criteria, rationale, consequences and accepted risk"
+    tests:
+      - test_l_adr_est_complet
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/capstone/decider-une-architecture-cible/
+  - id: decision
+    label: "The decision meets every hard requirement"
+    tests:
+      - test_la_decision_tient_les_exigences_dures
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/capstone/decider-une-architecture-cible/

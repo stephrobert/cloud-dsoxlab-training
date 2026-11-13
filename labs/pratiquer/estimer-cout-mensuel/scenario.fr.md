@@ -14,3 +14,5 @@ marge par rapport au budget.
 La grille fournie est synthétique et ne constitue pas un devis fournisseur.
 Feint et un compte cloud n'interviennent pas : l'exercice porte sur le calcul
 et les hypothèses, pas sur la prétention de reproduire une facture réelle.
+
+Compétence visée : `cloud.cost.estimate`

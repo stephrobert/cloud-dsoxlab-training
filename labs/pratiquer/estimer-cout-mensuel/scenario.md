@@ -14,3 +14,5 @@ headroom.
 The supplied grid is synthetic, not a provider quote. Feint and a cloud account
 are not involved; the task is arithmetic and documented assumptions, not a
 claim about a real invoice.
+
+Skill targeted: `cloud.cost.estimate`

@@ -2,3 +2,10 @@ title: "Choisir un modèle de service et de déploiement cloud"
 description: >-
   Choisir un modèle de service et de déploiement adapté à un workload, puis
   préciser les responsabilités qui restent au fournisseur et à l'équipe.
+criteria:
+  - id: modele-de-service
+    label: "Le modèle de service suit le brief"
+  - id: modele-de-deploiement
+    label: "Le modèle de déploiement suit le brief"
+  - id: responsabilites
+    label: "Les responsabilités sont partagées comme le veut le modèle, justification comprise"

@@ -17,3 +17,5 @@ le calcul après perte d'une instance, et les gestes de scale-out et de scale-in
 La fixture est une mesure d'exercice, pas une garantie fournisseur. Aucun
 service n'est déployé et aucune panne ou opération d'autoscaling réelle n'est
 revendiquée.
+
+Compétence visée : `cloud.elasticity.design`

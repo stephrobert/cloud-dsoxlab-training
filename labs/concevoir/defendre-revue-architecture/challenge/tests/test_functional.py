@@ -1,90 +1,153 @@
-"""State-based grading for the evidence-backed architecture review."""
+"""Tests fonctionnels de « Défendre une revue d'architecture ».
+
+Les livrables sont `challenge/work/review.json` et `challenge/work/review.md`.
+Chaque attendu se déduit de `review-evidence.json` et de la grille de notation
+donnée dans le README du challenge. Un test par état, et chacun échoue sur
+l'état de départ (les livrables n'existent pas) :
+
+1. les six axes sont notés selon la grille, chacun avec une preuve citée et un
+   constat ;
+2. les trois risques retenus sont les trois plus graves (gravité multipliée par
+   probabilité), dans l'ordre ;
+3. chacun porte une décision, une raison, une action, un responsable, une
+   échéance, et le nom de qui l'accepte quand il est accepté ;
+4. les limites des preuves sont toutes déclarées, et le rapport au comité
+   reprend les six axes et les trois risques.
+"""
 
 from __future__ import annotations
 
 import json
 from datetime import date
 
-from conftest import exiger_workdir, workdir_lab
+import pytest
+
+from conftest import exiger_workdir, message, workdir_lab
 
 WORKDIR = workdir_lab(__file__)
 LAB_ID = "defendre-revue-architecture"
-EXPECTED_SCORES = {
-    "operational-excellence": 2,
-    "security": 1,
-    "reliability": 3,
-    "performance": 3,
-    "cost": 2,
-    "sovereignty": 1,
+AXES = ("operational-excellence", "security", "reliability", "performance", "cost", "sovereignty")
+# La note que donne la grille du README, axe par axe, d'après le type et le
+# contenu des preuves du pack : 3 = test ou mesure vérifiés qui tiennent
+# l'exigence ; 2 = configuration ou estimation qui la tiennent sans
+# vérification ; 1 = exigence non tenue ou non évaluée ; 0 = aucune preuve.
+NOTES = {
+    "operational-excellence": 2,  # rebuild-config : plan et runbook, aucune reconstruction rejouée
+    "security": 1,                # audit-retention : 30 jours de rétention pour 90 exigés
+    "reliability": 3,             # recovery-drill : test vérifié, RTO 42 et RPO 12 sous les objectifs
+    "performance": 3,             # load-test : mesure vérifiée, p95 184 ms à 65 % de CPU
+    "cost": 2,                    # cost-model : estimation sous le budget, aucune facture
+    "sovereignty": 1,             # sovereignty-review : juridiction et coût de sortie non évalués
 }
 
 
-def test_review_cites_evidence_and_uses_the_six_axes() -> None:
+@pytest.fixture(scope="module")
+def preuves() -> dict:
     exiger_workdir(WORKDIR, LAB_ID)
-    evidence = json.loads((WORKDIR / "review-evidence.json").read_text(encoding="utf-8"))
-    review_path = WORKDIR / "review.json"
-    assert review_path.is_file(), "Create review.json with the scored architecture review."
-    review = json.loads(review_path.read_text(encoding="utf-8"))
-
-    assert review["architecture"] == evidence["architecture"]
-    assert date.fromisoformat(review["review_date"]) >= date.fromisoformat(evidence["review_date"])
-    axes = review["axes"]
-    assert {item["id"] for item in axes} == set(EXPECTED_SCORES)
-    for item in axes:
-        axis_id = item["id"]
-        assert item["score"] == EXPECTED_SCORES[axis_id], (
-            f"Reassess {axis_id} from the evidence and the 0-3 rubric."
-        )
-        assert item["evidence_ids"], f"Cite evidence for {axis_id}."
-        assert set(item["evidence_ids"]) <= set(evidence["evidence"])
-        assert isinstance(item["finding"], str) and item["finding"].strip()
-
-        if item["score"] == 3:
-            assert any(
-                evidence["evidence"][evidence_id].get("verified") is True
-                and evidence["evidence"][evidence_id]["kind"] in ("test", "measurement")
-                for evidence_id in item["evidence_ids"]
-            ), f"A score of 3 for {axis_id} requires a dated test or measurement."
+    return json.loads((WORKDIR / "review-evidence.json").read_text(encoding="utf-8"))
 
 
-def test_review_prioritizes_three_risks_and_records_accountable_decisions() -> None:
+@pytest.fixture(scope="module")
+def revue() -> dict:
     exiger_workdir(WORKDIR, LAB_ID)
-    evidence = json.loads((WORKDIR / "review-evidence.json").read_text(encoding="utf-8"))
-    review_path = WORKDIR / "review.json"
-    assert review_path.is_file(), "Create review.json with the risk decisions."
-    review = json.loads(review_path.read_text(encoding="utf-8"))
-
-    ranked_risks = sorted(
-        evidence["risks"],
-        key=lambda risk: (-risk["severity"] * risk["likelihood"], risk["id"]),
-    )[:3]
-    decisions = review["top_risks"]
-    assert [item["id"] for item in decisions] == [risk["id"] for risk in ranked_risks]
-    for item in decisions:
-        risk = next(risk for risk in evidence["risks"] if risk["id"] == item["id"])
-        assert item["evidence_id"] == risk["evidence_id"]
-        assert item["decision"] in ("correct", "accept", "defer")
-        assert isinstance(item["reason"], str) and item["reason"].strip()
-        assert isinstance(item["action"], str) and item["action"].strip()
-        assert item["owner"].strip(), f"Name an accountable owner for {item['id']}."
-        date.fromisoformat(item["due_date"])
-        if item["decision"] == "accept":
-            assert item["accepted_by"].strip(), "Name who accepts each residual risk."
+    chemin = WORKDIR / "review.json"
+    assert chemin.is_file(), message(
+        en="review.json is missing: the review is not written down.",
+        fr="review.json est absent : la revue n'est pas écrite.",
+    )
+    try:
+        contenu = json.loads(chemin.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as erreur:
+        pytest.fail(message(en=f"review.json is not valid JSON: {erreur}",
+                            fr=f"review.json n'est pas un JSON valide : {erreur}"))
+    assert isinstance(contenu, dict), message(en="review.json must hold an object.",
+                                              fr="review.json doit contenir un objet.")
+    return contenu
 
 
-def test_report_and_evidence_limits_are_present() -> None:
-    exiger_workdir(WORKDIR, LAB_ID)
-    evidence = json.loads((WORKDIR / "review-evidence.json").read_text(encoding="utf-8"))
-    review_path = WORKDIR / "review.json"
-    report_path = WORKDIR / "review.md"
-    assert review_path.is_file(), "Create review.json before writing the report."
-    assert report_path.is_file(), "Write review.md for the architecture board."
-    review = json.loads(review_path.read_text(encoding="utf-8"))
-    report = report_path.read_text(encoding="utf-8")
+def _trois_plus_graves(preuves: dict) -> list[dict]:
+    return sorted(preuves["risks"], key=lambda r: (-r["severity"] * r["likelihood"], r["id"]))[:3]
 
-    assert set(evidence["evidence_limits"]) <= set(review["evidence_limits"])
-    assert review["evidence_limits"]
-    for axis in EXPECTED_SCORES:
-        assert axis in report, f"The report is missing the {axis} assessment."
-    for risk in review["top_risks"]:
-        assert risk["id"] in report, f"The report is missing risk {risk['id']}."
+
+def test_les_six_axes_sont_notes_selon_la_grille(preuves: dict, revue: dict) -> None:
+    assert revue.get("architecture") == preuves["architecture"], message(
+        en=f"The review is about {revue.get('architecture')!r}, not {preuves['architecture']!r}.",
+        fr=f"La revue porte sur {revue.get('architecture')!r}, pas sur {preuves['architecture']!r}.",
+    )
+    axes = {a.get("id"): a for a in revue.get("axes") or [] if isinstance(a, dict)}
+    manquants = sorted(set(AXES) - set(axes))
+    assert not manquants, message(en=f"These axes are not assessed: {manquants}.",
+                                  fr=f"Ces axes ne sont pas évalués : {manquants}.")
+    ecarts = {}
+    for axe in AXES:
+        a = axes[axe]
+        cites = set(a.get("evidence_ids") or [])
+        if not cites or not cites <= set(preuves["evidence"]):
+            ecarts[axe] = message(en="no valid evidence cited", fr="aucune preuve valide citée")
+        elif not (isinstance(a.get("finding"), str) and a["finding"].strip()):
+            ecarts[axe] = message(en="no finding", fr="aucun constat")
+        elif a.get("score") != NOTES[axe]:
+            ecarts[axe] = message(en=f"score {a.get('score')} does not follow the grid",
+                                  fr=f"la note {a.get('score')} ne suit pas la grille")
+    assert not ecarts, message(
+        en=f"These axes are not assessed as the grid and the evidence say: {ecarts}.",
+        fr=f"Ces axes ne sont pas évalués comme le disent la grille et les preuves : {ecarts}.",
+    )
+
+
+def test_les_trois_risques_les_plus_graves_sont_retenus(preuves: dict, revue: dict) -> None:
+    attendus = [r["id"] for r in _trois_plus_graves(preuves)]
+    retenus = [r.get("id") for r in revue.get("top_risks") or [] if isinstance(r, dict)]
+    assert retenus == attendus, message(
+        en=f"The risks retained ({retenus}) are not the three most serious, in order of severity times "
+        "likelihood.",
+        fr=f"Les risques retenus ({retenus}) ne sont pas les trois plus graves, dans l'ordre de la gravité "
+        "multipliée par la probabilité.",
+    )
+
+
+def test_chaque_risque_porte_une_decision_attribuee(preuves: dict, revue: dict) -> None:
+    risques = {r["id"]: r for r in preuves["risks"]}
+    attendus = [r["id"] for r in _trois_plus_graves(preuves)]
+    decisions = {r.get("id"): r for r in revue.get("top_risks") or [] if isinstance(r, dict)}
+    manques = {}
+    for rid in attendus:
+        d = decisions.get(rid) or {}
+        trous = []
+        if d.get("evidence_id") != risques[rid]["evidence_id"]:
+            trous.append("evidence_id")
+        if d.get("decision") not in ("correct", "accept", "defer"):
+            trous.append("decision")
+        trous += [c for c in ("reason", "action", "owner") if not (isinstance(d.get(c), str) and d[c].strip())]
+        try:
+            date.fromisoformat(str(d.get("due_date")))
+        except ValueError:
+            trous.append("due_date")
+        if d.get("decision") == "accept" and not (isinstance(d.get("accepted_by"), str) and d["accepted_by"].strip()):
+            trous.append("accepted_by")
+        if trous:
+            manques[rid] = trous
+    assert not manques, message(
+        en=f"These risks lack part of their decision: {manques}. A decision says what is done, why, by whom, "
+        "by when, and who accepts the residual risk.",
+        fr=f"Il manque une part de leur décision à ces risques : {manques}. Une décision dit ce qui est fait, "
+        "pourquoi, par qui, pour quand, et qui accepte le risque résiduel.",
+    )
+
+
+def test_les_limites_et_le_rapport_au_comite(preuves: dict, revue: dict) -> None:
+    oubliees = sorted(set(preuves["evidence_limits"]) - set(revue.get("evidence_limits") or []))
+    assert not oubliees, message(
+        en=f"These limits of the evidence are not declared: {oubliees}.",
+        fr=f"Ces limites des preuves ne sont pas déclarées : {oubliees}.",
+    )
+    rapport = WORKDIR / "review.md"
+    assert rapport.is_file(), message(en="review.md, the report for the architecture board, is missing.",
+                                      fr="review.md, le rapport au comité d'architecture, est absent.")
+    texte = rapport.read_text(encoding="utf-8")
+    absents = [a for a in AXES if a not in texte]
+    absents += [r["id"] for r in _trois_plus_graves(preuves) if r["id"] not in texte]
+    assert not absents, message(
+        en=f"The board report does not mention: {absents}.",
+        fr=f"Le rapport au comité ne mentionne pas : {absents}.",
+    )

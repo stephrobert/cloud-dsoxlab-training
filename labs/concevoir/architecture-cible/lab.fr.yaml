@@ -3,3 +3,10 @@ description: >-
   Comparer deux options d'architecture cloud complètes selon six axes,
   retenir celle qui respecte les contraintes impératives et consigner la
   décision ainsi que le risque accepté dans un ADR.
+criteria:
+  - id: comparaison
+    label: "La comparaison couvre les deux options avec les faits mesurés"
+  - id: adr-complet
+    label: "L'ADR dit les options, les critères, la justification, les conséquences et le risque accepté"
+  - id: decision
+    label: "La décision tient toutes les exigences dures"

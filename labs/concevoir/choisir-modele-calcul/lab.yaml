@@ -11,7 +11,7 @@ estimated_time: 35m
 skills:
   - cloud.compute.choose
 distros:
-  - any
+  - debian13
 doc_url: https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/
 runtime:
   type: shell
@@ -22,3 +22,28 @@ validation:
   functional: true
   security: false
   persistence_after_reboot: false
+criteria:
+  - id: modele
+    label: "The compute model fits the runtime constraints, with a rationale"
+    tests:
+      - test_le_modele_de_calcul_tient_les_contraintes_d_execution
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/
+  - id: architecture
+    label: "The architecture is one where the native dependency is tested"
+    tests:
+      - test_l_architecture_est_celle_ou_la_dependance_est_testee
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/
+  - id: demande
+    label: "The sizing demand comes from the weekly p95 and planned growth"
+    tests:
+      - test_la_demande_vient_du_p95_de_la_semaine_et_de_la_croissance
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/
+  - id: profil
+    label: "The profile is the cheapest one that holds the demand"
+    tests:
+      - test_le_profil_est_le_moins_cher_qui_tient_la_demande
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/

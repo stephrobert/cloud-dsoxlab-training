@@ -11,7 +11,7 @@ estimated_time: 35m
 skills:
   - cloud.data.choose
 distros:
-  - any
+  - debian13
 doc_url: https://www.stephane-robert.info/docs/cloud/donnees/
 runtime:
   type: shell
@@ -22,3 +22,34 @@ validation:
   functional: true
   security: false
   persistence_after_reboot: false
+criteria:
+  - id: service-retenu
+    label: "The retained service meets every constraint of the brief"
+    tests:
+      - test_le_service_retenu_tient_toutes_les_contraintes
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/donnees/
+  - id: caracteristiques
+    label: "The decision carries the characteristics of the service"
+    tests:
+      - test_la_decision_reprend_les_caracteristiques_du_service
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/donnees/
+  - id: acces-prive
+    label: "Access is private, without Internet exposure"
+    tests:
+      - test_l_acces_est_prive
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/donnees/
+  - id: restauration
+    label: "Verifying a restore is planned, by its owner"
+    tests:
+      - test_la_verification_d_une_restauration_est_prevue
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/donnees/
+  - id: comparaison
+    label: "Every option is compared and every rejection argued"
+    tests:
+      - test_chaque_option_est_comparee_et_chaque_rejet_justifie
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/donnees/

@@ -12,18 +12,36 @@
   "roles": [
     {
       "name": "developers",
-      "duties": ["read_nonproduction", "deploy_nonproduction"]
+      "duties": [
+        "read_nonproduction",
+        "deploy_nonproduction"
+      ]
     },
     {
       "name": "production_operators",
-      "duties": ["approve_production_change", "deploy_production"]
+      "duties": [
+        "approve_production_change",
+        "deploy_production"
+      ]
     },
     {
       "name": "security_auditors",
-      "duties": ["read_audit_events", "review_access"]
+      "duties": [
+        "read_audit_events",
+        "review_access"
+      ]
     }
   ],
-  "lifecycle_events": ["joiner", "mover", "leaver", "recertification"],
+  "lifecycle_events": [
+    "joiner",
+    "mover",
+    "leaver",
+    "recertification"
+  ],
+  "lifecycle_requirements": {
+    "leaver_maximum_hours": 4,
+    "recertification_maximum_interval_days": 90
+  },
   "audit_requirements": {
     "retention_days": 365,
     "immutable_destination": true,
@@ -33,6 +51,10 @@
       "production_access",
       "policy_denial"
     ],
-    "alert_on": ["break_glass_use", "privilege_escalation", "audit_delivery_failure"]
+    "alert_on": [
+      "break_glass_use",
+      "privilege_escalation",
+      "audit_delivery_failure"
+    ]
   }
 }

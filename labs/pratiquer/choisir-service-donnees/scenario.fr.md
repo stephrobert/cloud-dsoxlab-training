@@ -14,3 +14,5 @@ plan de vérification d'une sauvegarde restaurée.
 Le catalogue fourni est une donnée synthétique d'exercice. Ses disponibilités
 et ses tarifs ne décrivent aucun fournisseur réel. Le challenge évalue une
 décision argumentée, pas un déploiement ni une reprise réellement éprouvée.
+
+Compétence visée : `cloud.data.choose`

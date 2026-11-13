@@ -14,3 +14,5 @@ The included service catalogue is synthetic exercise data. Its availability
 and prices do not describe a real provider. This challenge asks for an
 evidence-based design decision, not deployment or a claim that recovery has
 been exercised.
+
+Skill targeted: `cloud.data.choose`

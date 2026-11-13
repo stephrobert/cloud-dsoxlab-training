@@ -1,28 +1,26 @@
 # Challenge: choose and size a compute model
 
 Read `workload.json` and create `compute-decision.json` in the working
-directory. Record the model, processor architecture, selected machine profile,
-the p95 demand after planned growth, and a concise rationale.
+directory (`challenge/work/`). Record the model, processor architecture, selected machine profile,
+the demand used for sizing, and a concise rationale.
 
-Use this shape:
+Use this shape (the values in angle brackets are yours to find):
 
 ```json
 {
-  "compute_model": "virtual_machine",
-  "architecture": "x86_64",
-  "machine_profile": "m7i.xlarge",
+  "compute_model": "<virtual_machine | managed_container | function>",
+  "architecture": "<processor architecture>",
+  "machine_profile": "<an id from machine_catalogue>",
   "sizing_demand": {
-    "cpu_vcpus": 3.84,
-    "memory_gib": 12.48
+    "cpu_vcpus": <number>,
+    "memory_gib": <number>
   },
-  "rationale": "Explain the runtime, compatibility and measured-sizing decision."
+  "rationale": "<why this model, this architecture and this size>"
 }
 ```
 
-Use the week-long p95 measurements and the stated growth factor. The brief
-maximum lasted only seconds; do not size the workload as if that were sustained
-demand. Select the least-cost profile that meets both sizing demands and is
-compatible with the tested processor architecture. Relative cost units are
-exercise data, not provider prices.
+The brief holds a full week of measurements, including a short maximum that
+lasted only seconds. Relative cost units are exercise data, not provider
+prices.
 
 Run `dsoxlab check choisir-modele-calcul` to see the result.

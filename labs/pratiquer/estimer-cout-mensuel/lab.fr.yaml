@@ -2,3 +2,16 @@ title: "Estimer le coût mensuel d'une architecture cloud"
 description: >-
   Chiffrer une architecture à partir d'un dossier et d'une grille tarifaire
   synthétique et datée, en comptant calcul, stockage, requêtes et egress.
+criteria:
+  - id: calcul
+    label: "Le calcul est chiffré par classe"
+  - id: stockage
+    label: "Le stockage bloc, objet et snapshots est chiffré"
+  - id: egress
+    label: "Le trafic sortant est chiffré après la franchise"
+  - id: requetes-api
+    label: "Les requêtes d'API sont chiffrées"
+  - id: total
+    label: "Le total mensuel est la somme, dans la devise et à la date de la grille"
+  - id: budget
+    label: "L'annualisation et la marge budgétaire sont justes"

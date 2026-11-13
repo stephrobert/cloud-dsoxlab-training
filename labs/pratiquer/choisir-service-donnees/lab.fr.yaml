@@ -2,3 +2,14 @@ title: "Choisir un service de données managé"
 description: >-
   Choisir un service de données pour une charge transactionnelle, justifier le
   managé ou l'auto-géré et préciser accès privé, reprise et bascule.
+criteria:
+  - id: service-retenu
+    label: "Le service retenu tient toutes les contraintes du brief"
+  - id: caracteristiques
+    label: "La décision reprend les caractéristiques du service"
+  - id: acces-prive
+    label: "L'accès est privé, sans exposition à Internet"
+  - id: restauration
+    label: "La vérification d'une restauration est prévue, par son responsable"
+  - id: comparaison
+    label: "Chaque option est comparée et chaque rejet justifié"

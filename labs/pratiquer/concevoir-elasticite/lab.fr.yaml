@@ -2,3 +2,16 @@ title: "Concevoir un workload élastique"
 description: >-
   Décrire les prérequis sans état et opérationnels du passage à l'échelle
   horizontale, puis vérifier la capacité après la perte d'une instance.
+criteria:
+  - id: etat-externalise
+    label: "L'état qui doit survivre au remplacement quitte l'instance"
+  - id: reessais-surs
+    label: "Un réessai ne crée pas de seconde commande"
+  - id: controles-de-sante
+    label: "Vivacité et disponibilité sont deux contrôles distincts"
+  - id: perte-d-une-instance
+    label: "Le pic soutenu passe encore après la perte d'une instance"
+  - id: politiques-de-scaling
+    label: "Les politiques de montée et de descente sont sûres"
+  - id: verification
+    label: "Le plan dit comment le vérifier"

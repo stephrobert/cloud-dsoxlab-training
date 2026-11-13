@@ -1,22 +1,26 @@
 # Défi : choisir le modèle cloud
 
-Lisez `brief.json` et créez `decision.json` dans le répertoire de travail.
+Lisez `brief.json` et créez `decision.json` dans le répertoire de travail (`challenge/work/`).
 Indiquez le modèle de service, le modèle de déploiement et les responsabilités
 de sécurité du fournisseur et de l'équipe qui découlent du brief.
 
-Utilisez cette structure JSON :
+Utilisez cette forme JSON (les valeurs entre chevrons sont à choisir) :
 
 ```json
 {
-  "service_model": "paas",
-  "deployment_model": "public",
+  "service_model": "<iaas | paas | saas>",
+  "deployment_model": "<public | private | hybrid>",
   "responsibilities": {
-    "provider": ["managed_platform"],
-    "team": ["application", "data", "identities", "configuration"]
+    "provider": ["<responsabilité>", "…"],
+    "team": ["<responsabilité>", "…"]
   },
-  "rationale": "Une explication concise, liée au brief."
+  "rationale": "<une explication courte, rattachée au brief>"
 }
 ```
+
+Les responsabilités se nomment dans cette liste : `hardware`, `network`,
+`operating_system`, `managed_platform`, `application`, `data`, `identities`,
+`configuration`.
 
 L'ordre des responsabilités n'a pas d'importance. La note porte sur le contenu
 obtenu, pas sur les commandes utilisées pour créer le fichier.

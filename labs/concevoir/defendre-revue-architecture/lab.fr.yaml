@@ -2,3 +2,12 @@ title: "Défendre une revue d'architecture cloud avec des preuves"
 description: >-
   Évaluer l'architecture d'un portail selon six axes, étayer chaque note par
   une preuve, classer les risques principaux et consigner décisions et actions.
+criteria:
+  - id: axes-notes
+    label: "Les six axes sont notés selon la grille, chacun avec une preuve citée"
+  - id: risques-prioritaires
+    label: "Les trois risques les plus graves sont retenus, dans l'ordre"
+  - id: decisions-attribuees
+    label: "Chaque risque porte une décision attribuée"
+  - id: limites-et-rapport
+    label: "Les limites des preuves sont déclarées et le rapport au comité est écrit"

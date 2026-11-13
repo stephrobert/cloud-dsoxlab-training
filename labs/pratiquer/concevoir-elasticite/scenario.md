@@ -15,3 +15,5 @@ calculation, and safe scale-out and scale-in actions.
 
 The fixture is measured exercise data, not a provider guarantee. No service is
 deployed and no actual failure or autoscaling event is claimed.
+
+Skill targeted: `cloud.elasticity.design`
