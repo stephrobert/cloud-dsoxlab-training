@@ -9,6 +9,26 @@ Ce dépôt est un **catalogue de contenu**, pas une bibliothèque. Une version s
 publie par un tag, qui produit une archive signée (voir
 [RELEASING.fr.md](./RELEASING.fr.md)) ; l'unité qui compte reste le lab.
 
+## [Unreleased]
+
+### Ajouté
+
+- Neuf labs d'architecture, que citaient déjà des pages Cloud publiées
+  (#23) : concevoir-architecture-cible, choisir-modele-calcul,
+  defendre-revue-architecture, concevoir-modele-acces,
+  concevoir-recommander-evolutions-architecture, pratiquer-choisir-modele-cloud,
+  choisir-service-donnees, concevoir-elasticite, estimer-cout-mensuel. Un état
+  par test, messages bilingues, critères, triches refusées ; verdicts en #24.
+- Chaque verdict porte sa date (`date` dans `validation-labs.json`), et la
+  colonne de validation du catalogue l'affiche.
+
+### Modifié
+
+- Le catalogue des README suit le format du catalogue Kubernetes : numéro, lien
+  vers le lab, compétence, durée, validation et guide, avec la description et
+  le nombre de labs de chaque section ; chaque README de lab s'ouvre sur une
+  vignette (cible, durée, page associée, `dsoxlab run` et `check`) (#25).
+
 ## [0.2.2] - 2026-10-23
 
 ### Ajouté

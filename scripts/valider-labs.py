@@ -102,6 +102,9 @@ class Verdict:
     id: str
     chemin: str
     verdict: str = "INCONNU"
+    # Le jour de la mesure : `genere_le` ne date que la dernière campagne, et le
+    # catalogue doit dire QUAND chaque lab a été éprouvé.
+    date: str = ""
     score_avant: int | None = None
     score_apres: int | None = None
     tests: str | None = None
@@ -301,7 +304,7 @@ def _jouer_solution_vm(source: Path, runtime: dict) -> str | None:
 
 def valider(identifiant: str, lab: Path) -> Verdict:
     """Le cycle complet sur un lab."""
-    v = Verdict(id=identifiant, chemin=str(lab.relative_to(LABS)))
+    v = Verdict(id=identifiant, chemin=str(lab.relative_to(LABS)), date=time.strftime("%Y-%m-%d"))
     debut = time.monotonic()
     avant = _ressources()
 

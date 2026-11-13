@@ -9,6 +9,26 @@ This repository is a **content catalog**, not a library. A version is published
 by a tag, which produces a signed archive (see [RELEASING.md](./RELEASING.md));
 the unit that matters remains the lab.
 
+## [Unreleased]
+
+### Added
+
+- Nine architecture labs, already cited by published Cloud pages (#23):
+  concevoir-architecture-cible, choisir-modele-calcul,
+  defendre-revue-architecture, concevoir-modele-acces,
+  concevoir-recommander-evolutions-architecture, pratiquer-choisir-modele-cloud,
+  choisir-service-donnees, concevoir-elasticite, estimer-cout-mensuel. One state
+  per test, bilingual messages, criteria, refused cheats; verdicts in #24.
+- Each verdict carries its date (`date` in `validation-labs.json`), and the
+  catalogue's validation column shows it.
+
+### Changed
+
+- The README catalogue follows the format of the Kubernetes catalogue: number,
+  link to the lab, skill, duration, validation and guide, with each section's
+  description and lab count; each lab README opens on a card (target,
+  duration, companion lesson, `dsoxlab run` and `check`) (#25).
+
 ## [0.2.2] - 2026-10-23
 
 ### Added
