@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
+id: defendre-revue-architecture
+title: "Defend a cloud architecture review with evidence"
+description: >-
+  Review a customer-portal architecture against six explicit axes, support
+  every score with evidence, rank the main risks, and record decisions and
+  accountable actions.
+level: a
+difficulty: intermediate
+lab_type: lab
+estimated_time: 45m
+skills:
+  - cloud.architecture.review
+distros:
+  - debian13
+doc_url: https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - review-evidence.json
+validation:
+  functional: true
+  security: false
+  persistence_after_reboot: false
+criteria:
+  - id: axes-notes
+    label: "The six axes are scored with the grid, each with cited evidence"
+    tests:
+      - test_les_six_axes_sont_notes_selon_la_grille
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/
+  - id: risques-prioritaires
+    label: "The three most serious risks are retained, in order"
+    tests:
+      - test_les_trois_risques_les_plus_graves_sont_retenus
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/
+  - id: decisions-attribuees
+    label: "Each risk carries an accountable decision"
+    tests:
+      - test_chaque_risque_porte_une_decision_attribuee
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/
+  - id: limites-et-rapport
+    label: "The evidence limits are declared and the board report is written"
+    tests:
+      - test_les_limites_et_le_rapport_au_comite
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/

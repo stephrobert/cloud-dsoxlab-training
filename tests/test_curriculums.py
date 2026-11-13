@@ -31,6 +31,33 @@ LABS = REPO / "labs"
 SOURCE = REPO / "curriculums.yml"
 
 FICHIERS_LUS = ("scenario.fr.md", "scenario.md")
+COMPETENCES_DE_L_ISSUE = {
+    "cloud.access.design",
+    "cloud.architecture.decide",
+    "cloud.architecture.recommend",
+    "cloud.architecture.review",
+    "cloud.compute.choose",
+    "cloud.cost.estimate",
+    "cloud.data.choose",
+    "cloud.elasticity.design",
+    "cloud.exposure.design",
+    "cloud.finops.optimize",
+    "cloud.governance.design",
+    "cloud.iam.design",
+    "cloud.model.choose",
+    "cloud.operations.run",
+    "cloud.resilience.design",
+    "cloud.sovereignty.assess",
+    "cloud.storage.choose",
+    "cloud.workload.identity",
+    "cloud.account.access",
+    "cloud.compute.provision",
+    "cloud.fleet.configure",
+    "cloud.image.build",
+    "cloud.network.isolate",
+    "cloud.storage.operate",
+    "cloud.terraform.provision",
+}
 CITATION = re.compile(
     r"(?:Compétences? visées?|Skills? targeted)\s*:\s*(?P<suite>[^\n]+)"
 )
@@ -61,10 +88,11 @@ def test_la_grille_porte_sa_provenance() -> None:
     assert g["derniere_verification"], "La grille ne dit pas quand elle a été confrontée."
 
 
-def test_la_grille_porte_les_dix_huit_candidates() -> None:
-    """Le contrat en arrête 18 (§3.2), chacune titrée dans les deux langues."""
+def test_la_grille_porte_les_competences_de_l_issue() -> None:
+    """L'issue demande une pratique pour chacune de ses 25 compétences."""
     competences = grille()["competences"]
-    assert len(competences) == 18, f"La grille porte {len(competences)} compétences, 18 attendues."
+    absentes = sorted(COMPETENCES_DE_L_ISSUE - set(competences))
+    assert not absentes, f"Compétences de l'issue absentes de la grille : {absentes}."
     sans_titre = [c for c, t in competences.items() if not (t.get("fr") and t.get("en"))]
     assert not sans_titre, f"Compétences sans titre FR et EN : {sans_titre}."
 

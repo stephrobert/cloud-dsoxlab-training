@@ -1,0 +1,51 @@
+id: concevoir-modele-acces
+title: "Design a cloud identity and access model"
+level: a
+description: >-
+  Design provider-neutral human identity, access lifecycle, separation of
+  duties, emergency access and audit-log requirements for a cloud environment.
+skills:
+  - cloud.access.design
+distros:
+  - debian13
+doc_url: https://www.stephane-robert.info/docs/cloud/securite/iam/
+lab_type: lab
+estimated_time: 40m
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - access-context.json
+validation:
+  functional: true
+criteria:
+  - id: identite-federee
+    label: "Human identities are federated from the directory, with a bounded session"
+    tests:
+      - test_les_identites_humaines_sont_federees
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/securite/iam/
+  - id: comptes-urgence
+    label: "Emergency accounts are named, under MFA, out of routine use and alerting"
+    tests:
+      - test_les_comptes_d_urgence_sont_controles
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/securite/iam/
+  - id: separation
+    label: "Roles hold their duties and separate approval from deployment"
+    tests:
+      - test_les_roles_separent_approbation_et_deploiement
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/securite/iam/
+  - id: cycle-de-vie
+    label: "Each lifecycle event has an owner and a deadline within the requirements"
+    tests:
+      - test_le_cycle_de_vie_a_des_responsables_et_des_delais
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/securite/iam/
+  - id: audit
+    label: "The audit meets the retention, immutability and alerting requirements"
+    tests:
+      - test_l_audit_tient_les_exigences
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/securite/iam/

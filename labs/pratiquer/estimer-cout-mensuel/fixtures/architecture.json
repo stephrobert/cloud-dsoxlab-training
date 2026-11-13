@@ -1,0 +1,48 @@
+{
+  "price_grid": {
+    "as_of": "2026-10-24",
+    "currency": "EUR",
+    "synthetic_exercise_prices": true,
+    "billing_period_hours": 730,
+    "monthly_budget_eur": 400.0,
+    "rates": {
+      "compute_eur_per_instance_hour": {
+        "web": 0.08,
+        "worker": 0.07,
+        "database": 0.12
+      },
+      "block_storage_eur_per_gib_month": 0.1,
+      "object_storage_eur_per_gib_month": 0.02,
+      "snapshot_storage_eur_per_gib_month": 0.04,
+      "egress": {
+        "included_gib_per_month": 100,
+        "eur_per_billable_gib": 0.05
+      },
+      "api_requests_eur_per_million": 0.2
+    }
+  },
+  "monthly_usage": {
+    "compute": [
+      {
+        "id": "web",
+        "instances": 2,
+        "hours_per_instance": 730
+      },
+      {
+        "id": "worker",
+        "instances": 1,
+        "hours_per_instance": 120
+      },
+      {
+        "id": "database",
+        "instances": 1,
+        "hours_per_instance": 730
+      }
+    ],
+    "block_storage_gib_month": 280,
+    "object_storage_gib_month": 500,
+    "snapshot_storage_gib_month": 80,
+    "outbound_data_gib": 2400,
+    "api_requests_millions": 12
+  }
+}

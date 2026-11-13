@@ -1,0 +1,52 @@
+{
+  "team": {
+    "capacity_person_days_per_sprint": 2
+  },
+  "scales": {
+    "severity": "1 (low) to 5 (critical)",
+    "likelihood": "1 (rare) to 5 (near certain)",
+    "risk_score": "severity multiplied by likelihood",
+    "quick_win_max_effort_days": 2
+  },
+  "findings": [
+    {
+      "id": "database_private",
+      "finding": "The production database accepts connections through a public endpoint.",
+      "severity": 5,
+      "likelihood": 4,
+      "effort_days": 1.5,
+      "dependencies": [],
+      "reversible": false,
+      "monthly_cost_eur": 0,
+      "expected_effect": "Remove direct public reachability to the production database.",
+      "verification_criterion": "An external connection attempt to the database endpoint is refused.",
+      "residual_risk": "A compromised private workload may still reach the database."
+    },
+    {
+      "id": "audit_retention",
+      "finding": "Audit events are retained for only 30 days.",
+      "severity": 4,
+      "likelihood": 3,
+      "effort_days": 0.5,
+      "dependencies": [],
+      "reversible": true,
+      "monthly_cost_eur": 40,
+      "expected_effect": "Preserve security events for the required investigation period.",
+      "verification_criterion": "A test event remains searchable after the configured retention interval.",
+      "residual_risk": "A privileged administrator could alter the audit destination."
+    },
+    {
+      "id": "regional_recovery",
+      "finding": "The service has no rehearsed recovery path for a regional outage.",
+      "severity": 5,
+      "likelihood": 2,
+      "effort_days": 2,
+      "dependencies": ["audit_retention"],
+      "reversible": false,
+      "monthly_cost_eur": 180,
+      "expected_effect": "Restore the service in a second region within the agreed recovery objective.",
+      "verification_criterion": "A timed recovery exercise meets the documented RTO and RPO.",
+      "residual_risk": "A regional control-plane outage may delay manual promotion."
+    }
+  ]
+}

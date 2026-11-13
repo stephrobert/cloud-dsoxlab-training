@@ -1,0 +1,51 @@
+id: concevoir-recommander-evolutions-architecture
+title: "Turn architecture findings into a prioritised action plan"
+level: a
+description: >-
+  Write verifiable architecture recommendations, rank them by risk and effort,
+  and schedule the work within the team's capacity and dependencies.
+skills:
+  - cloud.architecture.recommend
+distros:
+  - debian13
+doc_url: https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/
+lab_type: lab
+estimated_time: 40m
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - review.json
+validation:
+  functional: true
+criteria:
+  - id: recommandations
+    label: "One complete recommendation per finding"
+    tests:
+      - test_une_recommandation_complete_par_constat
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/
+  - id: priorite
+    label: "The priority order follows the risk score"
+    tests:
+      - test_l_ordre_de_priorite_suit_le_risque
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/
+  - id: classement
+    label: "Each recommendation is classified quick win or structural by the rule"
+    tests:
+      - test_chaque_recommandation_est_bien_classee
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/
+  - id: risque-accepte
+    label: "Each residual risk has an owner who accepts it"
+    tests:
+      - test_chaque_risque_residuel_est_accepte
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/
+  - id: planning
+    label: "The sprint plan holds capacity and dependencies"
+    tests:
+      - test_le_planning_tient_la_capacite_et_les_dependances
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/
