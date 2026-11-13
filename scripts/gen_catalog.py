@@ -37,7 +37,6 @@ HEAD = {
     "fr": ("#", "Lab", "Titre", "Compétence", "Durée", "Validé", "Guide compagnon"),
 }
 VALIDATION = ROOT / "validation-labs.json"
-VALIDE = {"en": "validated", "fr": "validé"}
 
 
 def _titres_sections_fr() -> dict[str, str]:
@@ -129,7 +128,10 @@ def _table(lang: str) -> str:
             ident = lab.get("id", "")
             titre = lab["_title_fr"] if lang == "fr" else lab.get("title", "")
             competence = ", ".join(s for s in lab.get("skills") or [] if str(s).startswith("cloud.")) or "-"
-            valide = VALIDE[lang] if (verdicts.get(ident) or {}).get("verdict") == "VALIDE" else "-"
+            mesure = verdicts.get(ident) or {}
+            # La date du dernier verdict VALIDE ; un verdict sans date (antérieur
+            # à ce champ) ou non valide n'affiche rien.
+            valide = (mesure.get("date") or "-") if mesure.get("verdict") == "VALIDE" else "-"
             lignes.append(f"| {rang} | [`{ident}`](labs/{lab['_rel']}/) | {titre} | {competence} | "
                           f"{lab.get('estimated_time', '') or '-'} | {valide} | {_guide(lab, lang)} |")
         lignes.append("")

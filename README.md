@@ -181,11 +181,11 @@ Module 2b: official CLIs plugged into feint, a budget challenge, and design exer
 
 | # | Lab | Title | Skill | Duration | Validated | Companion guide |
 |---|---|---|---|---|---|---|
-| 1 | [`pratiquer-challenge-budget-contraint`](labs/pratiquer/challenge-budget-contraint/) | Challenge 1: an architecture on a tight budget | cloud.cost.estimate | 45m | validated | [guide](https://www.stephane-robert.info/en/docs/cloud/outils/feint/limites/) |
-| 2 | [`estimer-cout-mensuel`](labs/pratiquer/estimer-cout-mensuel/) | Estimate a cloud architecture's monthly cost | cloud.cost.estimate | 30m | validated | [guide (FR)](https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/) |
-| 3 | [`choisir-service-donnees`](labs/pratiquer/choisir-service-donnees/) | Choose a managed data service | cloud.data.choose | 35m | validated | [guide (FR)](https://www.stephane-robert.info/docs/cloud/donnees/) |
-| 4 | [`concevoir-elasticite`](labs/pratiquer/concevoir-elasticite/) | Design an elastic application tier | cloud.elasticity.design | 35m | validated | [guide (FR)](https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/) |
-| 5 | [`pratiquer-choisir-modele-cloud`](labs/pratiquer/choisir-modele-cloud/) | Choose a cloud service and deployment model | cloud.model.choose | 30m | validated | [guide (FR)](https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/) |
+| 1 | [`pratiquer-challenge-budget-contraint`](labs/pratiquer/challenge-budget-contraint/) | Challenge 1: an architecture on a tight budget | cloud.cost.estimate | 45m | - | [guide](https://www.stephane-robert.info/en/docs/cloud/outils/feint/limites/) |
+| 2 | [`estimer-cout-mensuel`](labs/pratiquer/estimer-cout-mensuel/) | Estimate a cloud architecture's monthly cost | cloud.cost.estimate | 30m | - | [guide (FR)](https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/) |
+| 3 | [`choisir-service-donnees`](labs/pratiquer/choisir-service-donnees/) | Choose a managed data service | cloud.data.choose | 35m | - | [guide (FR)](https://www.stephane-robert.info/docs/cloud/donnees/) |
+| 4 | [`concevoir-elasticite`](labs/pratiquer/concevoir-elasticite/) | Design an elastic application tier | cloud.elasticity.design | 35m | - | [guide (FR)](https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/) |
+| 5 | [`pratiquer-choisir-modele-cloud`](labs/pratiquer/choisir-modele-cloud/) | Choose a cloud service and deployment model | cloud.model.choose | 30m | - | [guide (FR)](https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/) |
 
 ### Boot a machine
 
@@ -195,7 +195,7 @@ Module 2c: a first virtual machine booted by cloud-init, with no public address,
 
 | # | Lab | Title | Skill | Duration | Validated | Companion guide |
 |---|---|---|---|---|---|---|
-| 1 | [`amorcer-premiere-vm-propre`](labs/amorcer/premiere-vm-propre/) | A first clean VM: booted by cloud-init, with no public address | cloud.environment.rebuild | 30m | validated | [guide (FR)](https://www.stephane-robert.info/docs/cloud/cloud-init/) |
+| 1 | [`amorcer-premiere-vm-propre`](labs/amorcer/premiere-vm-propre/) | A first clean VM: booted by cloud-init, with no public address | cloud.environment.rebuild | 30m | - | [guide (FR)](https://www.stephane-robert.info/docs/cloud/cloud-init/) |
 
 ### Cloud networking
 
@@ -205,8 +205,8 @@ Module 3: a regional private network attached in two zones, an egress gateway an
 
 | # | Lab | Title | Skill | Duration | Validated | Companion guide |
 |---|---|---|---|---|---|---|
-| 1 | [`reseau-prive-scaleway`](labs/reseau/prive-scaleway/) | Private network, and first instances with no public address: scw on Feint | cloud.network.design | 40m | validated | [guide (FR)](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
-| 2 | [`reseau-prive-outscale`](labs/reseau/prive-outscale/) | Private network, and first instances with no public address: octl on Feint | cloud.network.design | 45m | validated | [guide (FR)](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+| 1 | [`reseau-prive-scaleway`](labs/reseau/prive-scaleway/) | Private network, and first instances with no public address: scw on Feint | cloud.network.design | 40m | - | [guide (FR)](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+| 2 | [`reseau-prive-outscale`](labs/reseau/prive-outscale/) | Private network, and first instances with no public address: octl on Feint | cloud.network.design | 45m | - | [guide (FR)](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
 
 ### Cloud architecture decisions
 
@@ -216,11 +216,11 @@ Choose and size compute, design identity and access, decide on architecture opti
 
 | # | Lab | Title | Skill | Duration | Validated | Companion guide |
 |---|---|---|---|---|---|---|
-| 1 | [`concevoir-architecture-cible`](labs/concevoir/architecture-cible/) | Decide on a target cloud architecture | cloud.architecture.decide | 40m | validated | [guide (FR)](https://www.stephane-robert.info/docs/cloud/capstone/decider-une-architecture-cible/) |
-| 2 | [`concevoir-modele-acces`](labs/concevoir/modele-acces/) | Design a cloud identity and access model | cloud.access.design | 40m | validated | [guide (FR)](https://www.stephane-robert.info/docs/cloud/securite/iam/) |
-| 3 | [`concevoir-recommander-evolutions-architecture`](labs/concevoir/recommander-evolutions-architecture/) | Turn architecture findings into a prioritised action plan | cloud.architecture.recommend | 40m | validated | [guide (FR)](https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/) |
-| 4 | [`defendre-revue-architecture`](labs/concevoir/defendre-revue-architecture/) | Defend a cloud architecture review with evidence | cloud.architecture.review | 45m | validated | [guide (FR)](https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/) |
-| 5 | [`choisir-modele-calcul`](labs/concevoir/choisir-modele-calcul/) | Choose a compute model and size it from measurements | cloud.compute.choose | 35m | validated | [guide (FR)](https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/) |
+| 1 | [`concevoir-architecture-cible`](labs/concevoir/architecture-cible/) | Decide on a target cloud architecture | cloud.architecture.decide | 40m | - | [guide (FR)](https://www.stephane-robert.info/docs/cloud/capstone/decider-une-architecture-cible/) |
+| 2 | [`concevoir-modele-acces`](labs/concevoir/modele-acces/) | Design a cloud identity and access model | cloud.access.design | 40m | - | [guide (FR)](https://www.stephane-robert.info/docs/cloud/securite/iam/) |
+| 3 | [`concevoir-recommander-evolutions-architecture`](labs/concevoir/recommander-evolutions-architecture/) | Turn architecture findings into a prioritised action plan | cloud.architecture.recommend | 40m | - | [guide (FR)](https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/) |
+| 4 | [`defendre-revue-architecture`](labs/concevoir/defendre-revue-architecture/) | Defend a cloud architecture review with evidence | cloud.architecture.review | 45m | - | [guide (FR)](https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/) |
+| 5 | [`choisir-modele-calcul`](labs/concevoir/choisir-modele-calcul/) | Choose a compute model and size it from measurements | cloud.compute.choose | 35m | - | [guide (FR)](https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/) |
 
 _13 labs, table generated by `scripts/gen_catalog.py`._
 <!-- LABS:END -->
