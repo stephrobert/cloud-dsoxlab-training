@@ -9,6 +9,17 @@ CLI, without an account, against the **feint** emulator. It is the Outscale
 variant of the `reseau-prive-scaleway` lab: the same need, another provider
 model.
 
+| | |
+|---|---|
+| Target | your machine, with the **feint** emulator started by `dsoxlab run` |
+| Duration | about 45 minutes |
+| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+
+```bash
+dsoxlab run   reseau-prive-outscale
+dsoxlab check reseau-prive-outscale
+```
+
 Lesson of the site that carries this lab (in French):
 <https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
 

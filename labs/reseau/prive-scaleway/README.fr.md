@@ -8,6 +8,17 @@ elle aussi, reliée au réseau par un **gateway-network** qui pousse la **route
 par défaut** et fait du NAT. Ce lab vous fait construire cette architecture
 avec le CLI officiel `scw`, sans compte, contre l'émulateur **feint**.
 
+| | |
+|---|---|
+| Cible | votre poste, avec l'émulateur **feint** démarré par `dsoxlab run` |
+| Durée | environ 40 minutes |
+| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+
+```bash
+dsoxlab run   reseau-prive-scaleway
+dsoxlab check reseau-prive-scaleway
+```
+
 Leçon du site qui porte ce lab :
 <https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
 

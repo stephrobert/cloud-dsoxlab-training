@@ -3,6 +3,17 @@
 Évaluez le portail client à partir de son architecture et des preuves de
 mesure fournies.
 
+| | |
+|---|---|
+| Cible | votre poste, répertoire `challenge/work/`, sans compte cloud |
+| Durée | environ 45 minutes |
+| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/) |
+
+```bash
+dsoxlab run   defendre-revue-architecture
+dsoxlab check defendre-revue-architecture
+```
+
 ## Ce que vous saurez faire
 
 - Noter six axes d'architecture de 0 à 3 et citer une preuve pour chaque note.

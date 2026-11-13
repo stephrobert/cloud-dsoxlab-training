@@ -7,6 +7,17 @@ Internet. Ce lab vous fait poser ce geste en local, sans compte cloud : une
 machine virtuelle **Incus** joue le rôle de l'instance, un réseau Incus privé
 celui du réseau du fournisseur.
 
+| | |
+|---|---|
+| Cible | votre poste, avec une machine virtuelle **Incus** |
+| Durée | environ 30 minutes |
+| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/cloud-init/) |
+
+```bash
+dsoxlab run   amorcer-premiere-vm-propre
+dsoxlab check amorcer-premiere-vm-propre
+```
+
 Leçon du site qui porte ce lab :
 <https://www.stephane-robert.info/docs/cloud/cloud-init/>.
 

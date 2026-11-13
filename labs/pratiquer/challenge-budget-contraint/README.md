@@ -6,6 +6,17 @@ build: you have to **read** it, through the official CLI plugged into the
 **feint** emulator, then **cost** it on a dated price grid. It is a challenge,
 not a guided lab: no command is given.
 
+| | |
+|---|---|
+| Target | your machine, with the **feint** emulator started by `dsoxlab run` |
+| Duration | about 45 minutes |
+| Companion lesson | [the lesson on the site](https://www.stephane-robert.info/en/docs/cloud/outils/feint/limites/) |
+
+```bash
+dsoxlab run   pratiquer-challenge-budget-contraint
+dsoxlab check pratiquer-challenge-budget-contraint
+```
+
 Lesson of the site that carries this challenge:
 <https://www.stephane-robert.info/en/docs/cloud/outils/feint/limites/>.
 

@@ -5,6 +5,17 @@ sessions et les fichiers téléversés, rendez les requêtes sûres à réessaye
 précisez les contrôles de santé et de disponibilité avant de faire varier le
 nombre de réplicas.
 
+| | |
+|---|---|
+| Cible | votre poste, répertoire `challenge/work/`, sans compte cloud |
+| Durée | environ 35 minutes |
+| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/) |
+
+```bash
+dsoxlab run   concevoir-elasticite
+dsoxlab check concevoir-elasticite
+```
+
 Calculez le nombre minimal de réplicas qui sert le pic soutenu même après la
 perte d'une instance. Décrivez le scale-out et le scale-in avec des seuils
 distincts, des fenêtres d'observation, un cooldown et le drainage des

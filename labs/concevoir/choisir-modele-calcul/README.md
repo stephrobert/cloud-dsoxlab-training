@@ -3,6 +3,17 @@
 Use a measured workload profile to select a compute model and a compatible
 machine size.
 
+| | |
+|---|---|
+| Target | your machine, `challenge/work/` directory, no cloud account |
+| Duration | about 35 minutes |
+| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/) |
+
+```bash
+dsoxlab run   choisir-modele-calcul
+dsoxlab check choisir-modele-calcul
+```
+
 ## What you will be able to do
 
 - Choose between a virtual machine, managed containers and functions from the
