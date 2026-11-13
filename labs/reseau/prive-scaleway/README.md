@@ -8,6 +8,17 @@ zonal as well, linked to the network by a **gateway-network** that pushes the
 **default route** and does NAT. This lab has you build that architecture with
 the official `scw` CLI, without an account, against the **feint** emulator.
 
+| | |
+|---|---|
+| Target | your machine, with the **feint** emulator started by `dsoxlab run` |
+| Duration | about 40 minutes |
+| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+
+```bash
+dsoxlab run   reseau-prive-scaleway
+dsoxlab check reseau-prive-scaleway
+```
+
 Lesson of the site that carries this lab (in French):
 <https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
 

@@ -3,6 +3,17 @@
 Utilisez un profil mesuré pour sélectionner un modèle de calcul et une taille
 de machine compatible.
 
+| | |
+|---|---|
+| Cible | votre poste, répertoire `challenge/work/`, sans compte cloud |
+| Durée | environ 35 minutes |
+| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/) |
+
+```bash
+dsoxlab run   choisir-modele-calcul
+dsoxlab check choisir-modele-calcul
+```
+
 ## Ce que vous saurez faire
 
 - Choisir entre machine virtuelle, conteneurs managés et fonctions selon les

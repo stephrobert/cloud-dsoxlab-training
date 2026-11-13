@@ -3,6 +3,17 @@
 Concevez le système d'accès avant de le rattacher à l'implémentation IAM d'un
 fournisseur.
 
+| | |
+|---|---|
+| Cible | votre poste, répertoire `challenge/work/`, sans compte cloud |
+| Durée | environ 40 minutes |
+| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/securite/iam/) |
+
+```bash
+dsoxlab run   concevoir-modele-acces
+dsoxlab check concevoir-modele-acces
+```
+
 ## Ce que vous saurez faire
 
 - Définir la fédération des identités, les sessions courtes et les accès de

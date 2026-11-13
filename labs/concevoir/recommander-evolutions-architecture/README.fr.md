@@ -3,6 +3,17 @@
 Ce lab transforme des constats de revue en actions vérifiables et réalisables
 par une équipe.
 
+| | |
+|---|---|
+| Cible | votre poste, répertoire `challenge/work/`, sans compte cloud |
+| Durée | environ 40 minutes |
+| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/) |
+
+```bash
+dsoxlab run   concevoir-recommander-evolutions-architecture
+dsoxlab check concevoir-recommander-evolutions-architecture
+```
+
 ## Ce que vous saurez faire
 
 - Formuler des recommandations avec critères mesurables, effets attendus,

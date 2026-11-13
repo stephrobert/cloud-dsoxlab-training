@@ -2,6 +2,17 @@
 
 Review the customer portal using its architecture and measurement evidence.
 
+| | |
+|---|---|
+| Target | your machine, `challenge/work/` directory, no cloud account |
+| Duration | about 45 minutes |
+| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/) |
+
+```bash
+dsoxlab run   defendre-revue-architecture
+dsoxlab check defendre-revue-architecture
+```
+
 ## What you will be able to do
 
 - Score six architecture axes from 0 to 3 and cite evidence for each score.

@@ -9,6 +9,17 @@ architecture avec le CLI officiel `octl`, sans compte, contre l'émulateur
 **feint**. C'est la variante Outscale du lab `reseau-prive-scaleway` : le même
 besoin, un autre modèle de fournisseur.
 
+| | |
+|---|---|
+| Cible | votre poste, avec l'émulateur **feint** démarré par `dsoxlab run` |
+| Durée | environ 45 minutes |
+| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+
+```bash
+dsoxlab run   reseau-prive-outscale
+dsoxlab check reseau-prive-outscale
+```
+
 Leçon du site qui porte ce lab :
 <https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
 

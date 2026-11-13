@@ -2,6 +2,17 @@
 
 Design the access system before binding it to a provider's IAM implementation.
 
+| | |
+|---|---|
+| Target | your machine, `challenge/work/` directory, no cloud account |
+| Duration | about 40 minutes |
+| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/securite/iam/) |
+
+```bash
+dsoxlab run   concevoir-modele-acces
+dsoxlab check concevoir-modele-acces
+```
+
 ## What you will be able to do
 
 - Specify workforce federation, short sessions and tightly controlled

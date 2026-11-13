@@ -6,6 +6,17 @@ n'avez pas construit : il faut le **lire**, par le CLI officiel branché sur
 l'émulateur **feint**, puis le **chiffrer** sur une grille tarifaire datée.
 C'est un challenge, pas un lab guidé : aucune commande n'est donnée.
 
+| | |
+|---|---|
+| Cible | votre poste, avec l'émulateur **feint** démarré par `dsoxlab run` |
+| Durée | environ 45 minutes |
+| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/outils/feint/limites/) |
+
+```bash
+dsoxlab run   pratiquer-challenge-budget-contraint
+dsoxlab check pratiquer-challenge-budget-contraint
+```
+
 Leçon du site qui porte ce challenge :
 <https://www.stephane-robert.info/docs/cloud/outils/feint/limites/>.
 
