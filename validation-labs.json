@@ -1,6 +1,6 @@
 {
-  "genere_le": "2026-10-24 15:41:01",
-  "dsoxlab": "dsoxlab 0.5.5",
+  "genere_le": "2026-10-13 12:10:39",
+  "dsoxlab": "dsoxlab 0.3.5",
   "feint": "ghcr.io/stephrobert/feint:v0.13.0@sha256:d46639ac7c7a0fa2b6b69d0c5d74bdca0757e3124675563209e8ada58e6a6040",
   "scw": "2.62.0",
   "octl": "octl version v0.0.32",
@@ -18,94 +18,6 @@
       "traces": [],
       "pourquoi": ""
     },
-    "choisir-modele-calcul": {
-      "id": "choisir-modele-calcul",
-      "chemin": "concevoir/choisir-modele-calcul",
-      "verdict": "VALIDE",
-      "score_avant": 0,
-      "score_apres": 100,
-      "tests": "2/2",
-      "duree_s": 1.7,
-      "traces": [],
-      "pourquoi": ""
-    },
-    "choisir-service-donnees": {
-      "id": "choisir-service-donnees",
-      "chemin": "pratiquer/choisir-service-donnees",
-      "verdict": "VALIDE",
-      "score_avant": 0,
-      "score_apres": 100,
-      "tests": "2/2",
-      "duree_s": 2.2,
-      "traces": [],
-      "pourquoi": ""
-    },
-    "concevoir-architecture-cible": {
-      "id": "concevoir-architecture-cible",
-      "chemin": "concevoir/architecture-cible",
-      "verdict": "VALIDE",
-      "score_avant": 0,
-      "score_apres": 100,
-      "tests": "1/1",
-      "duree_s": 1.6,
-      "traces": [],
-      "pourquoi": ""
-    },
-    "concevoir-elasticite": {
-      "id": "concevoir-elasticite",
-      "chemin": "pratiquer/concevoir-elasticite",
-      "verdict": "VALIDE",
-      "score_avant": 0,
-      "score_apres": 100,
-      "tests": "3/3",
-      "duree_s": 1.8,
-      "traces": [],
-      "pourquoi": ""
-    },
-    "concevoir-modele-acces": {
-      "id": "concevoir-modele-acces",
-      "chemin": "concevoir/modele-acces",
-      "verdict": "VALIDE",
-      "score_avant": 0,
-      "score_apres": 100,
-      "tests": "1/1",
-      "duree_s": 1.7,
-      "traces": [],
-      "pourquoi": ""
-    },
-    "concevoir-recommander-evolutions-architecture": {
-      "id": "concevoir-recommander-evolutions-architecture",
-      "chemin": "concevoir/recommander-evolutions-architecture",
-      "verdict": "VALIDE",
-      "score_avant": 0,
-      "score_apres": 100,
-      "tests": "1/1",
-      "duree_s": 1.6,
-      "traces": [],
-      "pourquoi": ""
-    },
-    "defendre-revue-architecture": {
-      "id": "defendre-revue-architecture",
-      "chemin": "concevoir/defendre-revue-architecture",
-      "verdict": "VALIDE",
-      "score_avant": 0,
-      "score_apres": 100,
-      "tests": "3/3",
-      "duree_s": 1.8,
-      "traces": [],
-      "pourquoi": ""
-    },
-    "estimer-cout-mensuel": {
-      "id": "estimer-cout-mensuel",
-      "chemin": "pratiquer/estimer-cout-mensuel",
-      "verdict": "VALIDE",
-      "score_avant": 0,
-      "score_apres": 100,
-      "tests": "2/2",
-      "duree_s": 1.7,
-      "traces": [],
-      "pourquoi": ""
-    },
     "pratiquer-challenge-budget-contraint": {
       "id": "pratiquer-challenge-budget-contraint",
       "chemin": "pratiquer/challenge-budget-contraint",
@@ -114,17 +26,6 @@
       "score_apres": 100,
       "tests": "5/5",
       "duree_s": 10.3,
-      "traces": [],
-      "pourquoi": ""
-    },
-    "pratiquer-choisir-modele-cloud": {
-      "id": "pratiquer-choisir-modele-cloud",
-      "chemin": "pratiquer/choisir-modele-cloud",
-      "verdict": "VALIDE",
-      "score_avant": 0,
-      "score_apres": 100,
-      "tests": "1/1",
-      "duree_s": 1.6,
       "traces": [],
       "pourquoi": ""
     },
