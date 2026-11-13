@@ -1,0 +1,4 @@
+title: "Concevoir un workload élastique"
+description: >-
+  Décrire les prérequis sans état et opérationnels du passage à l'échelle
+  horizontale, puis vérifier la capacité après la perte d'une instance.

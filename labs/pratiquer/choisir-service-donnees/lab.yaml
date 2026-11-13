@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
+id: choisir-service-donnees
+title: "Choose a managed data service"
+description: >-
+  Select a data service for a transactional workload, justify managed versus
+  self-managed operation, and specify private access, recovery and failover.
+level: a
+difficulty: beginner
+lab_type: lab
+estimated_time: 35m
+skills:
+  - cloud.data.choose
+distros:
+  - any
+doc_url: https://www.stephane-robert.info/docs/cloud/donnees/
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - data-service-brief.json
+validation:
+  functional: true
+  security: false
+  persistence_after_reboot: false

@@ -1,0 +1,4 @@
+title: "Choisir un modèle de calcul et le dimensionner sur des mesures"
+description: >-
+  Choisir un modèle de calcul pour une charge continue, puis dimensionner une
+  machine compatible à partir des mesures CPU et mémoire au 95e centile d'une semaine.

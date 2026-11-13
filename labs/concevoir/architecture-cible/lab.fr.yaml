@@ -1,0 +1,5 @@
+title: "Décider d'une architecture cloud cible"
+description: >-
+  Comparer deux options d'architecture cloud complètes selon six axes,
+  retenir celle qui respecte les contraintes impératives et consigner la
+  décision ainsi que le risque accepté dans un ADR.

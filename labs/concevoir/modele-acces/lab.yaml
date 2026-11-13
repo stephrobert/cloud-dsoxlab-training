@@ -1,0 +1,20 @@
+id: concevoir-modele-acces
+title: "Design a cloud identity and access model"
+level: a
+description: >-
+  Design provider-neutral human identity, access lifecycle, separation of
+  duties, emergency access and audit-log requirements for a cloud environment.
+skills:
+  - cloud.access.design
+distros:
+  - any
+doc_url: https://www.stephane-robert.info/docs/cloud/securite/iam/
+lab_type: lab
+estimated_time: 40m
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - access-context.json
+validation:
+  functional: true

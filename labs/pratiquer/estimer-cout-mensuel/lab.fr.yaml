@@ -1,0 +1,4 @@
+title: "Estimer le coût mensuel d'une architecture cloud"
+description: >-
+  Chiffrer une architecture à partir d'un dossier et d'une grille tarifaire
+  synthétique et datée, en comptant calcul, stockage, requêtes et egress.

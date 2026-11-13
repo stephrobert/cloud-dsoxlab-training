@@ -1,0 +1,38 @@
+{
+  "environment": {
+    "provider_selected": false,
+    "production_contains_personal_data": true
+  },
+  "identity_source": {
+    "directory": "corporate-directory",
+    "protocol": "OIDC",
+    "sso_required": true,
+    "maximum_session_minutes": 60
+  },
+  "roles": [
+    {
+      "name": "developers",
+      "duties": ["read_nonproduction", "deploy_nonproduction"]
+    },
+    {
+      "name": "production_operators",
+      "duties": ["approve_production_change", "deploy_production"]
+    },
+    {
+      "name": "security_auditors",
+      "duties": ["read_audit_events", "review_access"]
+    }
+  ],
+  "lifecycle_events": ["joiner", "mover", "leaver", "recertification"],
+  "audit_requirements": {
+    "retention_days": 365,
+    "immutable_destination": true,
+    "events": [
+      "authentication",
+      "privilege_change",
+      "production_access",
+      "policy_denial"
+    ],
+    "alert_on": ["break_glass_use", "privilege_escalation", "audit_delivery_failure"]
+  }
+}

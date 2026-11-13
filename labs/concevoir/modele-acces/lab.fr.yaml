@@ -1,0 +1,5 @@
+title: "Concevoir un modèle d'identité et d'accès cloud"
+description: >-
+  Concevoir un modèle indépendant du fournisseur pour les identités humaines,
+  le cycle de vie des accès, la séparation des responsabilités, les accès de
+  secours et les exigences de journalisation.

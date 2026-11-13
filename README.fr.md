@@ -181,6 +181,7 @@ anglais vers la traduction quand elle existe.
 | Lab (id) | Titre | Niveau | Runtime | Guide compagnon |
 |---|---|---|---|---|
 | `pratiquer-challenge-budget-contraint` | Challenge 1 : architecture à budget contraint | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/outils/feint/limites/) |
+| `pratiquer-choisir-modele-cloud` | Choisir un modèle de service et de déploiement cloud | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/) |
 
 ### Amorcer une machine
 
@@ -195,7 +196,16 @@ anglais vers la traduction quand elle existe.
 | `reseau-prive-scaleway` | Réseau privé, et premières instances sans adresse publique : scw sur Feint | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
 | `reseau-prive-outscale` | Réseau privé, et premières instances sans adresse publique : octl sur Feint | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
 
-_4 labs, table générée par `scripts/gen_catalog.py`._
+### Décisions d'architecture cloud
+
+| Lab (id) | Titre | Niveau | Runtime | Guide compagnon |
+|---|---|---|---|---|
+| `concevoir-architecture-cible` | Décider d'une architecture cloud cible | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/capstone/decider-une-architecture-cible/) |
+| `concevoir-modele-acces` | Concevoir un modèle d'identité et d'accès cloud | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/securite/iam/) |
+| `concevoir-recommander-evolutions-architecture` | Prioriser les évolutions d'une architecture cloud | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/) |
+| `defendre-revue-architecture` | Défendre une revue d'architecture cloud avec des preuves | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/) |
+
+_9 labs, table générée par `scripts/gen_catalog.py`._
 <!-- LABS:END -->
 
 ## Contribuer

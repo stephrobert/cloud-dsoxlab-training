@@ -1,0 +1,20 @@
+id: concevoir-recommander-evolutions-architecture
+title: "Turn architecture findings into a prioritised action plan"
+level: a
+description: >-
+  Write verifiable architecture recommendations, rank them by risk and effort,
+  and schedule the work within the team's capacity and dependencies.
+skills:
+  - cloud.architecture.recommend
+distros:
+  - any
+doc_url: https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/
+lab_type: lab
+estimated_time: 40m
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - review.json
+validation:
+  functional: true

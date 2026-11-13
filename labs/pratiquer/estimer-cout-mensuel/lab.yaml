@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
+id: estimer-cout-mensuel
+title: "Estimate a cloud architecture's monthly cost"
+description: >-
+  Calculate a monthly estimate from an architecture brief and a dated,
+  synthetic price grid, including compute, storage, requests and egress.
+level: a
+difficulty: beginner
+lab_type: lab
+estimated_time: 30m
+skills:
+  - cloud.cost.estimate
+distros:
+  - any
+doc_url: https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - architecture.json
+validation:
+  functional: true
+  security: false
+  persistence_after_reboot: false

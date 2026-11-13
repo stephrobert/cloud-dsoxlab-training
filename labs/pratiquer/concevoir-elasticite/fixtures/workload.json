@@ -1,0 +1,41 @@
+{
+  "workload": {
+    "name": "customer-portal",
+    "sustained_peak_requests_per_second": 1500,
+    "off_peak_requests_per_second": 180,
+    "p95_latency_objective_ms": 200,
+    "safe_requests_per_second_per_instance": 800,
+    "current_instances": 3,
+    "minimum_failed_instances_to_tolerate": 1,
+    "instance_startup_minutes": 4,
+    "client_retries_after_connection_reset": true,
+    "duplicate_order_on_retry_is_acceptable": false
+  },
+  "state_inventory": {
+    "sessions": {
+      "location": "instance_local_memory",
+      "must_survive_instance_replacement": true
+    },
+    "uploads": {
+      "location": "instance_local_disk",
+      "must_survive_instance_replacement": true
+    },
+    "orders": {
+      "location": "managed_relational_database",
+      "idempotency_key_supported": true
+    }
+  },
+  "design_constraints": {
+    "application_code_changes_for_scale_out": false,
+    "minimum_instances": 3,
+    "maximum_instances": 4,
+    "scale_out_utilization_percent": 60,
+    "scale_out_window_minutes": 5,
+    "scale_out_cooldown_minutes": 5,
+    "scale_in_utilization_percent": 35,
+    "scale_in_window_minutes": 15,
+    "scale_in_cooldown_minutes": 10,
+    "connection_drain_seconds": 60,
+    "required_health_checks": ["liveness", "readiness"]
+  }
+}

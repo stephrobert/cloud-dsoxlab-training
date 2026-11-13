@@ -1,0 +1,21 @@
+id: concevoir-architecture-cible
+title: "Decide on a target cloud architecture"
+level: a
+description: >-
+  Compare two complete cloud architecture options against six explicit axes,
+  select the option that meets the hard requirements, and record the decision
+  and accepted risk as an ADR.
+skills:
+  - cloud.architecture.decide
+distros:
+  - any
+doc_url: https://www.stephane-robert.info/docs/cloud/capstone/decider-une-architecture-cible/
+lab_type: lab
+estimated_time: 40m
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - brief.json
+validation:
+  functional: true

@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
+id: choisir-modele-calcul
+title: "Choose a compute model and size it from measurements"
+description: >-
+  Select a compute model for a continuously running workload, then size a
+  compatible machine from a week's p95 CPU and memory measurements.
+level: a
+difficulty: beginner
+lab_type: lab
+estimated_time: 35m
+skills:
+  - cloud.compute.choose
+distros:
+  - any
+doc_url: https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - workload.json
+validation:
+  functional: true
+  security: false
+  persistence_after_reboot: false

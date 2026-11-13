@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
+id: concevoir-elasticite
+title: "Design an elastic application tier"
+description: >-
+  Document the stateless and operational prerequisites for horizontal scaling,
+  then prove the planned capacity still meets peak demand after one instance
+  is lost.
+level: a
+difficulty: intermediate
+lab_type: lab
+estimated_time: 35m
+skills:
+  - cloud.elasticity.design
+distros:
+  - any
+doc_url: https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - workload.json
+validation:
+  functional: true
+  security: false
+  persistence_after_reboot: false

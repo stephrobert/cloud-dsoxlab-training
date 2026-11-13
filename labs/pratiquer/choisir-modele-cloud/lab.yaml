@@ -1,0 +1,20 @@
+id: pratiquer-choisir-modele-cloud
+title: "Choose a cloud service and deployment model"
+level: a
+description: >-
+  Select a service model and deployment model for a workload, then state the
+  responsibilities that remain with the provider and the team.
+skills:
+  - cloud.model.choose
+distros:
+  - any
+doc_url: https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/
+lab_type: lab
+estimated_time: 30m
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - brief.json
+validation:
+  functional: true

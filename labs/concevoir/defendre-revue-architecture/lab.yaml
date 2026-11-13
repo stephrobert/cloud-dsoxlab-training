@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
+id: defendre-revue-architecture
+title: "Defend a cloud architecture review with evidence"
+description: >-
+  Review a customer-portal architecture against six explicit axes, support
+  every score with evidence, rank the main risks, and record decisions and
+  accountable actions.
+level: a
+difficulty: intermediate
+lab_type: lab
+estimated_time: 45m
+skills:
+  - cloud.architecture.review
+distros:
+  - any
+doc_url: https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - review-evidence.json
+validation:
+  functional: true
+  security: false
+  persistence_after_reboot: false

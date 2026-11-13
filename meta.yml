@@ -56,9 +56,13 @@ infra:
 sections:
   - id: pratiquer
     title: "Practise without an account"
-    description: "Module 2b: the official CLIs plugged into feint, and challenge 1, an estimate read from a provided environment."
+    description: "Module 2b: official CLIs plugged into feint, a budget challenge, and design exercises for cost, data services and elasticity."
     labs:
       - pratiquer/challenge-budget-contraint
+      - pratiquer/estimer-cout-mensuel
+      - pratiquer/choisir-service-donnees
+      - pratiquer/concevoir-elasticite
+      - pratiquer/choisir-modele-cloud
   - id: amorcer
     title: "Boot a machine"
     description: "Module 2c: a first virtual machine booted by cloud-init, with no public address, then destroyed."
@@ -70,3 +74,12 @@ sections:
     labs:
       - reseau/prive-scaleway
       - reseau/prive-outscale
+  - id: concevoir
+    title: "Cloud architecture decisions"
+    description: "Choose and size compute, design identity and access, decide on architecture options, prioritize improvements, and defend an evidence-based review."
+    labs:
+      - concevoir/architecture-cible
+      - concevoir/modele-acces
+      - concevoir/recommander-evolutions-architecture
+      - concevoir/defendre-revue-architecture
+      - concevoir/choisir-modele-calcul
