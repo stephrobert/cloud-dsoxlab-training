@@ -309,7 +309,18 @@ def valider(identifiant: str, lab: Path) -> Verdict:
     avant = _ressources()
 
     try:
-        _dsoxlab("clean", identifiant, timeout=300)
+        nettoyage = _dsoxlab("clean", identifiant, "--yes", timeout=300)
+        # Un clean qui n'a rien effacé laisse le livrable du passage précédent :
+        # le sens « 0 » mesurerait alors l'ancienne réponse. Vécu le 2026-11-13 :
+        # dsoxlab exige --yes sans terminal, le clean refusait en silence, et neuf
+        # labs passaient « 100 avant tout travail ».
+        travail = lab / str((lire_yaml(lab / "lab.yaml").get("runtime") or {}).get("workdir") or "challenge/work")
+        if nettoyage.returncode != 0 or travail.exists():
+            v.verdict = "ROUGE"
+            v.pourquoi = (f"`clean` n'a pas remis le lab à zéro (rc={nettoyage.returncode}, "
+                          f"{travail.relative_to(LABS)} {'encore présent' if travail.exists() else 'absent'}) : "
+                          f"{(nettoyage.stderr or nettoyage.stdout)[-200:]}")
+            return v
 
         pose = _dsoxlab("run", identifiant)
         if pose.returncode != 0:
@@ -374,7 +385,7 @@ def valider(identifiant: str, lab: Path) -> Verdict:
         v.verdict = "ROUGE"
         v.pourquoi = f"délai dépassé : {erreur}"
     finally:
-        _dsoxlab("clean", identifiant, timeout=300)
+        _dsoxlab("clean", identifiant, "--yes", timeout=300)
         v.duree_s = round(time.monotonic() - debut, 1)
 
         # Les traces : ce que le lab a laissé derrière lui.
