@@ -7,7 +7,7 @@ where that service is deployed.
 |---|---|
 | Target | your machine, `challenge/work/` directory, no cloud account |
 | Duration | about 30 minutes |
-| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/fondamentaux/responsabilites-partagees/) |
+| Companion lesson | [the lesson on the site](https://www.stephane-robert.info/en/docs/cloud/fundamentals/shared-responsibility-cloud/) |
 
 ```bash
 dsoxlab run   pratiquer-choisir-modele-cloud
@@ -25,4 +25,4 @@ This is a structured decision exercise. It does not provision a provider
 service or prove a provider's actual security controls.
 
 See the lesson:
-<https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/>.
+<https://www.stephane-robert.info/en/docs/cloud/fundamentals/cloud-service-models-iaas-paas-saas/>.

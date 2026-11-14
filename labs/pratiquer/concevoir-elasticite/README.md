@@ -8,7 +8,7 @@ and readiness checks before changing replica count.
 |---|---|
 | Target | your machine, `challenge/work/` directory, no cloud account |
 | Duration | about 35 minutes |
-| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/) |
+| Companion lesson | [the lesson on the site](https://www.stephane-robert.info/en/docs/cloud/fundamentals/elasticity-vs-scalability/) |
 
 ```bash
 dsoxlab run   concevoir-elasticite

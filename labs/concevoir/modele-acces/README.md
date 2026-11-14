@@ -6,7 +6,7 @@ Design the access system before binding it to a provider's IAM implementation.
 |---|---|
 | Target | your machine, `challenge/work/` directory, no cloud account |
 | Duration | about 40 minutes |
-| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/securite/iam/) |
+| Companion lesson | [the lesson on the site](https://www.stephane-robert.info/en/docs/cloud/security/iam/) |
 
 ```bash
 dsoxlab run   concevoir-modele-acces
@@ -26,6 +26,6 @@ This is a provider-neutral design exercise. It does not create identities or
 prove a provider's IAM enforcement.
 
 See the lessons:
-<https://www.stephane-robert.info/docs/cloud/securite/iam/>
+<https://www.stephane-robert.info/en/docs/cloud/security/iam/>
 and
-<https://www.stephane-robert.info/docs/cloud/securite/moindre-privilege/>.
+<https://www.stephane-robert.info/docs/cloud/securite/moindre-privilege/> (in French).

@@ -20,7 +20,7 @@ dsoxlab check reseau-prive-scaleway
 ```
 
 Lesson of the site that carries this lab (in French):
-<https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/>.
+<https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/> (in French).
 
 ## What you will be able to do
 

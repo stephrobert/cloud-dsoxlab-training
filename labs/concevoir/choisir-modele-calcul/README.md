@@ -7,7 +7,7 @@ machine size.
 |---|---|
 | Target | your machine, `challenge/work/` directory, no cloud account |
 | Duration | about 35 minutes |
-| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/) |
+| Companion lesson | [the lesson on the site](https://www.stephane-robert.info/en/docs/cloud/compute/machines-and-sizing/) |
 
 ```bash
 dsoxlab run   choisir-modele-calcul
@@ -29,4 +29,4 @@ The workload measurements and machine catalogue are controlled exercise data.
 Relative cost units are not provider prices, and no cloud resource is created.
 
 See the lesson:
-<https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/>.
+<https://www.stephane-robert.info/en/docs/cloud/compute/machines-and-sizing/>.

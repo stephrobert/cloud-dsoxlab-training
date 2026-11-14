@@ -6,7 +6,7 @@ Review the customer portal using its architecture and measurement evidence.
 |---|---|
 | Target | your machine, `challenge/work/` directory, no cloud account |
 | Duration | about 45 minutes |
-| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/) |
+| Companion lesson | [the lesson on the site](https://www.stephane-robert.info/en/docs/cloud/fundamentals/well-architected-frameworks/) |
 
 ```bash
 dsoxlab run   defendre-revue-architecture
@@ -28,4 +28,4 @@ dataplane behavior. A score of 3 is justified only by a dated test or
 measurement in that snapshot.
 
 See the lesson:
-<https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/>.
+<https://www.stephane-robert.info/en/docs/cloud/fundamentals/well-architected-frameworks/>.

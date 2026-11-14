@@ -6,7 +6,7 @@ Compare complete options rather than choosing a product from a feature list.
 |---|---|
 | Target | your machine, `challenge/work/` directory, no cloud account |
 | Duration | about 40 minutes |
-| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/capstone/decider-une-architecture-cible/) |
+| Companion lesson | [the lesson on the site](https://www.stephane-robert.info/en/docs/cloud/capstone/decide-a-target-architecture/) |
 
 ```bash
 dsoxlab run   concevoir-architecture-cible
@@ -25,4 +25,4 @@ The figures are controlled exercise facts, not provider prices or an assertion
 that a real cloud service has been provisioned.
 
 See the lesson:
-<https://www.stephane-robert.info/docs/cloud/capstone/decider-une-architecture-cible/>.
+<https://www.stephane-robert.info/en/docs/cloud/capstone/decide-a-target-architecture/>.
