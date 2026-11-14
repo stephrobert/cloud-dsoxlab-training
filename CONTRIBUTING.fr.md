@@ -66,7 +66,7 @@ trafic : l'énoncé le dit, et aucun test ne prétend le contraire.
 ```text
 labs/<section>/<lab>/
 ├── lab.yaml            # le contrat (id, level, runtime, fixtures, services, validation…)
-├── lab.fr.yaml         # surcharge FR du title/description UNIQUEMENT
+├── lab.fr.yaml         # surcharge FR du title, de la description et des libellés de critères UNIQUEMENT
 ├── README.md / README.fr.md        # la leçon : prérequis, étapes, limite
 ├── scenario.md / scenario.fr.md    # la situation et la compétence visée
 ├── setup.yaml / cleanup.yaml       # optionnels : joués sur le poste (localhost)

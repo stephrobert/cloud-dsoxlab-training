@@ -65,7 +65,7 @@ and no test claims otherwise.
 ```text
 labs/<section>/<lab>/
 ├── lab.yaml            # the contract (id, level, runtime, fixtures, services, validation…)
-├── lab.fr.yaml         # FR override of title/description ONLY
+├── lab.fr.yaml         # FR override of title, description and criteria labels ONLY
 ├── README.md / README.fr.md        # the lesson: prerequisites, steps, limit
 ├── scenario.md / scenario.fr.md    # the situation and the skill targeted
 ├── setup.yaml / cleanup.yaml       # optional: played on the host (localhost)
