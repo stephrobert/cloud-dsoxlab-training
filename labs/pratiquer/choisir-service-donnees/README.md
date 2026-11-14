@@ -8,7 +8,7 @@ record private connectivity, replication, failover and restore verification.
 |---|---|
 | Target | your machine, `challenge/work/` directory, no cloud account |
 | Duration | about 35 minutes |
-| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/donnees/connexions-et-acces-prive/) |
+| Companion lesson | [the lesson on the site](https://www.stephane-robert.info/en/docs/cloud/data/connections-and-private-access/) |
 
 ```bash
 dsoxlab run   choisir-service-donnees

@@ -6,7 +6,7 @@ This lab turns review findings into actions a team can verify and deliver.
 |---|---|
 | Target | your machine, `challenge/work/` directory, no cloud account |
 | Duration | about 40 minutes |
-| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/) |
+| Companion lesson | [the lesson on the site](https://www.stephane-robert.info/en/docs/cloud/capstone/recommend-changes/) |
 
 ```bash
 dsoxlab run   concevoir-recommander-evolutions-architecture
@@ -25,4 +25,4 @@ The risks and estimates are controlled exercise data. The lab evaluates the
 quality and feasibility of the plan, not an actual provider environment.
 
 See the lesson:
-<https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/>.
+<https://www.stephane-robert.info/en/docs/cloud/capstone/recommend-changes/>.

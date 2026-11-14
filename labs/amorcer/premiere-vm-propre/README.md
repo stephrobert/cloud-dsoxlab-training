@@ -19,7 +19,7 @@ dsoxlab check amorcer-premiere-vm-propre
 ```
 
 Lesson of the site that carries this lab (in French):
-<https://www.stephane-robert.info/docs/cloud/cloud-init/>.
+<https://www.stephane-robert.info/docs/cloud/cloud-init/> (in French).
 
 ## What you will be able to do
 
