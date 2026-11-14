@@ -66,7 +66,7 @@ trafic : l'énoncé le dit, et aucun test ne prétend le contraire.
 ```text
 labs/<section>/<lab>/
 ├── lab.yaml            # le contrat (id, level, runtime, fixtures, services, validation…)
-├── lab.fr.yaml         # surcharge FR du title/description UNIQUEMENT
+├── lab.fr.yaml         # surcharge FR du title, de la description et des libellés de critères UNIQUEMENT
 ├── README.md / README.fr.md        # la leçon : prérequis, étapes, limite
 ├── scenario.md / scenario.fr.md    # la situation et la compétence visée
 ├── setup.yaml / cleanup.yaml       # optionnels : joués sur le poste (localhost)
@@ -77,6 +77,11 @@ labs/<section>/<lab>/
     └── tests/test_functional.py    # la preuve
 solution/<section>/<lab>/           # solution de référence, chiffrée par ansible-vault
 ```
+
+Cet arbre montre les conventions de ce catalogue. Ce que chaque fichier porte
+pour le moteur, et les champs qu'accepte `lab.yaml`, sont documentés dans
+dsoxlab : [guide de l'auteur](https://github.com/stephrobert/dsoxlab/blob/main/docs/catalog-author.fr.md)
+et [contrat](https://github.com/stephrobert/dsoxlab/blob/main/docs/contract-v1.fr.md).
 
 Un lab sur feint déclare le service dans `runtime.services`, à l'image
 **épinglée par digest**, et son `setup.yaml` remet l'émulateur à zéro

@@ -65,7 +65,7 @@ and no test claims otherwise.
 ```text
 labs/<section>/<lab>/
 ├── lab.yaml            # the contract (id, level, runtime, fixtures, services, validation…)
-├── lab.fr.yaml         # FR override of title/description ONLY
+├── lab.fr.yaml         # FR override of title, description and criteria labels ONLY
 ├── README.md / README.fr.md        # the lesson: prerequisites, steps, limit
 ├── scenario.md / scenario.fr.md    # the situation and the skill targeted
 ├── setup.yaml / cleanup.yaml       # optional: played on the host (localhost)
@@ -76,6 +76,11 @@ labs/<section>/<lab>/
     └── tests/test_functional.py    # the proof
 solution/<section>/<lab>/           # reference solution, encrypted with ansible-vault
 ```
+
+This tree shows this catalog's conventions. What each file holds for the
+engine, and which fields `lab.yaml` accepts, is documented in dsoxlab:
+[catalog author guide](https://github.com/stephrobert/dsoxlab/blob/main/docs/catalog-author.md)
+and [contract](https://github.com/stephrobert/dsoxlab/blob/main/docs/contract-v1.md).
 
 A lab on feint declares the service in `runtime.services`, with the image
 **pinned by digest**, and its `setup.yaml` resets the emulator
