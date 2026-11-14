@@ -7,7 +7,7 @@ l'endroit où ce service est déployé.
 |---|---|
 | Cible | votre poste, répertoire `challenge/work/`, sans compte cloud |
 | Durée | environ 30 minutes |
-| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/) |
+| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/fondamentaux/responsabilites-partagees/) |
 
 ```bash
 dsoxlab run   pratiquer-choisir-modele-cloud

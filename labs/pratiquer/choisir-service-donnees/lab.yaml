@@ -12,7 +12,7 @@ skills:
   - cloud.data.choose
 distros:
   - debian13
-doc_url: https://www.stephane-robert.info/docs/cloud/donnees/
+doc_url: https://www.stephane-robert.info/docs/cloud/donnees/connexions-et-acces-prive/
 runtime:
   type: shell
   workdir: challenge/work

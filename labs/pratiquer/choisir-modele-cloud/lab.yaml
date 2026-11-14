@@ -8,7 +8,7 @@ skills:
   - cloud.model.choose
 distros:
   - debian13
-doc_url: https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/
+doc_url: https://www.stephane-robert.info/docs/cloud/fondamentaux/responsabilites-partagees/
 lab_type: lab
 estimated_time: 30m
 runtime:
