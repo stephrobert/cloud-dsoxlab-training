@@ -178,9 +178,9 @@ Module 2b: official CLIs plugged into feint, a budget challenge, and design exer
 |---|---|---|---|---|---|---|
 | 1 | [`pratiquer-challenge-budget-contraint`](labs/pratiquer/challenge-budget-contraint/) | Challenge 1: an architecture on a tight budget | cloud.cost.estimate | 45m | 2026-11-13 | [guide](https://www.stephane-robert.info/en/docs/cloud/outils/feint/limites/) |
 | 2 | [`estimer-cout-mensuel`](labs/pratiquer/estimer-cout-mensuel/) | Estimate a cloud architecture's monthly cost | cloud.cost.estimate | 30m | 2026-11-13 | [guide (FR)](https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/) |
-| 3 | [`choisir-service-donnees`](labs/pratiquer/choisir-service-donnees/) | Choose a managed data service | cloud.data.choose | 35m | 2026-11-13 | [guide (FR)](https://www.stephane-robert.info/docs/cloud/donnees/) |
+| 3 | [`choisir-service-donnees`](labs/pratiquer/choisir-service-donnees/) | Choose a managed data service | cloud.data.choose | 35m | 2026-11-13 | [guide (FR)](https://www.stephane-robert.info/docs/cloud/donnees/connexions-et-acces-prive/) |
 | 4 | [`concevoir-elasticite`](labs/pratiquer/concevoir-elasticite/) | Design an elastic application tier | cloud.elasticity.design | 35m | 2026-11-13 | [guide (FR)](https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/) |
-| 5 | [`pratiquer-choisir-modele-cloud`](labs/pratiquer/choisir-modele-cloud/) | Choose a cloud service and deployment model | cloud.model.choose | 30m | 2026-11-13 | [guide (FR)](https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/) |
+| 5 | [`pratiquer-choisir-modele-cloud`](labs/pratiquer/choisir-modele-cloud/) | Choose a cloud service and deployment model | cloud.model.choose | 30m | 2026-11-13 | [guide (FR)](https://www.stephane-robert.info/docs/cloud/fondamentaux/responsabilites-partagees/) |
 
 ### Boot a machine
 

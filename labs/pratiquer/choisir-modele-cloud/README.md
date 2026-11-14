@@ -7,7 +7,7 @@ where that service is deployed.
 |---|---|
 | Target | your machine, `challenge/work/` directory, no cloud account |
 | Duration | about 30 minutes |
-| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/) |
+| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/fondamentaux/responsabilites-partagees/) |
 
 ```bash
 dsoxlab run   pratiquer-choisir-modele-cloud

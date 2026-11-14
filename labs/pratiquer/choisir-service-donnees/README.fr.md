@@ -9,7 +9,7 @@ la vérification d'une restauration.
 |---|---|
 | Cible | votre poste, répertoire `challenge/work/`, sans compte cloud |
 | Durée | environ 35 minutes |
-| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/donnees/) |
+| Page associée | [la leçon du site](https://www.stephane-robert.info/docs/cloud/donnees/connexions-et-acces-prive/) |
 
 ```bash
 dsoxlab run   choisir-service-donnees
