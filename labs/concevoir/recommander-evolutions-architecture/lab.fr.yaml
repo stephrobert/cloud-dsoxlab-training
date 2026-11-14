@@ -1,0 +1,15 @@
+title: "Prioriser les évolutions d'une architecture cloud"
+description: >-
+  Formuler des recommandations vérifiables, les classer par risque et effort,
+  puis planifier le travail selon la capacité et les dépendances de l'équipe.
+criteria:
+  - id: recommandations
+    label: "Une recommandation complète par constat"
+  - id: priorite
+    label: "L'ordre de priorité suit le score de risque"
+  - id: classement
+    label: "Chaque recommandation est classée gain rapide ou structurelle selon la règle"
+  - id: risque-accepte
+    label: "Chaque risque résiduel a un responsable qui l'accepte"
+  - id: planning
+    label: "Le planning tient la capacité et les dépendances"

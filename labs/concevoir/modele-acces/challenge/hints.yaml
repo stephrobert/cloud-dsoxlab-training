@@ -1,0 +1,11 @@
+points: 100
+hints:
+  - text_en: SHVtYW4gYWNjZXNzIHNob3VsZCBjb21lIGZyb20gdGhlIGNvbXBhbnkgZGlyZWN0b3J5OyBzZXBhcmF0ZSBhcHByb3ZhbCBmcm9tIHByb2R1Y3Rpb24gZGVwbG95bWVudC4=
+    text_fr: TGVzIGFjY8OocyBodW1haW5zIHZpZW5uZW50IGRlIGzigJlhbm51YWlyZSA7IHPDqXBhcmV6IGzigJlhcHByb2JhdGlvbiBkdSBkw6lwbG9pZW1lbnQgZW4gcHJvZHVjdGlvbi4=
+    cost: 10
+  - text_en: TmFtZSBvd25lcnMgZm9yIGpvaW5lciwgbW92ZXIsIGxlYXZlciBhbmQgcGVyaW9kaWMgYWNjZXNzIHJlY2VydGlmaWNhdGlvbiBldmVudHMu
+    text_fr: Tm9tbWV6IGxlcyByZXNwb25zYWJsZXMgZGVzIGFycml2w6llcywgbW9iaWxpdMOpcywgZMOpcGFydHMgZXQgcmVjZXJ0aWZpY2F0aW9ucyBww6lyaW9kaXF1ZXMu
+    cost: 15
+  - text_en: QSB1c2VmdWwgYXVkaXQgcmVxdWlyZW1lbnQgc3RhdGVzIGV2ZW50cywgcmV0ZW50aW9uLCBzdG9yYWdlLCByZWFkZXJzIGFuZCBhbGVydCBjb25kaXRpb25zLg==
+    text_fr: VW5lIGV4aWdlbmNlIGTigJlhdWRpdCBwcsOpY2lzZSBsZXMgw6l2w6luZW1lbnRzLCBsYSBjb25zZXJ2YXRpb24sIGxlIHN0b2NrYWdlLCBsZXMgbGVjdGV1cnMgZXQgbGVzIGFsZXJ0ZXMu
+    cost: 20

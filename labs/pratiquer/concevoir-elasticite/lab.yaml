@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
+id: concevoir-elasticite
+title: "Design an elastic application tier"
+description: >-
+  Document the stateless and operational prerequisites for horizontal scaling,
+  then prove the planned capacity still meets peak demand after one instance
+  is lost.
+level: a
+difficulty: intermediate
+lab_type: lab
+estimated_time: 35m
+skills:
+  - cloud.elasticity.design
+distros:
+  - debian13
+doc_url: https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - workload.json
+validation:
+  functional: true
+  security: false
+  persistence_after_reboot: false
+criteria:
+  - id: etat-externalise
+    label: "State that must survive replacement leaves the instance"
+    tests:
+      - test_l_etat_quitte_l_instance
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/
+  - id: reessais-surs
+    label: "A retry does not create a second order"
+    tests:
+      - test_un_reessai_ne_cree_pas_deux_commandes
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/
+  - id: controles-de-sante
+    label: "Liveness and readiness are two distinct checks"
+    tests:
+      - test_deux_controles_de_sante_distincts
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/
+  - id: perte-d-une-instance
+    label: "The sustained peak still holds after one instance is lost"
+    tests:
+      - test_le_pic_passe_apres_la_perte_d_une_instance
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/
+  - id: politiques-de-scaling
+    label: "Scale-out and scale-in policies are safe"
+    tests:
+      - test_les_politiques_de_scaling_sont_sures
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/
+  - id: verification
+    label: "The plan says how to verify it"
+    tests:
+      - test_le_plan_dit_comment_le_verifier
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/

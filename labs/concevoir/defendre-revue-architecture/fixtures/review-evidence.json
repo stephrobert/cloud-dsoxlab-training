@@ -1,0 +1,89 @@
+{
+  "architecture": "customer-portal",
+  "review_date": "2026-10-24",
+  "requirements": {
+    "monthly_budget_eur": 1500,
+    "rto_minutes": 60,
+    "rpo_minutes": 15,
+    "p95_latency_ms": 200,
+    "load_cpu_percent": 65,
+    "audit_retention_days": 90
+  },
+  "evidence": {
+    "rebuild-config": {
+      "kind": "configuration",
+      "date": "2026-10-20",
+      "description": "The infrastructure repository contains a complete Terraform plan and a documented rebuild runbook. No clean-room rebuild has been recorded."
+    },
+    "audit-retention": {
+      "kind": "configuration",
+      "date": "2026-10-21",
+      "description": "Application and identity events are retained for 30 days. The requirement is 90 days; immutable storage is not configured."
+    },
+    "recovery-drill": {
+      "kind": "test",
+      "date": "2026-10-18",
+      "verified": true,
+      "rto_minutes": 42,
+      "rpo_minutes": 12,
+      "description": "A restore and regional recovery exercise completed within both stated objectives."
+    },
+    "load-test": {
+      "kind": "measurement",
+      "date": "2026-10-19",
+      "verified": true,
+      "cpu_percent": 65,
+      "p95_latency_ms": 184,
+      "description": "The measured p95 latency met the target at the specified CPU load."
+    },
+    "cost-model": {
+      "kind": "estimate",
+      "date": "2026-10-20",
+      "monthly_estimate_eur": 1440,
+      "description": "A dated model estimates monthly spend below the budget. No provider invoice or real consumption data is available."
+    },
+    "sovereignty-review": {
+      "kind": "architecture-record",
+      "date": "2026-10-21",
+      "data_region": "eu",
+      "operator_jurisdiction": "not-assessed",
+      "exit_cost": "not-estimated",
+      "description": "The diagram places data in an EU region, but operator jurisdiction and the cost of exit have not been assessed."
+    }
+  },
+  "risks": [
+    {
+      "id": "audit-retention",
+      "severity": 5,
+      "likelihood": 4,
+      "evidence_id": "audit-retention",
+      "description": "The audit trail does not meet the required retention period."
+    },
+    {
+      "id": "operator-jurisdiction",
+      "severity": 5,
+      "likelihood": 3,
+      "evidence_id": "sovereignty-review",
+      "description": "Operator jurisdiction and the exit path remain unassessed."
+    },
+    {
+      "id": "rebuild-not-tested",
+      "severity": 4,
+      "likelihood": 3,
+      "evidence_id": "rebuild-config",
+      "description": "The documented rebuild has not been tested from a clean environment."
+    },
+    {
+      "id": "cost-variance",
+      "severity": 3,
+      "likelihood": 3,
+      "evidence_id": "cost-model",
+      "description": "Actual provider spend may differ from the estimate."
+    }
+  ],
+  "evidence_limits": [
+    "live-provider-dataplane",
+    "real-provider-invoice",
+    "real-iam-enforcement"
+  ]
+}

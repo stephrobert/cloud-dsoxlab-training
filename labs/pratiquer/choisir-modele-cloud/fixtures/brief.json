@@ -1,0 +1,13 @@
+{
+  "workload": "customer-api",
+  "team": {
+    "operations_staff": false,
+    "application_maintenance": true
+  },
+  "constraints": {
+    "kernel_dependency": false,
+    "operating_system_dependency": false,
+    "personal_data": true,
+    "team_controls_identity_and_application_configuration": true
+  }
+}

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/stephrobert/dsoxlab/main/schemas/lab.schema.json
+id: estimer-cout-mensuel
+title: "Estimate a cloud architecture's monthly cost"
+description: >-
+  Calculate a monthly estimate from an architecture brief and a dated,
+  synthetic price grid, including compute, storage, requests and egress.
+level: a
+difficulty: beginner
+lab_type: lab
+estimated_time: 30m
+skills:
+  - cloud.cost.estimate
+distros:
+  - debian13
+doc_url: https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/
+runtime:
+  type: shell
+  workdir: challenge/work
+  fixtures:
+    - architecture.json
+validation:
+  functional: true
+  security: false
+  persistence_after_reboot: false
+criteria:
+  - id: calcul
+    label: "Compute is costed per class"
+    tests:
+      - test_le_calcul_est_chiffre_par_classe
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/
+  - id: stockage
+    label: "Block, object and snapshot storage are costed"
+    tests:
+      - test_le_stockage_est_chiffre
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/
+  - id: egress
+    label: "Outbound traffic is costed after the allowance"
+    tests:
+      - test_le_trafic_sortant_deduit_la_franchise
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/
+  - id: requetes-api
+    label: "API requests are costed"
+    tests:
+      - test_les_requetes_api_sont_chiffrees
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/
+  - id: total
+    label: "The monthly total is the sum, in the grid's currency and date"
+    tests:
+      - test_le_total_mensuel
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/
+  - id: budget
+    label: "The annualized cost and the budget headroom are right"
+    tests:
+      - test_l_annualisation_et_la_marge_budgetaire
+    lessons:
+      - https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/

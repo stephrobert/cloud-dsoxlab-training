@@ -17,16 +17,16 @@
 #
 # LA SOURCE, ET SON STATUT
 #
-# Le contrat pédagogique de la formation Cloud (§3.2, « Les 18 candidates »),
-# arrêté le 2026-10-12. Ce sont des compétences CANDIDATES : elles entrent au
-# référentiel publié du site avec la formation. Un identifiant qui changerait
-# là-bas se corrige ici, et le test le fera voir dans chaque lab qui le cite.
+# Contrat pédagogique Cloud (§3.2) et compétences sans lab relevées par l'issue
+# cloud-dsoxlab-training#10. Les intitulés sont confrontés au catalogue publié
+# du site ; les compétences fournisseur sont également vérifiées dans ce
+# référentiel afin que les scénarios et les lab.yaml emploient les vrais IDs.
 
 curriculums:
   cloud:
-    nom: "Compétences de la formation Cloud (candidates du contrat, §3.2)"
+    nom: "Compétences de la formation Cloud et de l'issue #10"
     source: "https://www.stephane-robert.info/docs/cloud/"
-    derniere_verification: 2026-10-12
+    derniere_verification: 2026-10-24
     competences:
       cloud.model.choose:
         fr: "Choisir le modèle de service et de déploiement d'un workload et répartir les responsabilités"
@@ -82,3 +82,36 @@ curriculums:
       cloud.architecture.review:
         fr: "Défendre une architecture cloud en revue, décisions écrites et mesures à l'appui"
         en: "Defend a cloud architecture in review, with written decisions and measurements"
+      cloud.access.design:
+        fr: "Concevoir le modèle d'identité et d'accès d'un environnement cloud sans fournisseur imposé : fédération, séparation des responsabilités, cycle de vie des habilitations et exigences de traçabilité"
+        en: "Design a cloud environment's identity and access model with no imposed provider: federation, separation of duties, access lifecycle and traceability requirements"
+      cloud.architecture.decide:
+        fr: "Décider d'une architecture cloud cible : comparer au moins deux options complètes sur six axes et écrire la décision en ADR"
+        en: "Decide on a target cloud architecture: compare at least two complete options on six axes and write the decision as an ADR"
+      cloud.architecture.recommend:
+        fr: "Recommander les évolutions d'une architecture : actions vérifiables, priorisées par gravité, probabilité et effort, et plan tenable par l'équipe"
+        en: "Recommend an architecture's evolution: verifiable actions, prioritised by severity, likelihood and effort, and a plan the team can carry"
+      cloud.governance.design:
+        fr: "Concevoir l'organisation d'un environnement cloud multi-équipes : frontières en comptes, hiérarchie et zone d'atterrissage"
+        en: "Design a multi-team cloud environment's organisation: account boundaries, hierarchy and landing zone"
+      cloud.account.access:
+        fr: "Accéder à son compte cloud et le piloter en ligne de commande"
+        en: "Access your cloud account and drive it from the command line"
+      cloud.compute.provision:
+        fr: "Dimensionner, créer et détruire des instances cloud, GPU compris"
+        en: "Size, create and destroy cloud instances, GPUs included"
+      cloud.fleet.configure:
+        fr: "Configurer une flotte cloud avec Ansible par inventaire dynamique, de façon idempotente"
+        en: "Configure a cloud fleet with Ansible through a dynamic inventory, idempotently"
+      cloud.image.build:
+        fr: "Construire une image machine durcie avec Packer et nettoyer ses restes de build"
+        en: "Build a hardened machine image with Packer and clean up its build leftovers"
+      cloud.network.isolate:
+        fr: "Construire un réseau privé cloud multi-zones et filtrer ses flux"
+        en: "Build a multi-zone private cloud network and filter its traffic"
+      cloud.storage.operate:
+        fr: "Choisir et exploiter le stockage cloud, bloc et objet, jusqu'à la sauvegarde restaurée"
+        en: "Choose and operate cloud storage, block and object, up to a restored backup"
+      cloud.terraform.provision:
+        fr: "Provisionner une infrastructure cloud en Terraform, état sur le stockage objet du fournisseur"
+        en: "Provision cloud infrastructure with Terraform and store state in the provider's object storage"

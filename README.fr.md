@@ -178,24 +178,54 @@ anglais vers la traduction quand elle existe.
 <!-- LABS:START -->
 ### Pratiquer sans compte
 
-| Lab (id) | Titre | Niveau | Runtime | Guide compagnon |
-|---|---|---|---|---|
-| `pratiquer-challenge-budget-contraint` | Challenge 1 : architecture à budget contraint | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/outils/feint/limites/) |
+Module 2b : les CLI officielles branchées sur feint, un challenge de budget et des exercices de conception sur les coûts, les données et l'élasticité.
+
+5 lab(s).
+
+| # | Lab | Titre | Compétence | Durée | Validé | Guide compagnon |
+|---|---|---|---|---|---|---|
+| 1 | [`pratiquer-challenge-budget-contraint`](labs/pratiquer/challenge-budget-contraint/) | Challenge 1 : architecture à budget contraint | cloud.cost.estimate | 45m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/outils/feint/limites/) |
+| 2 | [`estimer-cout-mensuel`](labs/pratiquer/estimer-cout-mensuel/) | Estimer le coût mensuel d'une architecture cloud | cloud.cost.estimate | 30m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/) |
+| 3 | [`choisir-service-donnees`](labs/pratiquer/choisir-service-donnees/) | Choisir un service de données managé | cloud.data.choose | 35m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/donnees/) |
+| 4 | [`concevoir-elasticite`](labs/pratiquer/concevoir-elasticite/) | Concevoir un workload élastique | cloud.elasticity.design | 35m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/) |
+| 5 | [`pratiquer-choisir-modele-cloud`](labs/pratiquer/choisir-modele-cloud/) | Choisir un modèle de service et de déploiement cloud | cloud.model.choose | 30m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/) |
 
 ### Amorcer une machine
 
-| Lab (id) | Titre | Niveau | Runtime | Guide compagnon |
-|---|---|---|---|---|
-| `amorcer-premiere-vm-propre` | Première VM propre : amorcée par cloud-init, sans adresse publique | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/cloud-init/) |
+Module 2c : une première machine virtuelle amorcée par cloud-init, sans adresse publique, puis détruite.
+
+1 lab(s).
+
+| # | Lab | Titre | Compétence | Durée | Validé | Guide compagnon |
+|---|---|---|---|---|---|---|
+| 1 | [`amorcer-premiere-vm-propre`](labs/amorcer/premiere-vm-propre/) | Première VM propre : amorcée par cloud-init, sans adresse publique | cloud.environment.rebuild | 30m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/cloud-init/) |
 
 ### Réseau cloud
 
-| Lab (id) | Titre | Niveau | Runtime | Guide compagnon |
-|---|---|---|---|---|
-| `reseau-prive-scaleway` | Réseau privé, et premières instances sans adresse publique : scw sur Feint | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
-| `reseau-prive-outscale` | Réseau privé, et premières instances sans adresse publique : octl sur Feint | a | shell | [guide](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+Module 3 : un réseau privé régional attaché dans deux zones, une passerelle de sortie et sa route par défaut, déclarés sur feint.
 
-_4 labs, table générée par `scripts/gen_catalog.py`._
+2 lab(s).
+
+| # | Lab | Titre | Compétence | Durée | Validé | Guide compagnon |
+|---|---|---|---|---|---|---|
+| 1 | [`reseau-prive-scaleway`](labs/reseau/prive-scaleway/) | Réseau privé, et premières instances sans adresse publique : scw sur Feint | cloud.network.design | 40m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+| 2 | [`reseau-prive-outscale`](labs/reseau/prive-outscale/) | Réseau privé, et premières instances sans adresse publique : octl sur Feint | cloud.network.design | 45m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/architecture/03-tables-routage-et-gateways/) |
+
+### Décisions d'architecture cloud
+
+Choisir et dimensionner le calcul, concevoir les accès, comparer des options, prioriser des évolutions et défendre une revue appuyée sur des preuves.
+
+5 lab(s).
+
+| # | Lab | Titre | Compétence | Durée | Validé | Guide compagnon |
+|---|---|---|---|---|---|---|
+| 1 | [`concevoir-architecture-cible`](labs/concevoir/architecture-cible/) | Décider d'une architecture cloud cible | cloud.architecture.decide | 40m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/capstone/decider-une-architecture-cible/) |
+| 2 | [`concevoir-modele-acces`](labs/concevoir/modele-acces/) | Concevoir un modèle d'identité et d'accès cloud | cloud.access.design | 40m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/securite/iam/) |
+| 3 | [`concevoir-recommander-evolutions-architecture`](labs/concevoir/recommander-evolutions-architecture/) | Prioriser les évolutions d'une architecture cloud | cloud.architecture.recommend | 40m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/capstone/recommander-des-evolutions/) |
+| 4 | [`defendre-revue-architecture`](labs/concevoir/defendre-revue-architecture/) | Défendre une revue d'architecture cloud avec des preuves | cloud.architecture.review | 45m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/well-architected-frameworks/) |
+| 5 | [`choisir-modele-calcul`](labs/concevoir/choisir-modele-calcul/) | Choisir un modèle de calcul et le dimensionner sur des mesures | cloud.compute.choose | 35m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/compute/machines-et-dimensionnement/) |
+
+_13 labs, table générée par `scripts/gen_catalog.py`._
 <!-- LABS:END -->
 
 ## Contribuer

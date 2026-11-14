@@ -37,6 +37,9 @@ __pycache__/
 .ruff_cache/
 .venv/
 
+# Feuille de pilotage locale des labs Cloud manquants.
+PILOTAGE-CLOUD-LABS-MANQUANTS.md
+
 # LES FIXTURES NE S'IGNORENT JAMAIS, QUELLE QUE SOIT LEUR EXTENSION : une
 # fixture déclarée et non versionnée casse le lab pour quiconque clone le dépôt.
 !labs/**/fixtures/**

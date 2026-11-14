@@ -7,6 +7,17 @@ has you make that move locally, without a cloud account: an **Incus** virtual
 machine plays the instance, a private Incus network plays the provider's
 network.
 
+| | |
+|---|---|
+| Target | your machine, with an **Incus** virtual machine |
+| Duration | about 30 minutes |
+| Companion lesson | [the lesson on the site, in French](https://www.stephane-robert.info/docs/cloud/cloud-init/) |
+
+```bash
+dsoxlab run   amorcer-premiere-vm-propre
+dsoxlab check amorcer-premiere-vm-propre
+```
+
 Lesson of the site that carries this lab (in French):
 <https://www.stephane-robert.info/docs/cloud/cloud-init/>.
 

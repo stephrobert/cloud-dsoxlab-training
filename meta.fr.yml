@@ -16,10 +16,13 @@ repo:
 sections:
   - id: pratiquer
     title: "Pratiquer sans compte"
-    description: "Module 2b : les CLI officielles branchées sur feint, et le challenge 1, une estimation lue dans un environnement fourni."
+    description: "Module 2b : les CLI officielles branchées sur feint, un challenge de budget et des exercices de conception sur les coûts, les données et l'élasticité."
   - id: amorcer
     title: "Amorcer une machine"
     description: "Module 2c : une première machine virtuelle amorcée par cloud-init, sans adresse publique, puis détruite."
   - id: reseau
     title: "Réseau cloud"
     description: "Module 3 : un réseau privé régional attaché dans deux zones, une passerelle de sortie et sa route par défaut, déclarés sur feint."
+  - id: concevoir
+    title: "Décisions d'architecture cloud"
+    description: "Choisir et dimensionner le calcul, concevoir les accès, comparer des options, prioriser des évolutions et défendre une revue appuyée sur des preuves."

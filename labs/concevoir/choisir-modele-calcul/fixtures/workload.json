@@ -1,0 +1,107 @@
+{
+  "workload": {
+    "name": "product-image-indexer",
+    "request_pattern": "continuous-http",
+    "p95_request_duration_minutes": 12,
+    "maximum_request_duration_minutes": 18,
+    "requires_custom_host_kernel_module": true,
+    "native_dependencies": [
+      {
+        "name": "image-codec-accelerator",
+        "tested_architectures": ["x86_64"],
+        "arm64_tested": false
+      }
+    ],
+    "architecture_objective": "Choose the lowest-cost processor architecture that the tested dependencies support."
+  },
+  "compute_models": {
+    "virtual_machine": {
+      "supports_custom_host_kernel_module": true,
+      "maximum_request_duration_minutes": null
+    },
+    "managed_container": {
+      "supports_custom_host_kernel_module": false,
+      "maximum_request_duration_minutes": null
+    },
+    "function": {
+      "supports_custom_host_kernel_module": false,
+      "maximum_request_duration_minutes": 15
+    }
+  },
+  "measurements": {
+    "period_days": 7,
+    "current_profile": "m7i.2xlarge",
+    "current_capacity": {
+      "vcpus": 8,
+      "memory_gib": 32
+    },
+    "p95": {
+      "cpu_vcpus_used": 3.2,
+      "memory_gib_used": 10.4
+    },
+    "brief_maximum": {
+      "cpu_vcpus_used": 7.6,
+      "memory_gib_used": 14.8,
+      "duration_seconds": 20
+    },
+    "planned_growth_percent": 20
+  },
+  "machine_catalogue": [
+    {
+      "id": "t3.large",
+      "family": "burstable",
+      "architecture": "x86_64",
+      "vcpus": 2,
+      "memory_gib": 8,
+      "relative_monthly_cost_units": 6
+    },
+    {
+      "id": "c7g.xlarge",
+      "family": "compute",
+      "architecture": "arm64",
+      "vcpus": 4,
+      "memory_gib": 8,
+      "relative_monthly_cost_units": 7
+    },
+    {
+      "id": "m7g.xlarge",
+      "family": "general",
+      "architecture": "arm64",
+      "vcpus": 4,
+      "memory_gib": 16,
+      "relative_monthly_cost_units": 10
+    },
+    {
+      "id": "c7i.xlarge",
+      "family": "compute",
+      "architecture": "x86_64",
+      "vcpus": 4,
+      "memory_gib": 8,
+      "relative_monthly_cost_units": 11
+    },
+    {
+      "id": "m7i.xlarge",
+      "family": "general",
+      "architecture": "x86_64",
+      "vcpus": 4,
+      "memory_gib": 16,
+      "relative_monthly_cost_units": 12
+    },
+    {
+      "id": "r7i.xlarge",
+      "family": "memory",
+      "architecture": "x86_64",
+      "vcpus": 4,
+      "memory_gib": 32,
+      "relative_monthly_cost_units": 16
+    },
+    {
+      "id": "m7i.2xlarge",
+      "family": "general",
+      "architecture": "x86_64",
+      "vcpus": 8,
+      "memory_gib": 32,
+      "relative_monthly_cost_units": 24
+    }
+  ]
+}

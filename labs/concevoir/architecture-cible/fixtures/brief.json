@@ -1,0 +1,27 @@
+{
+  "requirements": {
+    "monthly_budget_eur": 1500,
+    "max_operations_days_per_month": 1,
+    "data_region": "eu",
+    "minimum_zones": 3,
+    "performance_target": "p95 below 200 ms at the measured 65% CPU load"
+  },
+  "options": {
+    "virtual_machines": {
+      "monthly_cost_eur": 1250,
+      "operations_days_per_month": 3,
+      "data_residency": "eu",
+      "availability_zones": 3,
+      "portability": "OCI image requires a VM wrapper and host maintenance",
+      "performance": "meets the p95 target at 65% CPU load"
+    },
+    "managed_containers": {
+      "monthly_cost_eur": 1450,
+      "operations_days_per_month": 0.5,
+      "data_residency": "eu",
+      "availability_zones": 3,
+      "portability": "runs the existing OCI image without a VM wrapper",
+      "performance": "meets the p95 target at 65% CPU load"
+    }
+  }
+}

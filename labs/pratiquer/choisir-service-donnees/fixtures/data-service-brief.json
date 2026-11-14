@@ -1,0 +1,76 @@
+{
+  "workload": {
+    "name": "order-platform",
+    "data_model": "relational",
+    "transactional_consistency_required": true,
+    "required_engine": "postgresql",
+    "required_major_version": 16,
+    "required_extensions": ["pgcrypto"],
+    "internet_access_allowed": false
+  },
+  "team": {
+    "database_operations_capacity_hours_per_month": 8
+  },
+  "recovery_objectives": {
+    "maximum_rpo_minutes": 5,
+    "maximum_rto_minutes": 30,
+    "minimum_failure_domains": 2
+  },
+  "monthly_budget_eur": 500,
+  "service_catalogue": [
+    {
+      "id": "managed-postgresql",
+      "operating_model": "managed",
+      "data_model": "relational",
+      "engine": "postgresql",
+      "major_versions": [15, 16],
+      "extensions": ["pgcrypto"],
+      "private_endpoint": true,
+      "internet_endpoint_mandatory": false,
+      "monthly_cost_eur": 420,
+      "operations_hours_per_month": 3,
+      "failure_domains": 2,
+      "replication": "synchronous_standby",
+      "rpo_minutes": 5,
+      "rto_minutes": 20,
+      "point_in_time_recovery": true,
+      "restore_test_owner": "customer"
+    },
+    {
+      "id": "self-managed-postgresql",
+      "operating_model": "self_managed",
+      "data_model": "relational",
+      "engine": "postgresql",
+      "major_versions": [16],
+      "extensions": ["pgcrypto"],
+      "private_endpoint": true,
+      "internet_endpoint_mandatory": false,
+      "monthly_cost_eur": 270,
+      "operations_hours_per_month": 24,
+      "failure_domains": 2,
+      "replication": "asynchronous_standby",
+      "rpo_minutes": 15,
+      "rto_minutes": 45,
+      "point_in_time_recovery": false,
+      "restore_test_owner": "customer"
+    },
+    {
+      "id": "managed-document-store",
+      "operating_model": "managed",
+      "data_model": "document",
+      "engine": "documentdb",
+      "major_versions": [],
+      "extensions": [],
+      "private_endpoint": true,
+      "internet_endpoint_mandatory": false,
+      "monthly_cost_eur": 310,
+      "operations_hours_per_month": 2,
+      "failure_domains": 3,
+      "replication": "synchronous_quorum",
+      "rpo_minutes": 0,
+      "rto_minutes": 10,
+      "point_in_time_recovery": true,
+      "restore_test_owner": "customer"
+    }
+  ]
+}
