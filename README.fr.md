@@ -181,9 +181,9 @@ Module 2b : les CLI officielles branchées sur feint, un challenge de budget et 
 |---|---|---|---|---|---|---|
 | 1 | [`pratiquer-challenge-budget-contraint`](labs/pratiquer/challenge-budget-contraint/) | Challenge 1 : architecture à budget contraint | cloud.cost.estimate | 45m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/outils/feint/limites/) |
 | 2 | [`estimer-cout-mensuel`](labs/pratiquer/estimer-cout-mensuel/) | Estimer le coût mensuel d'une architecture cloud | cloud.cost.estimate | 30m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/pay-as-you-go-modeles-tarifaires/) |
-| 3 | [`choisir-service-donnees`](labs/pratiquer/choisir-service-donnees/) | Choisir un service de données managé | cloud.data.choose | 35m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/donnees/) |
+| 3 | [`choisir-service-donnees`](labs/pratiquer/choisir-service-donnees/) | Choisir un service de données managé | cloud.data.choose | 35m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/donnees/connexions-et-acces-prive/) |
 | 4 | [`concevoir-elasticite`](labs/pratiquer/concevoir-elasticite/) | Concevoir un workload élastique | cloud.elasticity.design | 35m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/elasticite-vs-scalabilite/) |
-| 5 | [`pratiquer-choisir-modele-cloud`](labs/pratiquer/choisir-modele-cloud/) | Choisir un modèle de service et de déploiement cloud | cloud.model.choose | 30m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/modeles-cloud-iaas-paas-saas/) |
+| 5 | [`pratiquer-choisir-modele-cloud`](labs/pratiquer/choisir-modele-cloud/) | Choisir un modèle de service et de déploiement cloud | cloud.model.choose | 30m | 2026-11-13 | [guide](https://www.stephane-robert.info/docs/cloud/fondamentaux/responsabilites-partagees/) |
 
 ### Amorcer une machine
 
