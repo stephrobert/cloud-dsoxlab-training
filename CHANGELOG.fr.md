@@ -29,6 +29,12 @@ publie par un tag, qui produit une archive signée (voir
   le nombre de labs de chaque section ; chaque README de lab s'ouvre sur une
   vignette (cible, durée, page associée, `dsoxlab run` et `check`) (#25).
 
+- Le README renvoie à la documentation du moteur au lieu de la recopier
+  (dsoxlab#201) : les sections qui décrivaient le contrat de `dsoxlab` et la
+  vie d'un lab pointent sur la documentation de dsoxlab, qui reste juste quand
+  le moteur change. L'« Anatomie d'un lab » du CONTRIBUTING renvoie à la même
+  documentation pour le contrat de chaque fichier.
+
 ## [0.2.2] - 2026-10-23
 
 ### Ajouté

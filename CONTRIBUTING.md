@@ -77,6 +77,11 @@ labs/<section>/<lab>/
 solution/<section>/<lab>/           # reference solution, encrypted with ansible-vault
 ```
 
+This tree shows this catalog's conventions. What each file holds for the
+engine, and which fields `lab.yaml` accepts, is documented in dsoxlab:
+[catalog author guide](https://github.com/stephrobert/dsoxlab/blob/main/docs/catalog-author.md)
+and [contract](https://github.com/stephrobert/dsoxlab/blob/main/docs/contract-v1.md).
+
 A lab on feint declares the service in `runtime.services`, with the image
 **pinned by digest**, and its `setup.yaml` resets the emulator
 (`PUT /_feint/state` with an empty state): dsoxlab reuses the container from one

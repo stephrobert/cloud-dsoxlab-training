@@ -98,27 +98,22 @@ catalog: open an issue, the form comes pre-filled by `dsoxlab support --issue`.
 
 ## How it works
 
-### The declarative contract, on two levels
+### The engine, documented where it lives
 
-- **`meta.yml`**, at the root, declares the repository's identity, the
-  **order** of the labs, that of the blog's path, and reserves the catalog's
-  network (`lab-cloud`, `10.10.70.0/24`) for the machine labs to come;
-- **`lab.yaml`**, per lab, declares its `skills`, its `level`, its `runtime`
-  (type, fixtures, **services**), its `doc_url` and a `validation` block. A
-  `lab.fr.yaml` overrides the `title` and the `description` in French.
+This catalog is played by `dsoxlab`, which documents its own contract and
+commands. This README does not repeat them, so that it cannot drift when the
+engine changes (dsoxlab issue #201):
 
-### The lab lifecycle
+- the contract: `meta.yml`, `lab.yaml`, `lab.<lang>.yaml`, the runtimes and
+  their fields: [contract](https://github.com/stephrobert/dsoxlab/blob/main/docs/contract-v1.md);
+- the commands and the life of a lab, from `run` to `check`:
+  [commands](https://github.com/stephrobert/dsoxlab/blob/main/docs/commands.md) and [playing a lab](https://github.com/stephrobert/dsoxlab/blob/main/docs/learner.md);
+- writing a lab, and what `validate-structure` checks:
+  [catalog author guide](https://github.com/stephrobert/dsoxlab/blob/main/docs/catalog-author.md).
 
-```bash
-dsoxlab list-labs              # browse the catalog
-dsoxlab show      <id>         # metadata and status of one lab
-dsoxlab run       <id>         # set the starting state
-dsoxlab challenge <id>         # read the mission, no step-by-step
-dsoxlab hint      <id>         # reveal a hint (deducted from the score)
-dsoxlab check     <id>         # run the tests, compute and record the score
-dsoxlab clean     <id>         # remove the work directory and stop the services
-dsoxlab progress               # per-section progress, average score
-```
+What is specific to this catalog: [`meta.yml`](./meta.yml) also carries the
+order of the blog's path, and reserves the catalog's network (`lab-cloud`,
+`10.10.70.0/24`) for the machine labs to come.
 
 ### Runtimes
 

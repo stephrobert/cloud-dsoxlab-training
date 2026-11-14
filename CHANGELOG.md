@@ -29,6 +29,12 @@ the unit that matters remains the lab.
   description and lab count; each lab README opens on a card (target,
   duration, companion lesson, `dsoxlab run` and `check`) (#25).
 
+- The README links to the engine documentation instead of copying it
+  (dsoxlab#201): the sections that described the `dsoxlab` contract and the
+  life of a lab now point to the dsoxlab docs, which stay true when the engine
+  changes. The CONTRIBUTING "Anatomy of a lab" points to the same docs for the
+  contract of each file.
+
 ## [0.2.2] - 2026-10-23
 
 ### Added

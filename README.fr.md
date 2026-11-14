@@ -99,27 +99,22 @@ par `dsoxlab support --issue`.
 
 ## Comment ça marche
 
-### Le contrat déclaratif, à deux niveaux
+### Le moteur, documenté là où il vit
 
-- **`meta.yml`**, à la racine, déclare l'identité du dépôt, l'**ordre** des
-  labs, celui du parcours du blog, et réserve le réseau du catalogue
-  (`lab-cloud`, `10.10.70.0/24`) pour les labs sur machine à venir ;
-- **`lab.yaml`**, par lab, déclare ses `skills`, son `level`, son `runtime`
-  (type, fixtures, **services**), son `doc_url` et un bloc `validation`. Un
-  `lab.fr.yaml` surcharge le `title` et la `description` en français.
+Ce catalogue se joue avec `dsoxlab`, qui documente lui-même son contrat et ses
+commandes. Ce README ne les répète pas, pour ne pas dériver quand le moteur
+change (issue dsoxlab #201) :
 
-### Le cycle de vie d'un lab
+- le contrat : `meta.yml`, `lab.yaml`, `lab.<langue>.yaml`, les runtimes et
+  leurs champs : [contrat](https://github.com/stephrobert/dsoxlab/blob/main/docs/contract-v1.fr.md) ;
+- les commandes et la vie d'un lab, de `run` à `check` :
+  [commandes](https://github.com/stephrobert/dsoxlab/blob/main/docs/commands.fr.md) et [jouer un lab](https://github.com/stephrobert/dsoxlab/blob/main/docs/learner.fr.md) ;
+- écrire un lab, et ce que contrôle `validate-structure` :
+  [guide de l'auteur](https://github.com/stephrobert/dsoxlab/blob/main/docs/catalog-author.fr.md).
 
-```bash
-dsoxlab list-labs              # parcourir le catalogue
-dsoxlab show      <id>         # métadonnées et état d'un lab
-dsoxlab run       <id>         # poser l'état de départ
-dsoxlab challenge <id>         # lire la mission, sans pas-à-pas
-dsoxlab hint      <id>         # révéler un indice (déduit du score)
-dsoxlab check     <id>         # lancer les tests, calculer et enregistrer le score
-dsoxlab clean     <id>         # retirer le répertoire de travail et arrêter les services
-dsoxlab progress               # avancement par section, score moyen
-```
+Ce qui est propre à ce catalogue : [`meta.yml`](./meta.yml) porte aussi
+l'ordre du parcours du blog, et réserve le réseau du catalogue (`lab-cloud`,
+`10.10.70.0/24`) pour les labs sur machine à venir.
 
 ### Les runtimes
 
