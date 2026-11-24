@@ -1,4 +1,23 @@
-# Défi : recommander et planifier les évolutions d'architecture
+# Une revue d'architecture sans plan d'action
+
+## La situation
+
+Une revue d'architecture a relevé trois problèmes sur la plateforme client :
+une base de données accessible publiquement, une conservation incomplète des
+journaux d'audit et l'absence de reprise régionale testée. L'équipe
+d'ingénierie dispose de deux jours-personne par sprint, et le chantier de
+reprise dépend de la journalisation.
+
+Un scénario dit **où on est et ce qui ne va pas**, pas la marche à suivre :
+c'est le travail de l'apprenant de la trouver.
+
+Les constats, preuves, échelles de risque et estimations d'effort figurent dans
+`review.json`. Le rapport énumère les observations sans recommandations
+vérifiables, ordre de priorité ni plan réalisable.
+
+Compétence visée : `cloud.architecture.recommend`
+
+## Défi : recommander et planifier les évolutions d'architecture
 
 À partir des preuves de `review.json`, créez `plan.json` dans `challenge/work/`. Ajoutez une
 recommandation par constat, avec son score de risque, son effort, son effet

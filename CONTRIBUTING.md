@@ -67,7 +67,6 @@ labs/<section>/<lab>/
 ├── lab.yaml            # the contract (id, level, runtime, fixtures, services, validation…)
 ├── lab.fr.yaml         # FR override of title, description and criteria labels ONLY
 ├── README.md / README.fr.md        # the lesson: prerequisites, steps, limit
-├── scenario.md / scenario.fr.md    # the situation and the skill targeted
 ├── setup.yaml / cleanup.yaml       # optional: played on the host (localhost)
 ├── fixtures/           # what `run` copies into challenge/work
 └── challenge/
@@ -92,7 +91,7 @@ reference in `lab_state_dir`, outside the working directory.
 
 - **Start from the course contract**: the module, the level (A or B) and the
   limit of the device are set there, not in the lab.
-- **Name the skill tested**, in both scenarios: "Compétence visée :
+- **Name the skill tested**, in both briefs: "Compétence visée :
   `cloud.x.y`" and "Skill targeted: `cloud.x.y`", and carry it in the `skills`
   of `lab.yaml`. `tests/test_curriculums.py` checks it.
 - **Point `doc_url` at the French lesson** that carries the lab: the CLI reads

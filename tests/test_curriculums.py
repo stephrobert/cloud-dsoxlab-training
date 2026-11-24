@@ -30,7 +30,7 @@ REPO = Path(__file__).resolve().parent.parent
 LABS = REPO / "labs"
 SOURCE = REPO / "curriculums.yml"
 
-FICHIERS_LUS = ("scenario.fr.md", "scenario.md")
+FICHIERS_LUS = ("challenge/README.fr.md", "challenge/README.md")
 COMPETENCES_DE_L_ISSUE = {
     "cloud.access.design",
     "cloud.architecture.decide",
@@ -112,7 +112,7 @@ def test_chaque_scenario_cite_une_competence_connue(rel: str, nom: str) -> None:
 @pytest.mark.parametrize("rel", tous_les_labs())
 def test_le_lab_porte_la_competence_qu_il_annonce(rel: str) -> None:
     skills = set(yaml.safe_load((LABS / rel / "lab.yaml").read_text(encoding="utf-8"))["skills"])
-    citees = set(citations(rel, "scenario.fr.md")) | set(citations(rel, "scenario.md"))
+    citees = set(citations(rel, "challenge/README.fr.md")) | set(citations(rel, "challenge/README.md"))
     absentes = sorted(citees - skills)
     assert not absentes, (
         f"{rel} annonce {absentes} dans son scénario, mais son lab.yaml ne les "
