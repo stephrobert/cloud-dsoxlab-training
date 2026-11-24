@@ -68,7 +68,6 @@ labs/<section>/<lab>/
 ├── lab.yaml            # le contrat (id, level, runtime, fixtures, services, validation…)
 ├── lab.fr.yaml         # surcharge FR du title, de la description et des libellés de critères UNIQUEMENT
 ├── README.md / README.fr.md        # la leçon : prérequis, étapes, limite
-├── scenario.md / scenario.fr.md    # la situation et la compétence visée
 ├── setup.yaml / cleanup.yaml       # optionnels : joués sur le poste (localhost)
 ├── fixtures/           # ce que `run` copie dans challenge/work
 └── challenge/
@@ -93,7 +92,7 @@ lab à l'autre. Un lab qui pose un état tiré au hasard range sa référence da
 
 - **Partir du contrat de la formation** : le module, le niveau (A ou B) et la
   limite du dispositif sont fixés là, pas dans le lab.
-- **Citer la compétence éprouvée**, dans les deux scénarios : « Compétence
+- **Citer la compétence éprouvée**, dans les deux énoncés : « Compétence
   visée : `cloud.x.y` » et « Skill targeted: `cloud.x.y` », et la porter dans
   les `skills` du `lab.yaml`. `tests/test_curriculums.py` le vérifie.
 - **Faire pointer `doc_url` vers la leçon française** qui porte le lab : la CLI
